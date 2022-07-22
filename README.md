@@ -86,8 +86,16 @@ _**投注失败的定义：eBET收到的状态不是200或未收到。**_\
 example: RegisterOrLoginReq
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" type="array" name="photoUrls" required="true" %}
+252542542544
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="eventType" type="integer" required="true" %}
 example: 1
+{% endswagger-parameter %}
+
+{% swagger-parameter in="cookie" %}
+
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="成功" %}
