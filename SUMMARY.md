@@ -1,7 +1,7 @@
 # Table of contents
 
 * [注意事项](README.md)
-* [eBET請求](<README (1).md>)
+* [eBET請求](README.md)
 * [Quick Start](quick-start.md)
 * [API Reference](api-reference/README.md)
   * [Pets](api-reference/pets.md)
