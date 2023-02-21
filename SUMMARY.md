@@ -1,12 +1,29 @@
 # Table of contents
 
 * [注意事项](README.md)
-* [eBET請求](README.md)
-* [Quick Start](quick-start.md)
-* [API Reference](api-reference/README.md)
-  * [Pets](api-reference/pets.md)
-  * [Users](api-reference/users.md)
+* [游戏类型](you-xi-lei-xing.md)
+* [登入方式](deng-ru-fang-shi/README.md)
+  * [Token登入](deng-ru-fang-shi/token-deng-ru.md)
+  * [普通登入](deng-ru-fang-shi/pu-tong-deng-ru.md)
+  * [试玩登入](deng-ru-fang-shi/shi-wan-deng-ru.md)
+* [API](api/README.md)
+  * [转帐钱包 API](api/zhuan-zhang-qian-bao-api.md)
+  * [单一钱包 API](api/dan-yi-qian-bao-api.md)
+  * [共用 API](api/gong-yong-api.md)
+  * [参数说明](api/can-shu-shuo-ming.md)
+  * [游戏相关说明](api/you-xi-xiang-guan-shuo-ming.md)
+  * [代码范本](api/dai-ma-fan-ben.md)
+  * [签名测试](api/qian-ming-ce-shi.md)
+* [数据后台](shu-ju-hou-tai/README.md)
+  * [后台操作说明](shu-ju-hou-tai/hou-tai-cao-zuo-shuo-ming.md)
+  * [后台角色权限](shu-ju-hou-tai/hou-tai-jiao-se-quan-xian.md)
+  * [下载区](shu-ju-hou-tai/xia-zai-qu.md)
+* [备注](bei-zhu.md)
 
-## Reference
+## 範本
 
-* [Page 1](reference/page-1.md)
+* [Page 1](fan-ben/page-1.md)
+* [Quick Start](fan-ben/quick-start.md)
+* [API Reference](fan-ben/api-reference/README.md)
+  * [Pets](fan-ben/api-reference/pets.md)
+  * [Users](fan-ben/api-reference/users.md)
