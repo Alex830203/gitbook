@@ -1,7 +1,7 @@
 # Table of contents
 
 * [注意事项](README.md)
-* [游戏类型](you-xi-lei-xing.md)
+* [游戏类型](<README (1).md>)
 * [登入方式](deng-ru-fang-shi/README.md)
   * [Token登入](deng-ru-fang-shi/token-deng-ru.md)
   * [普通登入](deng-ru-fang-shi/pu-tong-deng-ru.md)
@@ -22,8 +22,8 @@
 
 ## 範本
 
-* [Page 1](fan-ben/page-1.md)
-* [Quick Start](fan-ben/quick-start.md)
-* [API Reference](fan-ben/api-reference/README.md)
-  * [Pets](fan-ben/api-reference/pets.md)
-  * [Users](fan-ben/api-reference/users.md)
+* [Page 1](reference/page-1.md)
+* [Quick Start](quick-start.md)
+* [API Reference](api-reference/README.md)
+  * [Pets](api-reference/pets.md)
+  * [Users](api-reference/users.md)
