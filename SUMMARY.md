@@ -4,6 +4,7 @@
 * [登入方式](deng-ru-fang-shi/README.md)
   * [Token登入](deng-ru-fang-shi/token-deng-ru.md)
   * [普通登入](deng-ru-fang-shi/pu-tong-deng-ru.md)
+  * [AppLink登入](deng-ru-fang-shi/applink-deng-ru.md)
   * [试玩登入](deng-ru-fang-shi/shi-wan-deng-ru.md)
 * [API](api/README.md)
   * [转帐钱包 API](api/zhuan-zhang-qian-bao-api.md)
