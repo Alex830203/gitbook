@@ -1,7 +1,7 @@
 # Table of contents
 
 * [注意事项](README.md)
-* [游戏类型](<README (1).md>)
+* [游戏类型](README.md)
 * [登入方式](deng-ru-fang-shi/README.md)
   * [Token登入](deng-ru-fang-shi/token-deng-ru.md)
   * [普通登入](deng-ru-fang-shi/pu-tong-deng-ru.md)
