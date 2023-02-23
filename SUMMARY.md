@@ -12,13 +12,14 @@
   * [共用 API](api/gong-yong-api.md)
   * [参数说明](api/can-shu-shuo-ming.md)
   * [游戏相关说明](api/you-xi-xiang-guan-shuo-ming.md)
+  * [eBET响应状态码](api/ebet-xiang-ying-zhuang-tai-ma.md)
   * [代码范本](api/dai-ma-fan-ben.md)
   * [签名测试](api/qian-ming-ce-shi.md)
-* [游戏类型](README.md)
+* [游戏类型](<README (1).md>)
 * [数据后台](shu-ju-hou-tai/README.md)
   * [后台操作说明](shu-ju-hou-tai/hou-tai-cao-zuo-shuo-ming.md)
   * [后台角色权限](shu-ju-hou-tai/hou-tai-jiao-se-quan-xian.md)
-  * [下载区](shu-ju-hou-tai/xia-zai-qu.md)
+* [下载区](xia-zai-qu.md)
 * [备注](bei-zhu.md)
 
 ## 範本

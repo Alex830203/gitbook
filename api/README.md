@@ -4,6 +4,11 @@ description: 此页面提供eBET 必要实作的API相关资讯。
 
 # API
 
+#### eBET提供两种不同的钱包类型：单钱包 和 转账钱包 。&#x20;
+
+1. **转账钱包** : 玩家的资金由eBET管理。
+2. **单钱包** : 玩家的资金由渠道管理。
+
 {% hint style="info" %}
 <mark style="color:blue;">蓝色：此API是由eBET发送相关请求</mark>
 
