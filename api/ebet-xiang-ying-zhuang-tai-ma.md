@@ -1,5 +1,5 @@
 ---
-description: 此页描述eBET响应的状态码。
+description: 此页面描述eBET响应的状态码。
 ---
 
 # eBET响应状态码

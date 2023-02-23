@@ -15,7 +15,7 @@
   * [eBET响应状态码](api/ebet-xiang-ying-zhuang-tai-ma.md)
   * [代码范本](api/dai-ma-fan-ben.md)
   * [签名测试](api/qian-ming-ce-shi.md)
-* [游戏类型](<README (1).md>)
+* [游戏类型](README.md)
 * [数据后台](shu-ju-hou-tai/README.md)
   * [后台操作说明](shu-ju-hou-tai/hou-tai-cao-zuo-shuo-ming.md)
   * [后台角色权限](shu-ju-hou-tai/hou-tai-jiao-se-quan-xian.md)
