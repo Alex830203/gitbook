@@ -47,3 +47,6 @@ example: RegisterOrLoginReq
 {% endcode %}
 {% endswagger-response %}
 {% endswagger %}
+
+{% embed url="http://ebetapi.oplive.info/swaggernew/ebet_request.html" %}
+
