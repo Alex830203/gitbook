@@ -1,6 +1,7 @@
 # Table of contents
 
-* [注意事项](README.md)
+* [主页](README.md)
+* [注意事项](<README (1).md>)
 * [登入方式](deng-ru-fang-shi/README.md)
   * [Token登入](deng-ru-fang-shi/token-deng-ru.md)
   * [普通登入](deng-ru-fang-shi/pu-tong-deng-ru.md)
@@ -15,7 +16,7 @@
   * [eBET响应状态码](api/ebet-xiang-ying-zhuang-tai-ma.md)
   * [代码范本](api/dai-ma-fan-ben.md)
   * [签名测试](api/qian-ming-ce-shi.md)
-* [游戏类型](README.md)
+* [游戏类型](<README (2).md>)
 * [数据后台](shu-ju-hou-tai/README.md)
   * [后台操作说明](shu-ju-hou-tai/hou-tai-cao-zuo-shuo-ming.md)
   * [后台角色权限](shu-ju-hou-tai/hou-tai-jiao-se-quan-xian.md)
@@ -23,3 +24,7 @@
 * [备注](bei-zhu.md)
 * [语系](yu-xi/README.md)
   * [简体中文](http://ebetapi.oplive.info/swaggernew/index.html)
+
+## Group 1
+
+* [Page 2](group-1/page-2.md)
