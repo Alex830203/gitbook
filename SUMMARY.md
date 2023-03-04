@@ -22,9 +22,3 @@
   * [后台角色权限](shu-ju-hou-tai/hou-tai-jiao-se-quan-xian.md)
 * [下载区](shu-ju-hou-tai/xia-zai-qu.md)
 * [备注](bei-zhu.md)
-* [语系](yu-xi/README.md)
-  * [简体中文](http://ebetapi.oplive.info/swaggernew/index.html)
-
-## Group 1
-
-* [Page 2](group-1/page-2.md)
