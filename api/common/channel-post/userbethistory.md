@@ -58,10 +58,46 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">accessToken</mark></td><td><mark style="color:blue;">string</mark></td><td>渠道返回的accessToken。</td><td><pre><code>accessTokenTest
-</code></pre></td></tr><tr><td><mark style="color:red;">subChannelId</mark></td><td><mark style="color:blue;">int</mark></td><td>子渠道 ID。 如果未创建，请输入0。</td><td><pre><code>0
-</code></pre></td></tr><tr><td><mark style="color:red;">username</mark></td><td><mark style="color:blue;">string</mark></td><td>用户名。不可使用http保留字元。</td><td><pre><code>apitest01
-</code></pre></td></tr><tr><td><mark style="color:red;">status</mark></td><td><mark style="color:blue;">int</mark></td><td>建议返回的状态码</td><td>200</td></tr><tr><td>nickname</td><td><mark style="color:blue;">string</mark></td><td>用户昵称</td><td>预设随机生成</td></tr><tr><td>currency</td><td><mark style="color:blue;">string</mark></td><td>货币</td><td>CNY</td></tr></tbody></table>
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>status</td><td><mark style="color:blue;">int</mark></td><td>渠道返回的accessToken。</td><td><pre><code>accessTokenTest
+</code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>子渠道 ID。 如果未创建，请输入0。</td><td><pre><code>0
+</code></pre></td></tr><tr><td>count</td><td><mark style="color:blue;">int</mark></td><td>用户名。不可使用http保留字元。</td><td><pre><code>apitest01
+</code></pre></td></tr><tr><td>remainingVisits</td><td><mark style="color:blue;">int</mark></td><td>建议返回的状态码</td><td>200</td></tr><tr><td>betHistories</td><td><mark style="color:blue;">array</mark></td><td><p>投注历史。</p><p>gameType</p><p>gameName</p><p>betMap</p><p>bet</p><p>roundNo</p><p>payout</p><p>payoutDetail</p><p>judgeResult</p><p>oddsMap</p><p>surrender</p><p>playerCards</p><p>playerResult</p><p>bankerCard</p><p>bankerResult</p><p>dragonCard</p><p>tigerCard</p><p>number</p><p>allDices</p><p>niuniuResult</p><p>withHoldingTotal</p><p>withHoldingDetail</p><p>maxPayout</p><p>payoutWithoutholding</p><p>createTime</p><p>payoutTime</p><p>betHistoryId</p><p>validBet</p><p>rebateAmount</p><p>balance</p><p>username</p><p>userId</p><p>providerId</p><p>platform</p><p>brokerageRequired</p></td><td>预设随机生成</td></tr></tbody></table>
+
+| gameType             |   |   |
+| -------------------- | - | - |
+| gameName             |   |   |
+| betMap               |   |   |
+| bet                  |   |   |
+| roundNo              |   |   |
+| payout               |   |   |
+| payoutDetail         |   |   |
+| judgeResult          |   |   |
+| oddsMap              |   |   |
+| surrender            |   |   |
+| playerCards          |   |   |
+| playerResult         |   |   |
+| bankerCard           |   |   |
+| bankerResult         |   |   |
+| dragonCard           |   |   |
+| tigerCard            |   |   |
+| number               |   |   |
+| allDices             |   |   |
+| niuniuResult         |   |   |
+| withHoldingTotal     |   |   |
+| withHoldingDetail    |   |   |
+| maxPayout            |   |   |
+| payoutWithoutholding |   |   |
+| createTime           |   |   |
+| payoutTime           |   |   |
+| betHistoryId         |   |   |
+| validBet             |   |   |
+| rebateAmount         |   |   |
+| balance              |   |   |
+| username             |   |   |
+| userId               |   |   |
+| providerId           |   |   |
+| platform             |   |   |
+| brokerageRequired    |   |   |
 
 {% code title="Responses" overflow="wrap" %}
 ```json
