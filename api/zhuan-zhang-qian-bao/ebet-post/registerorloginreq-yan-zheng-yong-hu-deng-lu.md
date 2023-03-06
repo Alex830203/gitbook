@@ -32,7 +32,7 @@ Content-Type: application/json
 ```
 {% endcode %}
 
-## **Responses**
+### **Responses**
 
 #### Headers:
 
