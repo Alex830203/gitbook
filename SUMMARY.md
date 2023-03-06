@@ -26,7 +26,7 @@
       * [autoBatchRefund](api/sw/ebet-post/autobatchrefund.md)
     * [渠道 POST](api/sw/channel-post/README.md)
       * [getseqnorecord](api/sw/channel-post/getseqnorecord.md)
-  * [共用 API](api/common/README.md)
+  * [共用 API](api/gong-yong-api.md)
     * [eBET POST](api/common/ebet-post/README.md)
       * [netCheck](api/common/ebet-post/netcheck.md)
     * [渠道 POST](api/common/channel-post/README.md)
