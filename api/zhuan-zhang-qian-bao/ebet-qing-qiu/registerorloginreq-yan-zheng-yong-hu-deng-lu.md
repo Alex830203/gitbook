@@ -12,17 +12,17 @@ Content-Type: application/json
 
 #### Body:
 
-| 参数          | 格式              | 描述                                                                                                     | 范例                                                                                       |
-| ----------- | --------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| cmd         | string          | API 名称                                                                                                 | RegisterOrLoginReq                                                                       |
-| eventType   | int             | <p>登录方式:</p><p>1:普通登录</p><p>3:Applink登录</p><p>4:Token登录</p>                                            | 1                                                                                        |
-| channelId   | int             | 渠道 ID                                                                                                  | 1                                                                                        |
-| username    | string          | 用户名。不可使用http保留字元。                                                                                      | apitest01                                                                                |
-| password    | string          | 用户密码。 空字符串為沒有密码。                                                                                       | password                                                                                 |
-| accessToken | string          | 该参数值由渠道提供。仅在eventType = 4时使用                                                                           | accessToken                                                                              |
-| timestamp   | integer($int64) | 当前时间,格式为Unix。                                                                                          | 1577808000                                                                               |
-| ip          | string          | 用户登录IP                                                                                                 | 127.0.0.1                                                                                |
-| signature   | string          | <p>签名。 </p><p>字符串拼接:</p><p>普通登录/applink登录: username+timestamp</p><p>token登录: timestamp+accessToken</p> | bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ== |
+| 参数          | 格式                                               | 描述                                                                                                     | 范例                                                                                       |
+| ----------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| cmd         | <mark style="color:blue;">string</mark>          | API 名称                                                                                                 | RegisterOrLoginReq                                                                       |
+| eventType   | <mark style="color:blue;">int</mark>             | <p>登录方式:</p><p>1:普通登录</p><p>3:Applink登录</p><p>4:Token登录</p>                                            | 1                                                                                        |
+| channelId   | <mark style="color:blue;">int</mark>             | 渠道 ID                                                                                                  | 1                                                                                        |
+| username    | <mark style="color:blue;">string</mark>          | 用户名。不可使用http保留字元。                                                                                      | apitest01                                                                                |
+| password    | <mark style="color:blue;">string</mark>          | 用户密码。 空字符串為沒有密码。                                                                                       | password                                                                                 |
+| accessToken | <mark style="color:blue;">string</mark>          | 该参数值由渠道提供。仅在eventType = 4时使用                                                                           | accessToken                                                                              |
+| timestamp   | <mark style="color:blue;">integer($int64)</mark> | 当前时间,格式为Unix。                                                                                          | 1577808000                                                                               |
+| ip          | <mark style="color:blue;">string</mark>          | 用户登录IP                                                                                                 | 127.0.0.1                                                                                |
+| signature   | <mark style="color:blue;">string</mark>          | <p>签名。 </p><p>字符串拼接:</p><p>普通登录/applink登录: username+timestamp</p><p>token登录: timestamp+accessToken</p> | bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ== |
 
 {% code overflow="wrap" %}
 ```json
@@ -48,14 +48,14 @@ Content-Type: application/json
 
 #### Body:
 
-| 参数             | 格式     | 描述                  | 范例              |
-| -------------- | ------ | ------------------- | --------------- |
-| accessToken\*  | string | 渠道返回的AccessToken。   | accessTokenTest |
-| subChannelId\* | int    | 子渠道 ID。 如果未创建，请输入0。 | 0               |
-| username\*     | string | 用户名。不可使用http保留字元。   | apitest01       |
-| status\*       | int    | 建议返回的状态码            | 200             |
-| nickname       | string | 用户昵称                | 预设随机生成          |
-| currency       | string | 货币                  | CNY             |
+| 参数                                             | 格式                                      | 描述                  | 范例              |
+| ---------------------------------------------- | --------------------------------------- | ------------------- | --------------- |
+| accessToken<mark style="color:red;">\*</mark>  | <mark style="color:blue;">string</mark> | 渠道返回的AccessToken。   | accessTokenTest |
+| subChannelId<mark style="color:red;">\*</mark> | <mark style="color:blue;">int</mark>    | 子渠道 ID。 如果未创建，请输入0。 | 0               |
+| username<mark style="color:red;">\*</mark>     | <mark style="color:blue;">string</mark> | 用户名。不可使用http保留字元。   | apitest01       |
+| status<mark style="color:red;">\*</mark>       | <mark style="color:blue;">int</mark>    | 建议返回的状态码            | 200             |
+| nickname                                       | <mark style="color:blue;">string</mark> | 用户昵称                | 预设随机生成          |
+| currency                                       | <mark style="color:blue;">string</mark> | 货币                  | CNY             |
 
 {% code overflow="wrap" %}
 ```json
