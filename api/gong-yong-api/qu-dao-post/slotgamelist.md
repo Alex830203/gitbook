@@ -1,0 +1,2 @@
+# slotgamelist
+
