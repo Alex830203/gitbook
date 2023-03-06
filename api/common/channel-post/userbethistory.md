@@ -63,41 +63,42 @@ Content-Type: application/json
 </code></pre></td></tr><tr><td>count</td><td><mark style="color:blue;">int</mark></td><td>用户名。不可使用http保留字元。</td><td><pre><code>apitest01
 </code></pre></td></tr><tr><td>remainingVisits</td><td><mark style="color:blue;">int</mark></td><td>建议返回的状态码</td><td>200</td></tr><tr><td>betHistories</td><td><mark style="color:blue;">array</mark></td><td><p>投注历史。</p><p>gameType</p><p>gameName</p><p>betMap</p><p>bet</p><p>roundNo</p><p>payout</p><p>payoutDetail</p><p>judgeResult</p><p>oddsMap</p><p>surrender</p><p>playerCards</p><p>playerResult</p><p>bankerCard</p><p>bankerResult</p><p>dragonCard</p><p>tigerCard</p><p>number</p><p>allDices</p><p>niuniuResult</p><p>withHoldingTotal</p><p>withHoldingDetail</p><p>maxPayout</p><p>payoutWithoutholding</p><p>createTime</p><p>payoutTime</p><p>betHistoryId</p><p>validBet</p><p>rebateAmount</p><p>balance</p><p>username</p><p>userId</p><p>providerId</p><p>platform</p><p>brokerageRequired</p></td><td>预设随机生成</td></tr></tbody></table>
 
-| 参数                   | 格式 | 描述 |
-| -------------------- | -- | -- |
-| gameName             |    |    |
-| betMap               |    |    |
-| bet                  |    |    |
-| roundNo              |    |    |
-| payout               |    |    |
-| payoutDetail         |    |    |
-| judgeResult          |    |    |
-| oddsMap              |    |    |
-| surrender            |    |    |
-| playerCards          |    |    |
-| playerResult         |    |    |
-| bankerCard           |    |    |
-| bankerResult         |    |    |
-| dragonCard           |    |    |
-| tigerCard            |    |    |
-| number               |    |    |
-| allDices             |    |    |
-| niuniuResult         |    |    |
-| withHoldingTotal     |    |    |
-| withHoldingDetail    |    |    |
-| maxPayout            |    |    |
-| payoutWithoutholding |    |    |
-| createTime           |    |    |
-| payoutTime           |    |    |
-| betHistoryId         |    |    |
-| validBet             |    |    |
-| rebateAmount         |    |    |
-| balance              |    |    |
-| username             |    |    |
-| userId               |    |    |
-| providerId           |    |    |
-| platform             |    |    |
-| brokerageRequired    |    |    |
+| 参数                   | 格式                                      | 描述                                                                                                                                                                                                                                   |
+| -------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| gameType             | <mark style="color:blue;">int</mark>    | <p>游戏类型。</p><p>1: 百家乐</p><p>2: 龙虎</p><p>3: 骰宝</p><p>4: 轮盘</p><p>5: 老虎机</p><p>8: 牛牛</p><p>23: 财富大转盘</p><p>24: 电子21点</p><p>25: 真人21点</p><p>27: 迷你游戏</p>                                                                                |
+| gameName             | <mark style="color:blue;">string</mark> | <p>游戏名称。</p><p>baccarat</p><p>dragon-tiger</p><p>sic-bo</p><p>roulette</p><p>slot(显示游戏的gameID)</p><p>bull-bull</p><p>fortune-wheel</p><p>black-jack-electronic</p><p>black-jack-live</p><p>mini-game(显示游戏的gameID)</p><p>pok-deng</p> |
+| betMap               | <mark style="color:blue;">array</mark>  | <p>betType</p><p>betMoney</p><p>betTypeInterval</p><p>betNumber</p><p>betDice</p>                                                                                                                                                    |
+| bet                  |                                         |                                                                                                                                                                                                                                      |
+| roundNo              |                                         |                                                                                                                                                                                                                                      |
+| payout               |                                         |                                                                                                                                                                                                                                      |
+| payoutDetail         |                                         |                                                                                                                                                                                                                                      |
+| judgeResult          |                                         |                                                                                                                                                                                                                                      |
+| oddsMap              |                                         |                                                                                                                                                                                                                                      |
+| surrender            |                                         |                                                                                                                                                                                                                                      |
+| playerCards          |                                         |                                                                                                                                                                                                                                      |
+| playerResult         |                                         |                                                                                                                                                                                                                                      |
+| bankerCard           |                                         |                                                                                                                                                                                                                                      |
+| bankerResult         |                                         |                                                                                                                                                                                                                                      |
+| dragonCard           |                                         |                                                                                                                                                                                                                                      |
+| tigerCard            |                                         |                                                                                                                                                                                                                                      |
+| number               |                                         |                                                                                                                                                                                                                                      |
+| allDices             |                                         |                                                                                                                                                                                                                                      |
+| niuniuResult         |                                         |                                                                                                                                                                                                                                      |
+| withHoldingTotal     |                                         |                                                                                                                                                                                                                                      |
+| withHoldingDetail    |                                         |                                                                                                                                                                                                                                      |
+| maxPayout            |                                         |                                                                                                                                                                                                                                      |
+| payoutWithoutholding |                                         |                                                                                                                                                                                                                                      |
+| createTime           |                                         |                                                                                                                                                                                                                                      |
+| payoutTime           |                                         |                                                                                                                                                                                                                                      |
+| betHistoryId         |                                         |                                                                                                                                                                                                                                      |
+| validBet             |                                         |                                                                                                                                                                                                                                      |
+| rebateAmount         |                                         |                                                                                                                                                                                                                                      |
+| balance              |                                         |                                                                                                                                                                                                                                      |
+| username             |                                         |                                                                                                                                                                                                                                      |
+| userId               |                                         |                                                                                                                                                                                                                                      |
+| providerId           |                                         |                                                                                                                                                                                                                                      |
+| platform             |                                         |                                                                                                                                                                                                                                      |
+| brokerageRequired    |                                         |                                                                                                                                                                                                                                      |
 
 {% code title="Responses" overflow="wrap" %}
 ```json
