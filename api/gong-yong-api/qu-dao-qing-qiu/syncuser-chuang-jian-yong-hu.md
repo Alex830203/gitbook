@@ -1,2 +1,2 @@
-# /syncuser(创建用户)
+# /syncuser (创建用户)
 

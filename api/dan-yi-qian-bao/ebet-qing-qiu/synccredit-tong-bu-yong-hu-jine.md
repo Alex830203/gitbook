@@ -1,2 +1,2 @@
-# ​/syncCredit(同步用户金额)
+# ​/syncCredit (同步用户金额)
 

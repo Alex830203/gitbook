@@ -1,2 +1,2 @@
-# /getcurrentluzhu(牌局結果路書)
+# /getcurrentluzhu (牌局結果路書)
 

@@ -1,2 +1,2 @@
-# /getseqnorecord(获取seqNo记录)
+# /getseqnorecord (获取seqNo记录)
 

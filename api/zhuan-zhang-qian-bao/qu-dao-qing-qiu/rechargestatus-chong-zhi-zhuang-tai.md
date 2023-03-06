@@ -1,2 +1,2 @@
-# /rechargestatus(充值状态)
+# /rechargestatus (充值状态)
 

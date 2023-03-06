@@ -1,2 +1,2 @@
-# /userbetsummary(用户摘要)
+# /userbetsummary (用户摘要)
 

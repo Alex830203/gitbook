@@ -1,2 +1,2 @@
-# /autoBatchRefund(自动通知退款)
+# /autoBatchRefund (自动通知退款)
 

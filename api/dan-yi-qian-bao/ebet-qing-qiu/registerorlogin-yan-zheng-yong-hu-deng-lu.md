@@ -1,2 +1,2 @@
-# ​/registerOrLogin(验证用户登录)
+# ​/registerOrLogin (验证用户登录)
 
