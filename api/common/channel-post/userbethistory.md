@@ -4,7 +4,7 @@ description: 该API用于查询在特定时间段内记录的投注。
 
 # userbethistory
 
-<mark style="color:green;">POST</mark>
+## <mark style="color:green;">POST</mark>
 
 ### **Request**
 
