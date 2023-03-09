@@ -4,12 +4,12 @@ description: 从渠道的APP或web跳转至eBET web
 
 # Token登入
 
-<figure><img src="../.gitbook/assets/擷取選取區域_210.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/擷取選取區域_216.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 游戏连结如何变成Token登入连结？&#x20;
 
-在取得的游戏连结后面添加"?"并添加参数"username"和"accessToken"及参数值
+在取得的游戏连结后面添加"?"和参数"username" & "accessToken"
 
 url example : http://\<eBET提供的H5 Game连结>?username=testmember\&accessToken=testaccesstoken
 {% endhint %}
