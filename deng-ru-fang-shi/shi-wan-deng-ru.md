@@ -4,7 +4,7 @@ description: 使用试玩帐号登入eBET游戏
 
 # 试玩登入
 
-<figure><img src="../.gitbook/assets/擷取選取區域_217.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/demo login.png" alt=""><figcaption><p>Demo登入的API操作流程</p></figcaption></figure>
 
 {% hint style="info" %}
 游戏连结如何变成Demo登入连结？ \

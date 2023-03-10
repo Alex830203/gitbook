@@ -4,7 +4,7 @@ description: 从渠道的APP或web跳转至eBET web
 
 # Token登入
 
-<figure><img src="../.gitbook/assets/擷取選取區域_216.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/token login.png" alt=""><figcaption><p>Token登入的API操作流程</p></figcaption></figure>
 
 {% hint style="info" %}
 游戏连结如何变成Token登入连结？&#x20;
@@ -37,22 +37,22 @@ url example : http://\<eBET提供的H5 Game连结>?username=testmember\&accessTo
 
 该参数<mark style="background-color:red;">只适用于PC H5页面</mark>且只能输入一个参数值。进入ebet游戏后仍可切换至其他游戏。&#x20;
 
-<figure><img src="../.gitbook/assets/擷取選取區域_212.png" alt=""><figcaption><p>url example : http://&#x3C;eBET提供的H5 Game连结>&#x26;dgt=1</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/token-dgt.png" alt=""><figcaption><p>url example : http://&#x3C;eBET提供的H5 Game连结>&#x26;dgt=1</p></figcaption></figure>
 
 ### gameType
 
 适用任意平台页面。 输入一个参数值时，为独立介面。 \
 可输入多个参数值，进入ebet游戏后只会显示特定游戏。&#x20;
 
-<figure><img src="../.gitbook/assets/擷取選取區域_213.png" alt=""><figcaption><p>url example 1 : http://&#x3C;eBET提供的H5 Game连结>&#x26;gameType=1</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/token-gameType-1.png" alt=""><figcaption><p>url example 1 : http://&#x3C;eBET提供的H5 Game连结>&#x26;gameType=1</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/擷取選取區域_214.png" alt=""><figcaption><p>url example 2 : http://&#x3C;eBET提供的H5 Game连结>&#x26;gameType=1,2,3,4</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/token-gameType-2.png" alt=""><figcaption><p>url example 2 : http://&#x3C;eBET提供的H5 Game连结>&#x26;gameType=1,2,3,4</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="进入游戏桌" %}
 连结后方添加参数tableCode，可以进入指定游戏桌&#x20;
 
-<figure><img src="../.gitbook/assets/擷取選取區域_215.png" alt=""><figcaption><p>url example : http://&#x3C;eBET提供的H5 Game连结>&#x26;tableCode=BP1</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/token-tableCode.png" alt=""><figcaption><p>url example : http://&#x3C;eBET提供的H5 Game连结>&#x26;tableCode=BP1</p></figcaption></figure>
 
 slot游戏有另外的连结，请使用api：loginslot。 \
 mini-game有另外的连结，请使用api：loginTableGame。\

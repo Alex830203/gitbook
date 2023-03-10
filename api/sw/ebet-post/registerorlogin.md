@@ -88,6 +88,16 @@ Content-Type: application/json
 
 {% code title="Responses" overflow="wrap" %}
 ```json
-// Some code
+{
+  "accessToken": "accessTokenTest",
+  "subChannelId": 0,
+  "username": "apitest01",
+  "sessionToken": "sessionToken",
+  "currency": "CNY",
+  "status": 200,
+  "event": "registerOrLogin",
+  "seqNo": "seqNoseqNoseqNoseqNo",
+  "nickname": "用户昵称，预设随机生成"
+}
 ```
 {% endcode %}
