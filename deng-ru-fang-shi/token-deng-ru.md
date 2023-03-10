@@ -27,7 +27,7 @@ url example : http://\<eBET提供的H5 Game连结>?username=testmember\&accessTo
 连结后方添加参数language，可以使介面变更语言\
 该参数<mark style="background-color:red;">仅适用于在有申请开放的语言并新会员进行第一次登入</mark>，后续切换语言请用户使用前台语言变更
 
-{% embed url="https://docs.google.com/spreadsheets/d/1KEZzNQUju8BA95l9UkvXammdniqK6Hg4MsRbtBZ_OTY/edit?usp=sharing" %}
+{% embed url="https://docs.google.com/spreadsheets/d/1KEZzNQUju8BA95l9UkvXammdniqK6Hg4MsRbtBZ_OTY" %}
 {% endtab %}
 
 {% tab title="进入特定游戏大厅" %}
