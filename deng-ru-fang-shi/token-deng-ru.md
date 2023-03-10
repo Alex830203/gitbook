@@ -64,7 +64,7 @@ mini-game有另外的连结，请使用api：loginTableGame。\
 url example : http://\<eBET提供的H5 Game连结>\&gameType=30\&tableCode=virtual\_blackjack\
 
 
-
+{% embed url="https://docs.google.com/spreadsheets/d/1KwSMxsX3ZkyzjqeXTvN5cS7piCliXAJBV2YlPKFEDbo" %}
 {% endtab %}
 {% endtabs %}
 
