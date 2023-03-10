@@ -32,11 +32,7 @@ Genesis老虎机游戏限制地区：<mark style="color:red;background-color:blu
 我方添加之后就“ <mark style="color:red;background-color:blue;">只有</mark> ”提供的 ip 地址才可以访问eBET api。\
 PS：我方 <mark style="color:red;background-color:blue;">已提醒</mark> 贵方安全措施，后期遇上关于访问 eBET api 特殊 <mark style="color:red;background-color:blue;">状况请自负</mark> 。
 
-## 4. 游戏登入
-
-登入游戏接口支持http以及https，若要 <mark style="color:red;background-color:blue;">使用https 需做申请</mark>。
-
-## 5. 用戶名组成
+## 4. 用戶名组成
 
 **組成规则：**
 
@@ -48,7 +44,7 @@ ebet接受的username的内容为 <mark style="color:red;background-color:blue;"
 2.建议使用的长度为25字元长度。\
 3.不可使用http保留字元，避免出现问题。
 
-## 6. Token组成
+## 5. Token组成
 
 此說明適用accessToken和sessionToken。
 
@@ -62,13 +58,13 @@ ebet接受的username的内容为 <mark style="color:red;background-color:blue;"
 2.建议每次使用后更新为新的参数值。\
 3.建议固定一组参数值提供给ebet重复测试使用。
 
-## 7. 签名组成
+## 6. 签名组成
 
 1\. eBET提供的钥匙格式为PEM。若渠道使用C#，请转换成XML。\
 2\. 由特定参数值做字串串接，透过RSA加密方式后组成签名字串。\
 3\. 若特定参数为非必要参数且请求时没有该参数时，可以略过该参数，例如：由username+timestamp組成的簽名，沒有username時可以只使用timestamp作转换。
 
-## 8. 时间格式字串
+## 7. 时间格式字串
 
 eBET server DB纪录的时间为 <mark style="color:red;background-color:blue;">北京时间(EAT)</mark>\
 eBET server接受的时间格式字串如下：\
@@ -79,7 +75,7 @@ e.g.2 要被转化的时间：美东时间2019-07-31 12:00:00 ( UTC-5 )\
 转化过后为：\
 2019-07-31T17:00:00Z (UTC+0)或2019-08-01 01:00:00 ( UTC+8 )
 
-## 9. 子渠道
+## 8. 子渠道
 
 eBET有提供子渠道/子代理的设置。<mark style="color:red;background-color:blue;">如果没有做任何设置，预设ID为0</mark>。\
 \
@@ -98,10 +94,10 @@ eBET有提供子渠道/子代理的设置。<mark style="color:red;background-co
 4\. 是否开启自定义图片\
 注意：<mark style="color:red;background-color:blue;">该设置可以在重制后，还原成与主渠道相同设置</mark>。
 
-## 10. 建议配置
+## 9. 建议配置
 
 <table><thead><tr><th>项目</th><th>建议配置</th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td>建议网络速度</td><td><p>PC（高清）: > 8Mbps</p><p>PC（标清）: 无标清选项</p><p>H5（高清）: > 5Mbps</p><p>H5（标清）: > 4Mbps</p><p>无画面： &#x3C; 2Mbps</p></td><td></td><td></td></tr><tr><td>建议手机版本</td><td><p>iOS 13以上</p><p>Android 8以上</p></td><td></td><td></td></tr><tr><td>建议浏览器</td><td><p>Chrome</p><p>Safari</p></td><td></td><td></td></tr><tr><td>系统需求</td><td><p>Windows</p><p>-Windows 7、Windows 8、Windows 8.1 或 Windows 10 以上版本</p><p>-Intel Pentium 4 以上版本处理器 (可支持 SSE2)</p><p>-RAM 8G以上</p><p>Mac</p><p>-OS X Yosemite 10.10 以上版本</p><p>Linux</p><p>-64 位 Ubuntu 14.04 以上版本、Debian 8 以上版本、openSUSE 13.3 以上版本或 Fedora Linux 24 以上版本</p><p>-Intel Pentium 4 以上版本处理器 (可支持 SSE2)</p></td><td></td><td></td></tr></tbody></table>
 
-## 11. 备注
+## 10. 备注
 
 您在eBET做任何操作（例如：登入eBET游戏、向eBET发送API请求等），若收到http的错误（例如：403、502、504等），或其他未提及之错误，请向eBET人员寻求协助。
