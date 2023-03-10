@@ -47,6 +47,8 @@ url example : http://\<eBET提供的H5 Game连结>?username=testmember\&accessTo
 <figure><img src="../.gitbook/assets/token-gameType-1.png" alt=""><figcaption><p>url example 1 : http://&#x3C;eBET提供的H5 Game连结>&#x26;gameType=1</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/token-gameType-2.png" alt=""><figcaption><p>url example 2 : http://&#x3C;eBET提供的H5 Game连结>&#x26;gameType=1,2,3,4</p></figcaption></figure>
+
+{% embed url="https://docs.google.com/spreadsheets/d/1NnI6pEt4aUCpR5lWj5wRtJ3VLLtMnZSKiyHluTVeDbs" %}
 {% endtab %}
 
 {% tab title="进入游戏桌" %}
