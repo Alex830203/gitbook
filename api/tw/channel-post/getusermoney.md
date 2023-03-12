@@ -5,7 +5,8 @@ description: 此api为查询一段时间内有登入的用户金额。
 # getusermoney
 
 {% hint style="info" %}
-Note: 由于数据量可能太大，建议带以下参数减少查询时间。 <mark style="color:purple;">`(startTimeStr, endTimeStr, pageNum, pageSize)`</mark>
+* 由于数据量可能太大，建议带以下参数减少查询时间。&#x20;
+* <mark style="color:purple;">`(startTimeStr, endTimeStr, pageNum, pageSize)`</mark>
 {% endhint %}
 
 ## <mark style="color:green;">POST</mark>
