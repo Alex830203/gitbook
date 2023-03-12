@@ -1,10 +1,14 @@
 ---
-description: >-
-  此api为用户要变更金额，通知ebet处理。 Note: 它返回成功是表示已接收到通知，但处理未完成。 Note: 没有限定额度上限。 Note:
-  ebet金额只计算到小数点第二位 Note: rechargeReqId请生成唯一值 建議用渠道+玩家+時間 切勿同秒发送 避免我方资料库数据无法判别
+description: 此api为用户要变更金额，通知ebet处理。
 ---
 
 # recharge
+
+{% hint style="info" %}
+Note: 它返回成功是表示已接收到通知，但处理未完成。 \
+Note: 没有限定额度上限。 Note: ebet金额只计算到小数点第二位 \
+Note: rechargeReqId请生成唯一值 建議用渠道+玩家+時間 切勿同秒发送 避免我方资料库数据无法判别
+{% endhint %}
 
 ## <mark style="color:green;">POST</mark>
 

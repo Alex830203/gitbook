@@ -1,10 +1,13 @@
 ---
-description: >-
-  此api为检查ebet是否有收到并处理完成充值请求。 若rechargestatus返回-1，可能為我方系統還沒寫入數據庫。
-  請貴司再多請求2次做最後確認(建議貴司隔5秒後再做請求)，如最後仍返回-1，请向eBET人员寻求协助。
+description: 此api为检查ebet是否有收到并处理完成充值请求。
 ---
 
 # rechargestatus
+
+{% hint style="info" %}
+若rechargestatus返回-1，可能為我方系統還沒寫入數據庫。 \
+請貴司再多請求2次做最後確認(建議貴司隔5秒後再做請求)，如最後仍返回-1，请向eBET人员寻求协助。
+{% endhint %}
 
 ## <mark style="color:green;">POST</mark>
 
