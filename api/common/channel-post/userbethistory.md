@@ -895,160 +895,575 @@ Content-Type: application/json
 {% endtab %}
 
 {% tab title="老虎机" %}
-| 参数                   | 格式                                                                                              | 描述                                                                                                                  |
-| -------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">int</mark>                                                            | <p>游戏类型。</p><p>5: 老虎机</p>                                                                                           |
-| gameName             | <mark style="color:blue;">string</mark>                                                         | <p>游戏名称。</p><p>slot(显示游戏的gameID)</p>                                                                                |
-| betMap               | <mark style="color:orange;">array</mark>                                                        | 投注详细信息。                                                                                                             |
-| bet                  | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总投注额。                                                                                                               |
-| roundNo              | <mark style="color:blue;">string</mark>                                                         | 牌局号码。                                                                                                               |
-| payout               | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总派彩金额。                                                                                                              |
-| payoutDetail         | <mark style="color:orange;">array</mark>                                                        | 每个投注项目的派彩金额。                                                                                                        |
-| judgeResult          | <mark style="color:orange;">array</mark>                                                        | 中奖奖项。 部分电子游戏不提供。                                                                                                    |
-| oddsMap              | <mark style="color:orange;">array</mark>                                                        | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p>                                                        |
-| surrender            | <mark style="color:blue;">int</mark>                                                            | 投降派彩(只有21点才會有此参数)                                                                                                   |
-| payoutWithoutholding | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | <p>纯派彩总额。</p><p>如果没有预扣金额，则参数值将与派彩相同。 如果有预扣金额，则计算公式为payout-withholdingtotal。</p><p>如果参数值大于0，则玩家获胜；如果参数值等于0是玩家输钱。</p> |
-| createTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 下注时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| payoutTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 派彩时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| betHistoryId         | <mark style="color:blue;">string</mark>                                                         | 投注记录ID。                                                                                                             |
-| validBet             | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 有效投注。                                                                                                               |
-| rebateAmount         | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 返水。                                                                                                                 |
-| balance              | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 盈余。                                                                                                                 |
-| username             | <mark style="color:blue;">string</mark>                                                         | 用户名。 不可使用http保留字元。                                                                                                  |
-| userId               | <mark style="color:blue;">int($int64)</mark>                                                    | 用户ID。                                                                                                               |
-| providerId           | <mark style="color:blue;">string</mark>                                                         | 游戏供应商ID。仅电子类游戏有此参数。                                                                                                 |
-| platform             | <mark style="color:blue;">int</mark>                                                            | 游戏平台。                                                                                                               |
+| 参数                   | 格式                                       | 描述                                                           |
+| -------------------- | ---------------------------------------- | ------------------------------------------------------------ |
+| gameType             | <mark style="color:blue;">int</mark>     | <p>游戏类型。</p><p>5: 老虎机</p>                                    |
+| gameName             | <mark style="color:blue;">string</mark>  | 游戏的gameID                                                    |
+| betMap               | <mark style="color:orange;">array</mark> | 投注详细信息。                                                      |
+| bet                  | <mark style="color:blue;">double</mark>  | 总投注额。                                                        |
+| roundNo              | <mark style="color:blue;">string</mark>  | 牌局号码。                                                        |
+| payout               | <mark style="color:blue;">double</mark>  | 总派彩金额。                                                       |
+| payoutDetail         | <mark style="color:orange;">array</mark> | 每个投注项目的派彩金额。                                                 |
+| oddsMap              | <mark style="color:orange;">array</mark> | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p> |
+| payoutWithoutholding | <mark style="color:blue;">double</mark>  | 纯派彩总额。                                                       |
+| createTime           | <mark style="color:blue;">long</mark>    | 下注时间。 以秒为单位。格式为Unix Time。                                    |
+| payoutTime           | <mark style="color:blue;">long</mark>    | 派彩时间。 以秒为单位。格式为Unix Time。                                    |
+| betHistoryId         | <mark style="color:blue;">string</mark>  | 投注记录ID。                                                      |
+| validBet             | <mark style="color:blue;">double</mark>  | 有效投注。                                                        |
+| rebateAmount         | <mark style="color:blue;">double</mark>  | 返水。                                                          |
+| balance              | <mark style="color:blue;">double</mark>  | 盈余。                                                          |
+| username             | <mark style="color:blue;">string</mark>  | 用户名。 不可使用http保留字元。                                           |
+| userId               | <mark style="color:blue;">long</mark>    | 用户ID。                                                        |
+| providerId           | <mark style="color:blue;">string</mark>  | 游戏供应商ID。仅电子类游戏有此参数。                                          |
+| platform             | <mark style="color:blue;">int</mark>     | 游戏平台。                                                        |
+
+{% code overflow="wrap" lineNumbers="true" %}
+```json
+{
+    "betHistories": [
+        {
+            "gameType": 5,
+            "gameName": "WHG-0020",
+            "betMap": [
+                {
+                    "betType": 601,
+                    "betMoney": 5
+                }
+            ],
+            "bet": 5,
+            "roundNo": "gn-49c4c0e6-8de4-41df-b988-244e843e4856",
+            "payout": 7.5,
+            "payoutDetail": {
+                "601-0": 7.5
+            },
+            "oddsMap": [
+                {}
+            ],
+            "payoutWithoutholding": 7.5,
+            "createTime": 1666665278,
+            "payoutTime": 1666665288,
+            "betHistoryId": "63574b489b4ad40035090bb5",
+            "validBet": 5,
+            "rebateAmount": 0,
+            "balance": 2.5,
+            "username": "demo",
+            "userId": 67928964,
+            "platform": 3
+        }
+    ],
+    "count": 1,
+    "remainingVisits": 499,
+    "status": 200,
+    "apiVersion": "1.5.75"
+}
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="牛牛" %}
-| 参数                   | 格式                                                                                              | 描述                                                                                                                  |
-| -------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">int</mark>                                                            | <p>游戏类型。</p><p>8: 牛牛</p>                                                                                            |
-| gameName             | <mark style="color:blue;">string</mark>                                                         | <p>游戏名称。</p><p>bull-bull</p>                                                                                        |
-| betMap               | <mark style="color:orange;">array</mark>                                                        | 投注详细信息。                                                                                                             |
-| bet                  | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总投注额。                                                                                                               |
-| roundNo              | <mark style="color:blue;">string</mark>                                                         | 牌局号码。                                                                                                               |
-| payout               | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总派彩金额。                                                                                                              |
-| payoutDetail         | <mark style="color:orange;">array</mark>                                                        | 每个投注项目的派彩金额。                                                                                                        |
-| judgeResult          | <mark style="color:orange;">array</mark>                                                        | 中奖奖项。 牛牛: 开牌结果。                                                                                                     |
-| oddsMap              | <mark style="color:orange;">array</mark>                                                        | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p>                                                        |
-| niuniuResult         | <mark style="color:orange;">array</mark>                                                        | <p>只有牛牛。牛牛的结果记录。<br>banker<br>player1<br>player2<br>player3<br>isWin</p>                                            |
-| withHoldingTotal     | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 预扣总额。                                                                                                               |
-| withHoldingDetail    |                                                                                                 | 只有牛牛。牛牛的预扣细节。                                                                                                       |
-| payoutWithoutholding | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | <p>纯派彩总额。</p><p>如果没有预扣金额，则参数值将与派彩相同。 如果有预扣金额，则计算公式为payout-withholdingtotal。</p><p>如果参数值大于0，则玩家获胜；如果参数值等于0是玩家输钱。</p> |
-| createTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 下注时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| payoutTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 派彩时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| betHistoryId         | <mark style="color:blue;">string</mark>                                                         | 投注记录ID。                                                                                                             |
-| validBet             | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 有效投注。                                                                                                               |
-| rebateAmount         | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 返水。                                                                                                                 |
-| balance              | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 盈余。                                                                                                                 |
-| username             | <mark style="color:blue;">string</mark>                                                         | 用户名。 不可使用http保留字元。                                                                                                  |
-| userId               | <mark style="color:blue;">int($int64)</mark>                                                    | 用户ID。                                                                                                               |
-| providerId           | <mark style="color:blue;">string</mark>                                                         | 游戏供应商ID。仅电子类游戏有此参数。                                                                                                 |
-| platform             | <mark style="color:blue;">int</mark>                                                            | 游戏平台。                                                                                                               |
+| 参数                   | 格式                                        | 描述                                                                                                                  |
+| -------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| gameType             | <mark style="color:blue;">int</mark>      | <p>游戏类型。</p><p>8: 牛牛</p>                                                                                            |
+| gameName             | <mark style="color:blue;">string</mark>   | 游戏名称。                                                                                                               |
+| betMap               | <mark style="color:orange;">array</mark>  | 投注详细信息。                                                                                                             |
+| bet                  | <mark style="color:blue;">double</mark>   | 总投注额。                                                                                                               |
+| roundNo              | <mark style="color:blue;">string</mark>   | 牌局号码。                                                                                                               |
+| payout               | <mark style="color:blue;">double</mark>   | 总派彩金额。                                                                                                              |
+| payoutDetail         | <mark style="color:orange;">array</mark>  | 每个投注项目的派彩金额。                                                                                                        |
+| judgeResult          | <mark style="color:orange;">array</mark>  | 开牌结果。                                                                                                               |
+| oddsMap              | <mark style="color:orange;">array</mark>  | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p>                                                        |
+| niuniuResult         | <mark style="color:orange;">array</mark>  | <p>只有牛牛。牛牛的结果记录。<br>banker<br>player1<br>player2<br>player3<br>isWin</p>                                            |
+| withHoldingTotal     | <mark style="color:blue;">double</mark>   | 预扣总额。                                                                                                               |
+| withHoldingDetail    | <mark style="color:purple;">object</mark> | 只有牛牛。牛牛的预扣细节。                                                                                                       |
+| payoutWithoutholding | <mark style="color:blue;">double</mark>   | <p>纯派彩总额。</p><p>如果没有预扣金额，则参数值将与派彩相同。 如果有预扣金额，则计算公式为payout-withholdingtotal。</p><p>如果参数值大于0，则玩家获胜；如果参数值等于0是玩家输钱。</p> |
+| createTime           | <mark style="color:blue;">long</mark>     | 下注时间。 以秒为单位。格式为Unix Time。                                                                                           |
+| payoutTime           | <mark style="color:blue;">long</mark>     | 派彩时间。 以秒为单位。格式为Unix Time。                                                                                           |
+| betHistoryId         | <mark style="color:blue;">string</mark>   | 投注记录ID。                                                                                                             |
+| validBet             | <mark style="color:blue;">double</mark>   | 有效投注。                                                                                                               |
+| rebateAmount         | <mark style="color:blue;">double</mark>   | 返水。                                                                                                                 |
+| balance              | <mark style="color:blue;">double</mark>   | 盈余。                                                                                                                 |
+| username             | <mark style="color:blue;">string</mark>   | 用户名。                                                                                                                |
+| userId               | <mark style="color:blue;">long</mark>     | 用户ID。                                                                                                               |
+| platform             | <mark style="color:blue;">int</mark>      | 游戏平台。                                                                                                               |
+
+{% code overflow="wrap" lineNumbers="true" %}
+```json
+{
+    "betHistories": [
+        {
+            "gameType": 8,
+            "gameName": "bull-bull",
+            "betMap": [
+                {
+                    "betType": 301,
+                    "betMoney": 100
+                },
+                {
+                    "betType": 302,
+                    "betMoney": 100
+                },
+                {
+                    "betType": 303,
+                    "betMoney": 100
+                },
+                {
+                    "betType": 304,
+                    "betMoney": 100
+                },
+                {
+                    "betType": 305,
+                    "betMoney": 100
+                },
+                {
+                    "betType": 306,
+                    "betMoney": 100
+                }
+            ],
+            "bet": 600,
+            "roundNo": "NNP1-221025101259",
+            "payout": 2075,
+            "payoutDetail": {
+                "302": 400,
+                "303": 195,
+                "304": 595,
+                "305": 195,
+                "306": 690
+            },
+            "judgeResult": [
+                42,
+                1,
+                49,
+                3,
+                22,
+                11,
+                50,
+                10,
+                45,
+                41,
+                48,
+                40,
+                36,
+                8,
+                39,
+                20,
+                21,
+                31,
+                25,
+                23
+            ],
+            "oddsMap": [
+                {
+                    "301": 1,
+                    "302": 1,
+                    "303": 0.95,
+                    "304": 0.95,
+                    "305": 0.95,
+                    "306": 1.9
+                }
+            ],
+            "withHoldingTotal": 1200,
+            "withHoldingDetail": {
+                "302": 400,
+                "304": 400,
+                "306": 400
+            },
+            "niuniuResult": [
+                {
+                    "banker": 13,
+                    "isWin": false
+                },
+                {
+                    "player1": 12,
+                    "isWin": false
+                },
+                {
+                    "player2": 15,
+                    "isWin": true
+                },
+                {
+                    "player3": 17,
+                    "isWin": true
+                }
+            ],
+            "payoutWithoutholding": 875,
+            "createTime": 1666663993,
+            "payoutTime": 1666664065,
+            "betHistoryId": "635746811c857e34c663ae7d",
+            "validBet": 600,
+            "rebateAmount": 0,
+            "balance": 275,
+            "username": "demo",
+            "userId": 67928964,
+            "platform": 3
+        }
+    ],
+    "count": 1,
+    "remainingVisits": 499,
+    "status": 200,
+    "apiVersion": "1.5.75"
+}
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="财富大转盘" %}
-| 参数                   | 格式                                                                                              | 描述                                                                                                                  |
-| -------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">int</mark>                                                            | <p>游戏类型。</p><p>23: 财富大转盘</p>                                                                                        |
-| gameName             | <mark style="color:blue;">string</mark>                                                         | <p>游戏名称。</p><p>fortune-wheel</p>                                                                                    |
-| betMap               | <mark style="color:orange;">array</mark>                                                        | 投注详细信息。                                                                                                             |
-| bet                  | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总投注额。                                                                                                               |
-| roundNo              | <mark style="color:blue;">string</mark>                                                         | 牌局号码。                                                                                                               |
-| payout               | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总派彩金额。                                                                                                              |
-| payoutDetail         | <mark style="color:orange;">array</mark>                                                        | 每个投注项目的派彩金额。                                                                                                        |
-| judgeResult          | <mark style="color:orange;">array</mark>                                                        | 中奖奖项。                                                                                                               |
-| oddsMap              | <mark style="color:orange;">array</mark>                                                        | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p>                                                        |
-| maxPayout            | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 只有财富大转盘。 最高赔付金额。                                                                                                    |
-| payoutWithoutholding | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | <p>纯派彩总额。</p><p>如果没有预扣金额，则参数值将与派彩相同。 如果有预扣金额，则计算公式为payout-withholdingtotal。</p><p>如果参数值大于0，则玩家获胜；如果参数值等于0是玩家输钱。</p> |
-| createTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 下注时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| payoutTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 派彩时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| betHistoryId         | <mark style="color:blue;">string</mark>                                                         | 投注记录ID。                                                                                                             |
-| validBet             | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 有效投注。                                                                                                               |
-| rebateAmount         | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 返水。                                                                                                                 |
-| balance              | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 盈余。                                                                                                                 |
-| username             | <mark style="color:blue;">string</mark>                                                         | 用户名。 不可使用http保留字元。                                                                                                  |
-| userId               | <mark style="color:blue;">int($int64)</mark>                                                    | 用户ID。                                                                                                               |
-| providerId           | <mark style="color:blue;">string</mark>                                                         | 游戏供应商ID。仅电子类游戏有此参数。                                                                                                 |
-| platform             | <mark style="color:blue;">int</mark>                                                            | 游戏平台。                                                                                                               |
+| 参数                   | 格式                                       | 描述                                                           |
+| -------------------- | ---------------------------------------- | ------------------------------------------------------------ |
+| gameType             | <mark style="color:blue;">int</mark>     | <p>游戏类型。</p><p>23: 财富大转盘</p>                                 |
+| gameName             | <mark style="color:blue;">string</mark>  | 游戏名称。                                                        |
+| betMap               | <mark style="color:orange;">array</mark> | 投注详细信息。                                                      |
+| bet                  | <mark style="color:blue;">double</mark>  | 总投注额。                                                        |
+| roundNo              | <mark style="color:blue;">string</mark>  | 牌局号码。                                                        |
+| payout               | <mark style="color:blue;">double</mark>  | 总派彩金额。                                                       |
+| payoutDetail         | <mark style="color:orange;">array</mark> | 每个投注项目的派彩金额。                                                 |
+| judgeResult          | <mark style="color:orange;">array</mark> | 中奖奖项。                                                        |
+| oddsMap              | <mark style="color:orange;">array</mark> | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p> |
+| maxPayout            | <mark style="color:blue;">double</mark>  | 只有财富大转盘。 最高赔付金额。                                             |
+| payoutWithoutholding | <mark style="color:blue;">double</mark>  | 纯派彩总额。                                                       |
+| createTime           | <mark style="color:blue;">long</mark>    | 下注时间。 以秒为单位。格式为Unix Time。                                    |
+| payoutTime           | <mark style="color:blue;">long</mark>    | 派彩时间。 以秒为单位。格式为Unix Time。                                    |
+| betHistoryId         | <mark style="color:blue;">string</mark>  | 投注记录ID。                                                      |
+| validBet             | <mark style="color:blue;">double</mark>  | 有效投注。                                                        |
+| rebateAmount         | <mark style="color:blue;">double</mark>  | 返水。                                                          |
+| balance              | <mark style="color:blue;">double</mark>  | 盈余。                                                          |
+| username             | <mark style="color:blue;">string</mark>  | 用户名。                                                         |
+| userId               | <mark style="color:blue;">long</mark>    | 用户ID。                                                        |
+| platform             | <mark style="color:blue;">int</mark>     | 游戏平台。                                                        |
+
+{% code overflow="wrap" lineNumbers="true" %}
+```json
+{
+    "betHistories": [
+        {
+            "gameType": 23,
+            "gameName": "fortune-wheel",
+            "betMap": [
+                {
+                    "betType": 400,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 401,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 402,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 403,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 404,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 405,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 406,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 407,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 408,
+                    "betMoney": 10
+                }
+            ],
+            "bet": 90,
+            "roundNo": "CW1-221025100255",
+            "payout": 132.5,
+            "payoutDetail": {
+                "403": 110,
+                "408": 22.5
+            },
+            "judgeResult": [
+                408,
+                403
+            ],
+            "oddsMap": [
+                {
+                    "400": 1,
+                    "401": 2,
+                    "402": 5,
+                    "403": 10,
+                    "404": 20,
+                    "405": 40,
+                    "406": 25,
+                    "407": 0.75,
+                    "408": 1.25
+                }
+            ],
+            "payoutWithoutholding": 132.5,
+            "createTime": 1666663393,
+            "payoutTime": 1666663435,
+            "betHistoryId": "6357440be9b3c334cdce3ea7",
+            "validBet": 90,
+            "rebateAmount": 0,
+            "balance": 42.5,
+            "username": "demo",
+            "userId": 67928964,
+            "platform": 3,
+            "maxPayout": 10000000
+        }
+    ],
+    "count": 1,
+    "remainingVisits": 499,
+    "status": 200,
+    "apiVersion": "1.5.75"
+}
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="电子21点" %}
-| 参数                   | 格式                                                                                              | 描述                                                                                                                  |
-| -------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">int</mark>                                                            | <p>游戏类型。</p><p>24: 电子21点</p>                                                                                        |
-| gameName             | <mark style="color:blue;">string</mark>                                                         | <p>游戏名称。</p><p>black-jack-electronic</p>                                                                            |
-| betMap               | <mark style="color:orange;">array</mark>                                                        | 投注详细信息。                                                                                                             |
-| bet                  | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总投注额。                                                                                                               |
-| roundNo              | <mark style="color:blue;">string</mark>                                                         | 牌局号码。                                                                                                               |
-| payout               | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总派彩金额。                                                                                                              |
-| payoutDetail         | <mark style="color:orange;">array</mark>                                                        | 每个投注项目的派彩金额。                                                                                                        |
-| judgeResult          | <mark style="color:orange;">array</mark>                                                        | 中奖奖项。  部分电子游戏不提供。                                                                                                   |
-| oddsMap              | <mark style="color:orange;">array</mark>                                                        | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p>                                                        |
-| surrender            | <mark style="color:blue;">int</mark>                                                            | 投降派彩(只有21点才會有此参数)                                                                                                   |
-| payoutWithoutholding | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | <p>纯派彩总额。</p><p>如果没有预扣金额，则参数值将与派彩相同。 如果有预扣金额，则计算公式为payout-withholdingtotal。</p><p>如果参数值大于0，则玩家获胜；如果参数值等于0是玩家输钱。</p> |
-| createTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 下注时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| payoutTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 派彩时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| betHistoryId         | <mark style="color:blue;">string</mark>                                                         | 投注记录ID。                                                                                                             |
-| validBet             | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 有效投注。                                                                                                               |
-| rebateAmount         | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 返水。                                                                                                                 |
-| balance              | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 盈余。                                                                                                                 |
-| username             | <mark style="color:blue;">string</mark>                                                         | 用户名。 不可使用http保留字元。                                                                                                  |
-| userId               | <mark style="color:blue;">int($int64)</mark>                                                    | 用户ID。                                                                                                               |
-| providerId           | <mark style="color:blue;">string</mark>                                                         | 游戏供应商ID。仅电子类游戏有此参数。                                                                                                 |
-| platform             | <mark style="color:blue;">int</mark>                                                            | 游戏平台。                                                                                                               |
+| 参数                   | 格式                                                                                              | 描述                                                           |
+| -------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| gameType             | <mark style="color:blue;">int</mark>                                                            | <p>游戏类型。</p><p>24: 电子21点</p>                                 |
+| gameName             | <mark style="color:blue;">string</mark>                                                         | 游戏名称。                                                        |
+| betMap               | <mark style="color:orange;">array</mark>                                                        | 投注详细信息。                                                      |
+| bet                  | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总投注额。                                                        |
+| roundNo              | <mark style="color:blue;">string</mark>                                                         | 牌局号码。                                                        |
+| payout               | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总派彩金额。                                                       |
+| payoutDetail         | <mark style="color:orange;">array</mark>                                                        | 每个投注项目的派彩金额。                                                 |
+| judgeResult          | <mark style="color:orange;">array</mark>                                                        | 中奖奖项。  部分电子游戏不提供。                                            |
+| oddsMap              | <mark style="color:orange;">array</mark>                                                        | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p> |
+| surrender            | <mark style="color:blue;">int</mark>                                                            | 投降派彩(只有21点才會有此参数)                                            |
+| payoutWithoutholding | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 纯派彩总额。                                                       |
+| createTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 下注时间。 以秒为单位。格式为Unix Time。                                    |
+| payoutTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 派彩时间。 以秒为单位。格式为Unix Time。                                    |
+| betHistoryId         | <mark style="color:blue;">string</mark>                                                         | 投注记录ID。                                                      |
+| validBet             | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 有效投注。                                                        |
+| rebateAmount         | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 返水。                                                          |
+| balance              | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 盈余。                                                          |
+| username             | <mark style="color:blue;">string</mark>                                                         | 用户名。                                                         |
+| userId               | <mark style="color:blue;">int($int64)</mark>                                                    | 用户ID。                                                        |
+| platform             | <mark style="color:blue;">int</mark>                                                            | 游戏平台。                                                        |
+
+{% code overflow="wrap" lineNumbers="true" %}
+```json
+{
+    "betHistories": [
+        {
+            "gameType": 24,
+            "gameName": "black_jack_electronic",
+            "betMap": [
+                {
+                    "betType": 6011,
+                    "betMoney": 100
+                },
+                {
+                    "betType": 60112,
+                    "betMoney": 100
+                }
+            ],
+            "bet": 200,
+            "roundNo": "J101-4J1013FAA86357532F001",
+            "payout": 400,
+            "payoutDetail": {
+                "6011": 400,
+                "60112": 0
+            },
+            "judgeResult": [
+                6011,
+                801,
+                602162,
+                605162,
+                6061,
+                607162
+            ],
+            "oddsMap": [
+                {},
+                {}
+            ],
+            "payoutWithoutholding": 400,
+            "createTime": 1666667336,
+            "payoutTime": 1666667345,
+            "betHistoryId": "63575351bb76a30012bbb0ed",
+            "validBet": 200,
+            "rebateAmount": 0,
+            "balance": 200,
+            "username": "demo",
+            "userId": 67928964,
+            "platform": 3
+        }
+    ],
+    "count": 1,
+    "remainingVisits": 499,
+    "status": 200,
+    "apiVersion": "1.5.75"
+}
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="真人21点" %}
-| 参数                   | 格式                                                                                              | 描述                                                                                                                  |
-| -------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">int</mark>                                                            | <p>游戏类型。</p><p>25: 真人21点</p>                                                                                        |
-| gameName             | <mark style="color:blue;">string</mark>                                                         | <p>游戏名称。</p><p>black-jack-live</p>                                                                                  |
-| betMap               | <mark style="color:orange;">array</mark>                                                        | 投注详细信息。                                                                                                             |
-| bet                  | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总投注额。                                                                                                               |
-| roundNo              | <mark style="color:blue;">string</mark>                                                         | 牌局号码。                                                                                                               |
-| payout               | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总派彩金额。                                                                                                              |
-| payoutDetail         | <mark style="color:orange;">array</mark>                                                        | 每个投注项目的派彩金额。                                                                                                        |
-| judgeResult          | <mark style="color:orange;">array</mark>                                                        | 中奖奖项。                                                                                                               |
-| oddsMap              | <mark style="color:orange;">array</mark>                                                        | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p>                                                        |
-| surrender            | <mark style="color:blue;">int</mark>                                                            | 投降派彩(只有21点才會有此参数)                                                                                                   |
-| payoutWithoutholding | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | <p>纯派彩总额。</p><p>如果没有预扣金额，则参数值将与派彩相同。 如果有预扣金额，则计算公式为payout-withholdingtotal。</p><p>如果参数值大于0，则玩家获胜；如果参数值等于0是玩家输钱。</p> |
-| createTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 下注时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| payoutTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 派彩时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| betHistoryId         | <mark style="color:blue;">string</mark>                                                         | 投注记录ID。                                                                                                             |
-| validBet             | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 有效投注。                                                                                                               |
-| rebateAmount         | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 返水。                                                                                                                 |
-| balance              | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 盈余。                                                                                                                 |
-| username             | <mark style="color:blue;">string</mark>                                                         | 用户名。 不可使用http保留字元。                                                                                                  |
-| userId               | <mark style="color:blue;">int($int64)</mark>                                                    | 用户ID。                                                                                                               |
-| providerId           | <mark style="color:blue;">string</mark>                                                         | 游戏供应商ID。仅电子类游戏有此参数。                                                                                                 |
-| platform             | <mark style="color:blue;">int</mark>                                                            | 游戏平台。                                                                                                               |
+| 参数                   | 格式                                       | 描述                                                           |
+| -------------------- | ---------------------------------------- | ------------------------------------------------------------ |
+| gameType             | <mark style="color:blue;">int</mark>     | <p>游戏类型。</p><p>25: 真人21点</p>                                 |
+| gameName             | <mark style="color:blue;">string</mark>  | 游戏名称。                                                        |
+| betMap               | <mark style="color:orange;">array</mark> | 投注详细信息。                                                      |
+| bet                  | <mark style="color:blue;">double</mark>  | 总投注额。                                                        |
+| roundNo              | <mark style="color:blue;">string</mark>  | 牌局号码。                                                        |
+| payout               | <mark style="color:blue;">double</mark>  | 总派彩金额。                                                       |
+| payoutDetail         | <mark style="color:orange;">array</mark> | 每个投注项目的派彩金额。                                                 |
+| judgeResult          | <mark style="color:orange;">array</mark> | 中奖奖项。                                                        |
+| oddsMap              | <mark style="color:orange;">array</mark> | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p> |
+| surrender            | <mark style="color:blue;">int</mark>     | 投降派彩(只有21点才會有此参数)                                            |
+| payoutWithoutholding | <mark style="color:blue;">double</mark>  | 纯派彩总额。                                                       |
+| createTime           | <mark style="color:blue;">long</mark>    | 下注时间。 以秒为单位。格式为Unix Time。                                    |
+| payoutTime           | <mark style="color:blue;">long</mark>    | 派彩时间。 以秒为单位。格式为Unix Time。                                    |
+| betHistoryId         | <mark style="color:blue;">string</mark>  | 投注记录ID。                                                      |
+| validBet             | <mark style="color:blue;">double</mark>  | 有效投注。                                                        |
+| rebateAmount         | <mark style="color:blue;">double</mark>  | 返水。                                                          |
+| balance              | <mark style="color:blue;">double</mark>  | 盈余。                                                          |
+| username             | <mark style="color:blue;">string</mark>  | 用户名。 不可使用http保留字元。                                           |
+| userId               | <mark style="color:blue;">long</mark>    | 用户ID。                                                        |
+| platform             | <mark style="color:blue;">int</mark>     | 游戏平台。                                                        |
+
+{% code overflow="wrap" lineNumbers="true" %}
+```json
+{
+    "betHistories": [
+        {
+            "gameType": 25,
+            "gameName": "black_jack_live",
+            "betMap": [
+                {
+                    "betType": 6021,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 6031,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 60301,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 60302,
+                    "betMoney": 10
+                },
+                {
+                    "betType": 60312,
+                    "betMoney": 10
+                }
+            ],
+            "bet": 50,
+            "roundNo": "J001-4J001314686357497C170",
+            "payout": 0,
+            "payoutDetail": {
+                "6021": 0,
+                "6031": 0,
+                "60301": 0,
+                "60302": 0,
+                "60312": 0
+            },
+            "judgeResult": [
+                801,
+                605162,
+                601162,
+                603162,
+                602162,
+                607162
+            ],
+            "oddsMap": [
+                {},
+                {}
+            ],
+            "payoutWithoutholding": 0,
+            "createTime": 1666664888,
+            "payoutTime": 1666664923,
+            "betHistoryId": "635749dbbb76a30012bb9eec",
+            "validBet": 50,
+            "rebateAmount": 0,
+            "balance": -50,
+            "username": "demo",
+            "userId": 67928964,
+            "platform": 2
+        }
+    ],
+    "count": 1,
+    "remainingVisits": 499,
+    "status": 200,
+    "apiVersion": "1.5.75"
+}
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="迷你游戏" %}
-| 参数                   | 格式                                                                                              | 描述                                                                                                                  |
-| -------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">int</mark>                                                            | <p>游戏类型。</p><p>27: 迷你游戏</p>                                                                                         |
-| gameName             | <mark style="color:blue;">string</mark>                                                         | <p>游戏名称。</p><p>mini-game(显示游戏的gameID)</p>                                                                           |
-| betMap               | <mark style="color:orange;">array</mark>                                                        | 投注详细信息。                                                                                                             |
-| bet                  | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总投注额。                                                                                                               |
-| roundNo              | <mark style="color:blue;">string</mark>                                                         | 牌局号码。                                                                                                               |
-| payout               | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 总派彩金额。                                                                                                              |
-| payoutDetail         | <mark style="color:orange;">array</mark>                                                        | 每个投注项目的派彩金额。                                                                                                        |
-| judgeResult          | <mark style="color:orange;">array</mark>                                                        | 中奖奖项。                                                                                                               |
-| oddsMap              | <mark style="color:orange;">array</mark>                                                        | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p>                                                        |
-| payoutWithoutholding | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | <p>纯派彩总额。</p><p>如果没有预扣金额，则参数值将与派彩相同。 如果有预扣金额，则计算公式为payout-withholdingtotal。</p><p>如果参数值大于0，则玩家获胜；如果参数值等于0是玩家输钱。</p> |
-| createTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 下注时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| payoutTime           | <mark style="color:blue;">int($int64)</mark>                                                    | 派彩时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| betHistoryId         | <mark style="color:blue;">string</mark>                                                         | 投注记录ID。                                                                                                             |
-| validBet             | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 有效投注。                                                                                                               |
-| rebateAmount         | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 返水。                                                                                                                 |
-| balance              | <p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p> | 盈余。                                                                                                                 |
-| username             | <mark style="color:blue;">string</mark>                                                         | 用户名。 不可使用http保留字元。                                                                                                  |
-| userId               | <mark style="color:blue;">int($int64)</mark>                                                    | 用户ID。                                                                                                               |
-| providerId           | <mark style="color:blue;">string</mark>                                                         | 游戏供应商ID。仅电子类游戏有此参数。                                                                                                 |
-| platform             | <mark style="color:blue;">int</mark>                                                            | 游戏平台。                                                                                                               |
+| 参数                   | 格式                                       | 描述                                                           |
+| -------------------- | ---------------------------------------- | ------------------------------------------------------------ |
+| gameType             | <mark style="color:blue;">int</mark>     | <p>游戏类型。</p><p>27: 迷你游戏</p>                                  |
+| gameName             | <mark style="color:blue;">string</mark>  | 游戏的gameID                                                    |
+| betMap               | <mark style="color:orange;">array</mark> | 投注详细信息。                                                      |
+| bet                  | <mark style="color:blue;">double</mark>  | 总投注额。                                                        |
+| roundNo              | <mark style="color:blue;">string</mark>  | 牌局号码。                                                        |
+| payout               | <mark style="color:blue;">double</mark>  | 总派彩金额。                                                       |
+| payoutDetail         | <mark style="color:orange;">array</mark> | 每个投注项目的派彩金额。                                                 |
+| judgeResult          | <mark style="color:orange;">array</mark> | 中奖奖项。                                                        |
+| oddsMap              | <mark style="color:orange;">array</mark> | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p> |
+| payoutWithoutholding | <mark style="color:blue;">double</mark>  | 纯派彩总额。                                                       |
+| createTime           | <mark style="color:blue;">long</mark>    | 下注时间。 以秒为单位。格式为Unix Time。                                    |
+| payoutTime           | <mark style="color:blue;">long</mark>    | 派彩时间。 以秒为单位。格式为Unix Time。                                    |
+| betHistoryId         | <mark style="color:blue;">string</mark>  | 投注记录ID。                                                      |
+| validBet             | <mark style="color:blue;">double</mark>  | 有效投注。                                                        |
+| rebateAmount         | <mark style="color:blue;">double</mark>  | 返水。                                                          |
+| balance              | <mark style="color:blue;">double</mark>  | 盈余。                                                          |
+| username             | <mark style="color:blue;">string</mark>  | 用户名。 不可使用http保留字元。                                           |
+| userId               | <mark style="color:blue;">long</mark>    | 用户ID。                                                        |
+| platform             | <mark style="color:blue;">int</mark>     | 游戏平台。                                                        |
+
+{% code overflow="wrap" lineNumbers="true" %}
+```json
+{
+    "betHistories": [
+        {
+            "gameType": 27,
+            "gameName": "rocket",
+            "betMap": [
+                {
+                    "betType": 601,
+                    "betMoney": 1
+                }
+            ],
+            "bet": 1,
+            "roundNo": "wy-3166666503003",
+            "payout": 0,
+            "payoutDetail": {
+                "601-0": 0
+            },
+            "oddsMap": [
+                {
+                    "601-0": 1.28
+                }
+            ],
+            "payoutWithoutholding": 0,
+            "createTime": 1666665030,
+            "payoutTime": 1666665047,
+            "betHistoryId": "63574a58e25050002e31c54b",
+            "validBet": 1,
+            "rebateAmount": 0,
+            "balance": -1,
+            "username": "demo",
+            "userId": 67928964,
+            "platform": 2
+        }
+    ],
+    "count": 1,
+    "remainingVisits": 499,
+    "status": 200,
+    "apiVersion": "1.5.75"
+}
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="电子棋牌" %}
@@ -1088,5 +1503,51 @@ Content-Type: application/json
 | providerId           | <mark style="color:blue;">string</mark>                                                         | 游戏供应商ID。仅电子类游戏有此参数。                                                                                                                                                                                                                  |
 | platform             | <mark style="color:blue;">int</mark>                                                            | 游戏平台。                                                                                                                                                                                                                                |
 | brokerageRequired    | <mark style="color:blue;">boolean</mark>                                                        | <p>是否為免佣金百家乐。其餘為null。<br>true: 是免佣金百家乐。</p><p>false: 不是免佣金百家乐。</p>                                                                                                                                                                   |
+
+{% code overflow="wrap" lineNumbers="true" %}
+```json
+{
+    "betHistories": [
+        {
+            "gameType": 30,
+            "gameName": "pokdeng",
+            "betMap": [
+                {
+                    "betType": 601,
+                    "betMoney": 10
+                }
+            ],
+            "bet": 10,
+            "roundNo": "wg-pokdeng883_166666745788",
+            "payout": 59.7,
+            "payoutDetail": {
+                "601-0": 19.7
+            },
+            "oddsMap": [
+                {}
+            ],
+            "withHoldingTotal": 40,
+            "withHoldingDetail": {
+                "601-0": 40
+            },
+            "payoutWithoutholding": 19.7,
+            "createTime": 1666667466,
+            "payoutTime": 1666667490,
+            "betHistoryId": "635753e29b4ad400350910a0",
+            "validBet": 10,
+            "rebateAmount": 0,
+            "balance": 9.7,
+            "username": "demo",
+            "userId": 67928964,
+            "platform": -1
+        }
+    ],
+    "count": 1,
+    "remainingVisits": 499,
+    "status": 200,
+    "apiVersion": "1.5.75"
+}
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
