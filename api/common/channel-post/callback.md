@@ -5,7 +5,7 @@ description: 如果渠道不想通过 eBET 界面登录，则渠道可以使用�
 # callback
 
 {% hint style="warning" %}
-<mark style="color:red;">渠道需提供登录界面链接，由我方后台设置开启。</mark>
+<mark style="color:red;">渠道需提供登录界面链接，由eBET人員设置开启。</mark>
 {% endhint %}
 
 ## <mark style="color:green;">POST</mark>
@@ -18,14 +18,14 @@ Content-Type: application/json
 
 #### Body:
 
-| 参数                                          | 格式                                           | 描述                                                  |
-| ------------------------------------------- | -------------------------------------------- | --------------------------------------------------- |
-| <mark style="color:red;">username</mark>    | <mark style="color:blue;">string</mark>      | 用户名。 不可使用http保留字元。                                  |
-| <mark style="color:red;">channelId</mark>   | <mark style="color:blue;">int</mark>         | 渠道ID                                                |
-| subChannelId                                | <mark style="color:blue;">int</mark>         | 子渠道ID                                               |
-| <mark style="color:red;">timestamp</mark>   | <mark style="color:blue;">int($int64)</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。                           |
-| <mark style="color:red;">accessToken</mark> | <mark style="color:blue;">string</mark>      | 该参数值由渠道提供                                           |
-| <mark style="color:red;">signature</mark>   | <mark style="color:blue;">string</mark>      | 签名。字串拼接 :`username+channelId+accessToken+timestamp` |
+| 参数                                          | 格式                                      | 描述                                                             |
+| ------------------------------------------- | --------------------------------------- | -------------------------------------------------------------- |
+| <mark style="color:red;">username</mark>    | <mark style="color:blue;">string</mark> | 用户名。 不可使用http保留字元。                                             |
+| <mark style="color:red;">channelId</mark>   | <mark style="color:blue;">int</mark>    | 渠道ID                                                           |
+| subChannelId                                | <mark style="color:blue;">int</mark>    | 子渠道ID                                                          |
+| <mark style="color:red;">timestamp</mark>   | <mark style="color:blue;">lon</mark>    | 时间戳记。以毫秒为单位。格式为Unix Time。                                      |
+| <mark style="color:red;">accessToken</mark> | <mark style="color:blue;">string</mark> | 该参数值由渠道提供                                                      |
+| <mark style="color:red;">signature</mark>   | <mark style="color:blue;">string</mark> | <p>签名。字串拼接:</p><p>username+channelId+accessToken+timestamp</p> |
 
 {% hint style="warning" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
@@ -52,10 +52,10 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>status</td><td><mark style="color:blue;">int</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md">状态码表</a></td><td><pre><code>0
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>status</td><td><mark style="color:blue;">int</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td><pre><code>0
 </code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>apitest01
 </code></pre></td></tr><tr><td>channelId</td><td><mark style="color:blue;">string</mark></td><td>渠道ID</td><td><pre><code>accessTokenTest
-</code></pre></td></tr><tr><td>subChannelId</td><td><mark style="color:blue;">string</mark></td><td>子渠道ID</td><td>200</td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。 不可使用http保留字元。</td><td></td></tr><tr><td>userId</td><td><mark style="color:blue;">int($int64)</mark></td><td>用户ID</td><td></td></tr><tr><td>money</td><td><p><mark style="color:blue;">number</mark></p><p><mark style="color:blue;">($double)</mark></p></td><td>用户的金額。</td><td></td></tr><tr><td>timestamp</td><td><mark style="color:blue;">int($int64)</mark></td><td>当前时间。以秒为单位。格式为Unix Time。</td><td></td></tr><tr><td>wallet</td><td><mark style="color:blue;">array</mark></td><td>每个钱包的余额。<br>typeId<br>money</td><td></td></tr></tbody></table>
+</code></pre></td></tr><tr><td>subChannelId</td><td><mark style="color:blue;">string</mark></td><td>子渠道ID</td><td>200</td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。</td><td></td></tr><tr><td>userId</td><td><mark style="color:blue;">long</mark></td><td>用户ID</td><td></td></tr><tr><td>money</td><td><mark style="color:blue;">double</mark></td><td>用户的金額。</td><td></td></tr><tr><td>timestamp</td><td><mark style="color:blue;">long</mark></td><td>当前时间。以秒为单位。格式为Unix Time。</td><td></td></tr><tr><td>wallet</td><td><mark style="color:blue;">array</mark></td><td>每个钱包的余额。阵列值为物件，下表为物件参数说明。</td><td></td></tr></tbody></table>
 
 {% code title="Responses" overflow="wrap" %}
 ```json
