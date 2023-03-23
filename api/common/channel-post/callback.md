@@ -21,9 +21,9 @@ Content-Type: application/json
 | 参数                                          | 格式                                      | 描述                                                             |
 | ------------------------------------------- | --------------------------------------- | -------------------------------------------------------------- |
 | <mark style="color:red;">username</mark>    | <mark style="color:blue;">string</mark> | 用户名。 不可使用http保留字元。                                             |
-| <mark style="color:red;">channelId</mark>   | <mark style="color:blue;">int</mark>    | 渠道ID                                                           |
-| subChannelId                                | <mark style="color:blue;">int</mark>    | 子渠道ID                                                          |
-| <mark style="color:red;">timestamp</mark>   | <mark style="color:blue;">lon</mark>    | 时间戳记。以毫秒为单位。格式为Unix Time。                                      |
+| <mark style="color:red;">channelId</mark>   | <mark style="color:blue;">number</mark> | 渠道ID                                                           |
+| subChannelId                                | <mark style="color:blue;">number</mark> | 子渠道ID                                                          |
+| <mark style="color:red;">timestamp</mark>   | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。                                      |
 | <mark style="color:red;">accessToken</mark> | <mark style="color:blue;">string</mark> | 该参数值由渠道提供                                                      |
 | <mark style="color:red;">signature</mark>   | <mark style="color:blue;">string</mark> | <p>签名。字串拼接:</p><p>username+channelId+accessToken+timestamp</p> |
 
