@@ -46,10 +46,17 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td><pre><code>0
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>status</td><td><mark style="color:blue;">integer</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td><pre><code>0
 </code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>apitest01
 </code></pre></td></tr><tr><td>channelId</td><td><mark style="color:blue;">string</mark></td><td>渠道ID</td><td><pre><code>accessTokenTest
-</code></pre></td></tr><tr><td>subChannelId</td><td><mark style="color:blue;">string</mark></td><td>子渠道ID</td><td>200</td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。</td><td></td></tr><tr><td>userId</td><td><mark style="color:blue;">number</mark></td><td>用户ID</td><td></td></tr><tr><td>money</td><td><mark style="color:blue;">number</mark></td><td>用户的金額。</td><td></td></tr><tr><td>wallet</td><td><mark style="color:blue;">array</mark></td><td>每个钱包的余额。阵列值为物件，下表为物件参数说明。</td><td></td></tr></tbody></table>
+</code></pre></td></tr><tr><td>subChannelId</td><td><mark style="color:blue;">string</mark></td><td>子渠道ID</td><td>200</td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。</td><td></td></tr><tr><td>userId</td><td><mark style="color:blue;">integer($int64)</mark></td><td>用户ID</td><td></td></tr><tr><td>money</td><td><mark style="color:blue;">number($double)</mark></td><td>用户的金額。</td><td></td></tr><tr><td>wallet</td><td><mark style="color:blue;">array</mark></td><td>每个钱包的余额。阵列值为物件，下表为物件参数说明。</td><td></td></tr></tbody></table>
+
+#### wallet:
+
+| 参数     | 格式                                               | 描述     |
+| ------ | ------------------------------------------------ | ------ |
+| typeId | <mark style="color:blue;">integer</mark>         | 钱包种类。  |
+| money  | <mark style="color:blue;">number($double)</mark> | 钱包的余额。 |
 
 {% embed url="https://docs.google.com/spreadsheets/d/1ejxETVOI9kcCAP5eNpT6CIi4ftGHwcYWMHJTEPqLILs" %}
 
