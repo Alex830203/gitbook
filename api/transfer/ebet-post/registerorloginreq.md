@@ -57,7 +57,7 @@ Content-Type: application/json
 <table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">accessToken</mark></td><td><mark style="color:blue;">string</mark></td><td>渠道返回的accessToken。</td><td><pre><code>accessTokenTest
 </code></pre></td></tr><tr><td><mark style="color:red;">subChannelId</mark></td><td><mark style="color:blue;">number</mark></td><td>子渠道 ID。 如果未创建，请输入0。</td><td><pre><code>0
 </code></pre></td></tr><tr><td><mark style="color:red;">username</mark></td><td><mark style="color:blue;">string</mark></td><td>用户名。</td><td><pre><code>apitest01
-</code></pre></td></tr><tr><td><mark style="color:red;">status</mark></td><td><mark style="color:blue;">integer</mark></td><td><a href="../../ebet-zhuang-tai-ma.md#jian-yi-xiang-ying-de-zhuang-tai-dai-ma">建议返回的状态码</a></td><td>200</td></tr><tr><td>nickname</td><td><mark style="color:blue;">string</mark></td><td>用户昵称</td><td>预设随机生成</td></tr><tr><td>currency</td><td><mark style="color:blue;">string</mark></td><td>货币</td><td>CNY</td></tr></tbody></table>
+</code></pre></td></tr><tr><td><mark style="color:red;">status</mark></td><td><mark style="color:blue;">number</mark></td><td><a href="../../ebet-zhuang-tai-ma.md#jian-yi-xiang-ying-de-zhuang-tai-dai-ma">建议返回的状态码</a></td><td>200</td></tr><tr><td>nickname</td><td><mark style="color:blue;">string</mark></td><td>用户昵称</td><td>预设随机生成</td></tr><tr><td>currency</td><td><mark style="color:blue;">string</mark></td><td>货币</td><td>CNY</td></tr></tbody></table>
 
 {% hint style="warning" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
