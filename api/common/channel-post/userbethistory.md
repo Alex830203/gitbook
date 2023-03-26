@@ -85,7 +85,7 @@ Content-Type: application/json
 | balance              | <mark style="color:blue;">number</mark>   | 盈余。                                                        |
 | username             | <mark style="color:blue;">string</mark>   | 用户名。                                                       |
 | userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                      |
-| brokerageRequired    | <mark style="color:blue;">boolean</mark>  | 是否為免佣金百家乐。                                                 |
+| brokerageRequired    | <mark style="color:blue;">boolean</mark>  | 是否為免佣金百家乐。<mark style="color:red;">其餘為null。</mark>         |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                      |
 
 {% code overflow="wrap" lineNumbers="true" %}
