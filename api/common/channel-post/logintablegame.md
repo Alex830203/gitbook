@@ -29,30 +29,47 @@ Content-Type: application/json
 | ip                                             | <mark style="color:blue;">string</mark> | 登录IP                               |
 | language                                       | <mark style="color:blue;">string</mark> | 用户语言                               |
 
-{% embed url="https://docs.google.com/spreadsheets/d/1ejxETVOI9kcCAP5eNpT6CIi4ftGHwcYWMHJTEPqLILs" %}
-
 {% hint style="warning" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
+{% embed url="https://docs.google.com/spreadsheets/d/1ejxETVOI9kcCAP5eNpT6CIi4ftGHwcYWMHJTEPqLILs" %}
+
+{% tabs %}
+{% tab title="Token登录" %}
 {% code title="Request" overflow="wrap" %}
 ```json
 {
-  "username": "apitest01",
-  "channelId": 1,
-  "timestamp": 1577808000000,
-  "signature": "bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ==",
-  "gameID": "dice",
-  "providerId": "wayi",
-  "loginEventType": 1,
-  "currency": "CNY",
-  "pwd": "password",
-  "token": "tokentokentoken",
-  "ip": "127.0.0.1",
-  "language": "zh_cn"
+    "channelId": 1,
+    "username": "apitest01",
+    "timestamp": 1585619696049,
+    "signature": "kiHC0kZWnVt0ogftO9nudOchmA0aXq68T5SKTqkYs+YazS3pgj6Q6l7zL5SVP/E4KJmKOJ6nHJ/eFxPOE4YskiuFV4dR+F2CNMuGUuPYZgJKOpFUqx8re2bDYNsb/Hr7/Cbue0jwcF19CDguVut08rWrq5iN5Zazdd0UHixf++M=",
+    "loginEventType": 4,
+    "token": "0c75f8ed762e047fa0e4f6d6bf61867a",
+    "providerId": "pgsoft",
+    "gameID": "diaochan"
 }
 ```
 {% endcode %}
+{% endtab %}
+
+{% tab title="普通登录" %}
+{% code title="Request" overflow="wrap" %}
+```json
+{
+    "channelId": 1,
+    "username": "demo",
+    "timestamp": 1585619696049,
+    "signature": "kiHC0kZWnVt0ogftO9nudOchmA0aXq68T5SKTqkYs+YazS3pgj6Q6l7zL5SVP/E4KJmKOJ6nHJ/eFxPOE4YskiuFV4dR+F2CNMuGUuPYZgJKOpFUqx8re2bDYNsb/Hr7/Cbue0jwcF19CDguVut08rWrq5iN5Zazdd0UHixf++M=",
+    "loginEventType": 1,
+    "pwd":"hidden",
+    "providerId": "pgsoft",
+    "gameID": "diaochan"
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 ### **Responses**
 

@@ -20,11 +20,10 @@ Content-Type: application/json
 
 | 参数                                        | 格式                                      | 描述                                    |
 | ----------------------------------------- | --------------------------------------- | ------------------------------------- |
-| <mark style="color:red;">username</mark>  | <mark style="color:blue;">string</mark> | 用户名。 不可使用http保留字元。                    |
 | <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID                                  |
+| <mark style="color:red;">username</mark>  | <mark style="color:blue;">string</mark> | 用户名。 不可使用http保留字元。                    |
 | <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。             |
 | <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | 签名。 字串拼接：username+channelId+timestamp |
-| currency                                  | <mark style="color:blue;">string</mark> | 货币。                                   |
 
 {% hint style="warning" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
@@ -33,11 +32,10 @@ Content-Type: application/json
 {% code title="Request" overflow="wrap" %}
 ```json
 {
-  "username": "apitest01",
-  "channelId": 1,
-  "timestamp": 1577808000000,
-  "signature": "dry4mQ5qb7hyAeDDi1Ia+m5fsouP+qf2xfcpb+nP+La5yEMbYuHRz7Fge2OTgVi7DttC8p+Aiedfnnu42ii2lQ==",
-  "currency": "CNY"
+    "channelId": 1,
+    "username": "demo",
+    "timestamp": 1666504108,
+    "signature": "MvFRhorjHslQXI51K9Y+G3MJlnYYUgfhxkBPTeQda9k5Ynqn8X5vkjeA7Jy24siznxH1u6AoZUHfmFyjGqGTBjxOF5+y26z8uwvKvsSFP+RIq4r9Pw9LBmhSZv3TcflM6TXSXI40/T/iTJV8R5cdDobnuTEI+URMN/+VUShazKY="
 }
 ```
 {% endcode %}
