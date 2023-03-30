@@ -95,16 +95,16 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td><pre><code>0
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>slotURL</td><td><mark style="color:blue;">string</mark></td><td>登入老虎机游戏的连结。</td><td></td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td><pre><code>0
 </code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>apitest01
-</code></pre></td></tr><tr><td>slotURL</td><td><mark style="color:blue;">string</mark></td><td>登入老虎机游戏的连结。</td><td></td></tr></tbody></table>
+</code></pre></td></tr></tbody></table>
 
 {% code title="Responses" overflow="wrap" %}
 ```json
 {
-  "status": 200,
-  "apiVersion": "1.3.55",
-  "slotURL": "https://ugc.rongfakj.com/NG-1026/HTML5/index.html?turbo=true&mode=real&partner=be6c07f5-827c-4e76-8223-f3bda46f5a02&session=cppzzrex-xa450978331-4e055c951c834ae8a14960876&language=zh-hans&gs=nurgs-RMX&partnerCode=EBET&referer=ugc.rongfakj.com&refererRetries=0"
+    "slotURL": "https://ugc.kblgg.com/NGM4-0001/HTML5/index.html?turbo=true&mode=real&partner=964dc891-31c1-4579-8628-77ee21c35809&session=322dbbf66403a7e4e947f2e6ebfff110-88915679&language=zh-hant&gs=nurgs-RMX&partnerCode=EbetCNY&referer=ugc.kblgg.com&refererRetries=0&device=DESKTOP",
+    "status": 200,
+    "apiVersion": "1.5.94"
 }
 ```
 {% endcode %}

@@ -45,18 +45,24 @@ Content-Type: application/json
 
 **tableCodes**
 
-| 参数           | 格式                                      | 描述                              |
-| ------------ | --------------------------------------- | ------------------------------- |
-| tableCode    | <mark style="color:blue;">string</mark> | 游戏桌ID。                          |
-| tableType    | <mark style="color:blue;">number</mark> | 游戏类型。                           |
-| tableSubType | <mark style="color:blue;">number</mark> | 游戏桌类型。                          |
-| isMaintain   | <mark style="color:blue;">number</mark> | <p>游戏桌状态。</p><p>0:开放中 1:维护中</p> |
+| 参数           | 格式                                      | 描述                                           |
+| ------------ | --------------------------------------- | -------------------------------------------- |
+| tableCode    | <mark style="color:blue;">string</mark> | 游戏桌ID。                                       |
+| tableType    | <mark style="color:blue;">number</mark> | 游戏类型。                                        |
+| tableSubType | <mark style="color:blue;">number</mark> | 游戏桌类型。                                       |
+| isMaintain   | <mark style="color:blue;">number</mark> | <p>游戏桌状态。</p><p>0: 开放中 </p><p>其他参数值: 维护中</p> |
 
 {% code title="Responses" overflow="wrap" %}
 ```json
 {
-    "count": 2,
+    "count": 3,
     "tableCodes": [
+        {
+            "tableCode": "BP1",
+            "tableType": 1,
+            "tableSubType": 0,
+            "isMaintain": 0
+        },
         {
             "tableCode": "BPV1",
             "tableType": 1,
@@ -64,14 +70,14 @@ Content-Type: application/json
             "isMaintain": 0
         },
         {
-            "tableCode": "SLB3",
-            "tableType": 4,
+            "tableCode": "NNP1",
+            "tableType": 8,
             "tableSubType": 0,
-            "isMaintain": 0
+            "isMaintain": 2
         }
     ],
     "status": 200,
-    "apiVersion": "1.5.63"
+    "apiVersion": "1.5.94"
 }
 ```
 {% endcode %}

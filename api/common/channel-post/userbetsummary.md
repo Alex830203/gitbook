@@ -1,5 +1,5 @@
 ---
-description: 创建新用户
+description: 查询时间段内的总计报告。
 ---
 
 # userbetsummary
@@ -14,26 +14,37 @@ Content-Type: application/json
 
 #### Body:
 
-| 参数                                        | 格式                                      | 描述                 |
-| ----------------------------------------- | --------------------------------------- | ------------------ |
-| <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID               |
-| <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | 签名。 字串拼接：username  |
-| <mark style="color:red;">username</mark>  | <mark style="color:blue;">string</mark> | 用户名。 不可使用http保留字元。 |
-| subChannelId                              | <mark style="color:blue;">number</mark> | 子渠道ID              |
-| currency                                  | <mark style="color:blue;">string</mark> | 货币。                |
+| 参数                                        | 格式                                      | 描述                                                                        |
+| ----------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------- |
+| <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID                                                                      |
+| <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。                                                 |
+| <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | <p>签名。 字串拼接：username+timestamp <br>Note: 如API用户名参数非必要，可以单独使用timestamp</p> |
+| username                                  | <mark style="color:blue;">string</mark> | 用户名。                                                                      |
+| subChannelId                              | <mark style="color:blue;">number</mark> | 子渠道ID。                                                                    |
+| startTimeStr                              | <mark style="color:blue;">string</mark> | 查询时间范围的开始。                                                                |
+| endTimeStr                                | <mark style="color:blue;">string</mark> | 查询时间范围的结束。                                                                |
+| gameType                                  | <mark style="color:blue;">number</mark> | 游戏类型。                                                                     |
+| judgeTime                                 | <mark style="color:blue;">number</mark> | 判断查询时间。默认为0。                                                              |
+| userId                                    | <mark style="color:blue;">number</mark> | 用户ID。                                                                     |
 
 {% hint style="warning" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
+{% hint style="info" %}
+<mark style="color:blue;">预设时间段是当天。</mark>
+{% endhint %}
+
 {% code title="Request" overflow="wrap" %}
 ```json
 {
-  "channelId": 1,
-  "signature": "ZwV0Upcy93v3S/ChPh/K4FtbQ3VfA9bVomRZxBhp7I/nh2P0+qwl+dfax4QZrLwT3TuFIJGv1+nWBb+oTN5bdg==",
-  "username": "apitest01",
-  "subChannelId": 0,
-  "currency": "CNY"
+    "channelId": 1,
+    "timestamp": 1680159264,
+    "pageNum": 1,
+    "pageSize": 10,
+    "startTimeStr": "2023-03-30 00:00:00",
+    "endTimeStr": "2023-03-31 00:00:00",
+    "signature": "Udapf5Zc5fdx6r6G45u4uhYfAqXvt5ReXvKbza30579wfo8mYMBX5Hho7wHFV/NYoCB2eiGJeYd0MzjtdmPqVYyoWsPVaQEwQPuCPG3GIDI1MKYKxWGxMl+ylpsEPgM1v6rcmrGKXq3E6rZC8LuYnqDGA75aKuOa2mLZKARJQyE="
 }
 ```
 {% endcode %}
@@ -46,15 +57,32 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a><br><mark style="color:red;">401：该帐户已注册。</mark></td><td><pre><code>0
-</code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>apitest01
-</code></pre></td></tr></tbody></table>
+|                  |                                         |                                                                               |
+| ---------------- | --------------------------------------- | ----------------------------------------------------------------------------- |
+| count            | <mark style="color:blue;">number</mark> | 投注成功的总次数                                                                      |
+| totalBet         | <mark style="color:blue;">number</mark> | 投注成功的总额                                                                       |
+| totalPayout      | <mark style="color:blue;">number</mark> | 派彩成功的总额                                                                       |
+| totalWithholding | <mark style="color:blue;">number</mark> | 预扣成功的总额                                                                       |
+| totalBalance     | <mark style="color:blue;">number</mark> | 盈余总额，计算公式( 投注 - 派彩 )                                                          |
+| startTime        | <mark style="color:blue;">number</mark> | 查询的开始时间。以毫秒为单位。格式为Unix Time。                                                  |
+| endTime          | <mark style="color:blue;">number</mark> | 查询的结束时间。以毫秒为单位。格式为Unix Time。                                                  |
+| remainingVisits  | <mark style="color:blue;">number</mark> | 剩余请求数，每分钟500次。                                                                |
+| status           | <mark style="color:blue;">number</mark> | 回应状态。[状态码表](../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma) |
+| apiVersion       | <mark style="color:blue;">string</mark> | API版本号。                                                                       |
 
 {% code title="Responses" overflow="wrap" %}
 ```json
 {
-  "status": 200,
-  "apiVersion": "1.3.55"
+    "count": 112,
+    "totalBet": 2200,
+    "totalPayout": 3416.75,
+    "totalWithholding": 100.8,
+    "totalBalance": 1115.95,
+    "startTime": 1680105600000,
+    "endTime": 1680192000000,
+    "remainingVisits": 499,
+    "status": 200,
+    "apiVersion": "1.5.94"
 }
 ```
 {% endcode %}
