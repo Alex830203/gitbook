@@ -1,12 +1,8 @@
 ---
-description: 该 API 目的是让伙伴获得最新的 H5 游戏连结。
+description: 取得最新的 H5 游戏连结。
 ---
 
 # launchUrl
-
-{% hint style="info" %}
-<mark style="color:blue;">非人民币渠道请忽略</mark><mark style="color:blue;">`china`</mark><mark style="color:blue;">参数。</mark>
-{% endhint %}
 
 ## <mark style="color:green;">POST</mark>
 
@@ -28,6 +24,8 @@ Content-Type: application/json
 
 {% hint style="warning" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
+
+<mark style="color:red;">人民币渠道请务必添加china参数。</mark>
 {% endhint %}
 
 {% code title="Request" overflow="wrap" %}
@@ -36,8 +34,7 @@ Content-Type: application/json
   "channelId": 1,
   "timestamp": 1577808000000,
   "signature": "ZwV0Upcy93v3S/ChPh/K4FtbQ3VfA9bVomRZxBhp7I/nh2P0+qwl+dfax4QZrLwT3TuFIJGv1+nWBb+oTN5bdg==",
-  "currency": "CNY",
-  "china": 1
+  "currency": "CNY"
 }
 ```
 {% endcode %}

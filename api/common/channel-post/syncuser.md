@@ -20,7 +20,6 @@ Content-Type: application/json
 | <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | 签名。 字串拼接：username  |
 | <mark style="color:red;">username</mark>  | <mark style="color:blue;">string</mark> | 用户名。 不可使用http保留字元。 |
 | subChannelId                              | <mark style="color:blue;">number</mark> | 子渠道ID              |
-| currency                                  | <mark style="color:blue;">string</mark> | 货币。                |
 
 {% hint style="warning" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
@@ -29,11 +28,9 @@ Content-Type: application/json
 {% code title="Request" overflow="wrap" %}
 ```json
 {
-  "channelId": 1,
-  "signature": "ZwV0Upcy93v3S/ChPh/K4FtbQ3VfA9bVomRZxBhp7I/nh2P0+qwl+dfax4QZrLwT3TuFIJGv1+nWBb+oTN5bdg==",
-  "username": "apitest01",
-  "subChannelId": 0,
-  "currency": "CNY"
+    "channelId": 1,
+    "username": "demo",
+    "signature": "kxA2Ud7AAmQtIx8gs5/nMbzL9ifvVCPmXyK7D41hK/mxh4ylFwWkoHLA0IJCBk3OqOMJOyj8YhL/PUmK8ceDZ9mJC8+5I4RAGpgebqqHeW+6txaJIa1f9S4QdjErZDf+mMTnEUaVwkNU9Dw1MO94hFZPjqo1Qwmbdu4W6BJvI/A="
 }
 ```
 {% endcode %}
