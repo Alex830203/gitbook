@@ -11,7 +11,7 @@ description: 该API是用于通知渠道更改玩家金额。
 * 范例链接：[请求&回应范例](https://github.com/ITsupporteBET/demo\_code/tree/master/API%20for%20single%20wallet/increaseCredit)
 
 {% hint style="info" %}
-<mark style="color:blue;">发送请求至接收地址是渠道的服务器url + api E.g.</mark> [<mark style="color:blue;">http://127.0.0.1/increaseCredit</mark>](http://127.0.0.1/increaseCredit)<mark style="color:blue;"></mark>
+<mark style="color:blue;">发送请求至接收地址是渠道的服务器url + api E.g.</mark> [<mark style="color:blue;">http://127.0.0.1/increaseCredit</mark>](http://127.0.0.1/increaseCredit)
 {% endhint %}
 
 ## <mark style="color:green;">POST</mark>
@@ -41,6 +41,8 @@ Content-Type: application/json
 #### withHoldingList:
 
 <table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>withHolding</td><td><mark style="color:blue;">number</mark></td><td>預扣金额。<mark style="color:red;">withHolding =0时,代表預扣失败。</mark></td><td>RegisterOrLoginReq</td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td><p>预扣状态 </p><p>1: 成功 </p><p>0: 失败或没有金额需要返还 </p><p>11:退款 </p><p>13:退款失败</p></td><td></td></tr><tr><td>betType</td><td><mark style="color:blue;">number</mark></td><td>投注牌型</td><td></td></tr><tr><td>withHoldingId</td><td><mark style="color:blue;">string</mark></td><td>游戏下注的号码。 只有特定项目才会有此字段</td><td></td></tr><tr><td>betId</td><td><mark style="color:blue;">string</mark></td><td>投注ID</td><td></td></tr><tr><td>seqNo</td><td><mark style="color:blue;">string</mark></td><td>預扣请求的序列编号</td><td></td></tr><tr><td>refund</td><td><mark style="color:blue;">number</mark></td><td>牛牛返还金额,<mark style="color:red;">仅只有type=28的事件，才需要此字段。</mark></td><td></td></tr></tbody></table>
+
+{% embed url="https://docs.google.com/spreadsheets/d/1ejxETVOI9kcCAP5eNpT6CIi4ftGHwcYWMHJTEPqLILs" %}
 
 ### **Responses**
 
