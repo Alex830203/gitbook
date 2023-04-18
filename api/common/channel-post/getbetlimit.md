@@ -1,5 +1,5 @@
 ---
-description: 该API用于查询在特定时间段内记录的投注。
+description: 取得用户在各游戏类型设置的投注限制清单。
 ---
 
 # getbetlimit
@@ -14,18 +14,10 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">channelId</mark></td><td><mark style="color:blue;">number</mark></td><td>渠道ID。</td><td>RegisterOrLoginReq</td></tr><tr><td><mark style="color:red;">timestamp</mark></td><td><mark style="color:blue;">number</mark></td><td>时间戳记。以毫秒为单位。格式为Unix Time。</td><td>1</td></tr><tr><td><mark style="color:red;">signature</mark></td><td><mark style="color:blue;">string</mark></td><td><p>签名。 字串拼接：<code>username+timestamp</code></p><p>Note: 如API用户名参数非必要，可以单独使用timestamp</p></td><td>1</td></tr><tr><td><mark style="color:red;">betStatus</mark></td><td><mark style="color:blue;">number</mark></td><td><p>检查投注状态。默认为查询所有记录</p><p>0：仅查询失败的记录</p><p>1：仅查询成功的记录</p></td><td>apitest01</td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。</td><td>password</td></tr><tr><td>currency</td><td><mark style="color:blue;">string</mark></td><td>货币。</td><td>accessToken</td></tr><tr><td>subChannelId</td><td><mark style="color:blue;">number</mark></td><td>子渠道ID。</td><td>1577808000</td></tr><tr><td>startTimeStr</td><td><mark style="color:blue;">string</mark></td><td>查询时间范围的开始。</td><td>127.0.0.1</td></tr><tr><td>endTimeStr</td><td><mark style="color:blue;">string</mark></td><td>查询时间范围的结束。</td><td>bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ==</td></tr><tr><td>pageNum</td><td><mark style="color:blue;">number</mark></td><td>页码。 默认值为1。</td><td></td></tr><tr><td>pageSize</td><td><mark style="color:blue;">number</mark></td><td>每页上显示的记录数。默认值为10。最大为5000。</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号码。</td><td></td></tr><tr><td>gameType</td><td><mark style="color:blue;">number</mark></td><td><p>游戏类型。</p><p>1: 百家乐</p><p>2: 龙虎</p><p>3: 骰宝</p><p>4: 轮盘</p><p>5: 老虎机</p><p>8: 牛牛</p><p>23: 财富大转盘</p><p>24: 电子21点</p><p>25: 真人21点</p><p>27: 迷你游戏</p><p>30: 电子棋牌</p></td><td></td></tr><tr><td>judgeTime</td><td><mark style="color:blue;">number</mark></td><td>判断查询时间。预设为0</td><td></td></tr><tr><td>isSeparate</td><td><mark style="color:blue;">boolean</mark></td><td><p>betHistories的显示方式。默认为false。</p><p>true: 按确认的投注次数细分。</p><p>false: 根据付款记录显示。</p><p>Note: 该参数不会影响其他参数的计算。仍将根据付款数量进行处理。</p></td><td></td></tr></tbody></table>
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">channelId</mark></td><td><mark style="color:blue;">number</mark></td><td>渠道ID。</td><td>RegisterOrLoginReq</td></tr><tr><td><mark style="color:red;">username</mark></td><td><mark style="color:blue;">string</mark></td><td>用户名。</td><td>password</td></tr><tr><td><mark style="color:red;">timestamp</mark></td><td><mark style="color:blue;">number</mark></td><td>时间戳记。以毫秒为单位。格式为Unix Time。</td><td>1</td></tr><tr><td><mark style="color:red;">signature</mark></td><td><mark style="color:blue;">string</mark></td><td>签名。 字串拼接：username+channelId+timestamp</td><td>1</td></tr></tbody></table>
 
 {% hint style="warning" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
-{% endhint %}
-
-{% hint style="info" %}
-*   <mark style="color:blue;">由于数据量可能太大，建议带以下参数减少查询时间。</mark>
-
-    <mark style="color:blue;">(startTimeStr, endTimeStr, pageNum, pageSize)</mark>
-* <mark style="color:blue;">请带参数 betStatus:1 以查询成功的记录。</mark>
-* <mark style="color:blue;">游戏预扣请参考withHoldingTotal。</mark>
 {% endhint %}
 
 {% code overflow="wrap" lineNumbers="true" %}
@@ -56,276 +48,279 @@ limit
 
 {% tabs %}
 {% tab title="百家乐" %}
-| 参数                   | 格式                                      | 描述                                                         |
-| -------------------- | --------------------------------------- | ---------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>1: 百家乐 - VIP 桌 <br>2: 百家乐 - Normal 桌</p>    |
-| playerMin            | <mark style="color:blue;">number</mark> | 游戏名称                                                       |
-| playerMax            | <mark style="color:blue;">number</mark> | 投注详细信息。阵列值为物件，下表为物件参数说明。                                   |
-| bankerMin            | <mark style="color:blue;">number</mark> | 总投注额。                                                      |
-| bankerMax            | <mark style="color:blue;">number</mark> | 牌局号码。                                                      |
-| tieMin               | <mark style="color:blue;">number</mark> | 总派彩金额。                                                     |
-| tieMax               | <mark style="color:blue;">number</mark> | 每个投注项目的派彩金额。                                               |
-| playerPairMin        | <mark style="color:blue;">number</mark> | 中奖奖项。                                                      |
-| playerPairMax        | <mark style="color:blue;">number</mark> | <p>赔率。 </p><p>Noted:</p><p>1.仅派彩成功有此参数</p><p>2.赔率不含投注额</p> |
-| bankerPairMin        | <mark style="color:blue;">number</mark> | 闲的开牌结果。                                                    |
-| bankerPairMax        | <mark style="color:blue;">number</mark> | 闲家点数。                                                      |
-| bankerLucky6Min      | <mark style="color:blue;">number</mark> | 庄的开牌结果。                                                    |
-| bankerLucky6Max      | <mark style="color:blue;">number</mark> | 庄家点数。                                                      |
-| bankerDragonBonusMin | <mark style="color:blue;">number</mark> | 纯派彩总额。                                                     |
-| bankerDragonBonusMax | <mark style="color:blue;">number</mark> | 下注时间。 以秒为单位。格式为Unix Time。                                  |
-| playerDragonBonusMin | <mark style="color:blue;">number</mark> | 派彩时间。 以秒为单位。格式为Unix Time。                                  |
-| playerDragonBonusMax | <mark style="color:blue;">number</mark> | 投注记录ID。                                                    |
-| bigMin               | <mark style="color:blue;">number</mark> | 有效投注。                                                      |
-| bigMax               | <mark style="color:blue;">number</mark> | 返水。                                                        |
-| smallMin             | <mark style="color:blue;">number</mark> | 盈余。                                                        |
-| smallMax             | <mark style="color:blue;">number</mark> | 用户名。                                                       |
-| bankerOddMin         | <mark style="color:blue;">number</mark> | 用户ID。                                                      |
-| bankerOddMax         | <mark style="color:blue;">number</mark> | 是否為免佣金百家乐。                                                 |
-| bankerEvenMin        | <mark style="color:blue;">number</mark> | 游戏平台。                                                      |
-| bankerEvenMax        | <mark style="color:blue;">number</mark> |                                                            |
-| playerOddMin         | <mark style="color:blue;">number</mark> |                                                            |
-| playerOddMax         | <mark style="color:blue;">number</mark> |                                                            |
-| playerEvenMin        | <mark style="color:blue;">number</mark> |                                                            |
-| playerEvenMax        | <mark style="color:blue;">number</mark> |                                                            |
-| perfectPairMin       | <mark style="color:blue;">number</mark> |                                                            |
-| perfectPairMax       | <mark style="color:blue;">number</mark> |                                                            |
-| anyPairMin           | <mark style="color:blue;">number</mark> |                                                            |
-| anyPairMax           | <mark style="color:blue;">number</mark> |                                                            |
-| bankerNaturalMin     | <mark style="color:blue;">number</mark> |                                                            |
-| bankerNaturalMax     | <mark style="color:blue;">number</mark> |                                                            |
-| playerNaturalMin     | <mark style="color:blue;">number</mark> |                                                            |
-| playerNaturalMax     | <mark style="color:blue;">number</mark> |                                                            |
-| super6Min            | <mark style="color:blue;">number</mark> |                                                            |
-| super6Max            | <mark style="color:blue;">number</mark> |                                                            |
+| 参数                   | 格式                                      | 描述                                                      |
+| -------------------- | --------------------------------------- | ------------------------------------------------------- |
+| gameType             | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>1: 百家乐 - VIP 桌 <br>2: 百家乐 - Normal 桌</p> |
+| playerMin            | <mark style="color:blue;">number</mark> | 闲 最低下注限额。                                               |
+| playerMax            | <mark style="color:blue;">number</mark> | 闲 最高下注限额。                                               |
+| bankerMin            | <mark style="color:blue;">number</mark> | 庄 最低下注限额。                                               |
+| bankerMax            | <mark style="color:blue;">number</mark> | 庄 最高下注限额。                                               |
+| tieMin               | <mark style="color:blue;">number</mark> | 和 最低下注限额。                                               |
+| tieMax               | <mark style="color:blue;">number</mark> | 和 最高下注限额。                                               |
+| playerPairMin        | <mark style="color:blue;">number</mark> | 闲对 最低下注限额。                                              |
+| playerPairMax        | <mark style="color:blue;">number</mark> | 闲对 最高下注限额。                                              |
+| bankerPairMin        | <mark style="color:blue;">number</mark> | 庄对 最低下注限额。                                              |
+| bankerPairMax        | <mark style="color:blue;">number</mark> | 庄对 最高下注限额。                                              |
+| bankerLucky6Min      | <mark style="color:blue;">number</mark> | 庄幸运六 最低下注限额。                                            |
+| bankerLucky6Max      | <mark style="color:blue;">number</mark> | 庄幸运六 最高下注限额。                                            |
+| bankerDragonBonusMin | <mark style="color:blue;">number</mark> | 庄龙宝 最低下注限额。                                             |
+| bankerDragonBonusMax | <mark style="color:blue;">number</mark> | 庄龙宝 最高下注限额。                                             |
+| playerDragonBonusMin | <mark style="color:blue;">number</mark> | 闲龙宝 最低下注限额。                                             |
+| playerDragonBonusMax | <mark style="color:blue;">number</mark> | 闲龙宝 最高下注限额。                                             |
+| bigMin               | <mark style="color:blue;">number</mark> | 大 最低下注限额                                                |
+| bigMax               | <mark style="color:blue;">number</mark> | 大 最高下注限额。                                               |
+| smallMin             | <mark style="color:blue;">number</mark> | 小 最低下注限额。                                               |
+| smallMax             | <mark style="color:blue;">number</mark> | 小 最高下注限制。                                               |
+| bankerOddMin         | <mark style="color:blue;">number</mark> | 庄单 最低下注限额。                                              |
+| bankerOddMax         | <mark style="color:blue;">number</mark> | 庄单 最高下注限额。                                              |
+| bankerEvenMin        | <mark style="color:blue;">number</mark> | 庄双 最低下注限额。                                              |
+| bankerEvenMax        | <mark style="color:blue;">number</mark> | 庄双 最高下注限额。                                              |
+| playerOddMin         | <mark style="color:blue;">number</mark> | 闲单 最低下注限额。                                              |
+| playerOddMax         | <mark style="color:blue;">number</mark> | 闲单 最高下注限额。                                              |
+| playerEvenMin        | <mark style="color:blue;">number</mark> | 闲双 最低下注限额。                                              |
+| playerEvenMax        | <mark style="color:blue;">number</mark> | 闲双 最高下注限额。                                              |
+| perfectPairMin       | <mark style="color:blue;">number</mark> | 暂时不开放使用。                                                |
+| perfectPairMax       | <mark style="color:blue;">number</mark> | 暂时不开放使用。                                                |
+| anyPairMin           | <mark style="color:blue;">number</mark> | 暂时不开放使用。                                                |
+| anyPairMax           | <mark style="color:blue;">number</mark> | 暂时不开放使用。                                                |
+| bankerNaturalMin     | <mark style="color:blue;">number</mark> | 暂时不开放使用。                                                |
+| bankerNaturalMax     | <mark style="color:blue;">number</mark> | 暂时不开放使用。                                                |
+| playerNaturalMin     | <mark style="color:blue;">number</mark> | 暂时不开放使用。                                                |
+| playerNaturalMax     | <mark style="color:blue;">number</mark> | 暂时不开放使用。                                                |
+| super6Min            | <mark style="color:blue;">number</mark> | 暂时不开放使用。                                                |
+| super6Max            | <mark style="color:blue;">number</mark> | 暂时不开放使用。                                                |
 {% endtab %}
 
 {% tab title="龙虎" %}
-| 参数             | 格式                                      | 描述                                                         |
-| -------------- | --------------------------------------- | ---------------------------------------------------------- |
-| gameType       | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>3: 龙虎</p>                                   |
-| dragonMin      | <mark style="color:blue;">number</mark> | 游戏名称。                                                      |
-| dragonMax      | <mark style="color:blue;">number</mark> | 投注详细信息。阵列值为物件，下表为物件参数说明。                                   |
-| tigerMin       | <mark style="color:blue;">number</mark> | 总投注额。                                                      |
-| tigerMax       | <mark style="color:blue;">number</mark> | 牌局号码。                                                      |
-| tieMin         | <mark style="color:blue;">number</mark> | 总派彩金额。                                                     |
-| tieMax         | <mark style="color:blue;">number</mark> | 每个投注项目的派彩金额。                                               |
-| dragonOddMin   | <mark style="color:blue;">number</mark> | 中奖奖项。                                                      |
-| dragonOddMax   | <mark style="color:blue;">number</mark> | <p>赔率。 </p><p>Noted:</p><p>1.仅派彩成功有此参数</p><p>2.赔率不含投注额</p> |
-| dragonEvenMin  | <mark style="color:blue;">number</mark> | 只有龙虎。 龙的开牌结果。                                              |
-| dragonEvenMax  | <mark style="color:blue;">number</mark> | 只有龙虎。 虎的开牌结果。                                              |
-| tigerOddMin    | <mark style="color:blue;">number</mark> | 纯派彩总额。                                                     |
-| tigerOddMax    | <mark style="color:blue;">number</mark> | 下注时间。 以秒为单位。格式为Unix Time。                                  |
-| tigerEvenMin   | <mark style="color:blue;">number</mark> | 派彩时间。 以秒为单位。格式为Unix Time。                                  |
-| tigerEvenMax   | <mark style="color:blue;">number</mark> | 投注记录ID。                                                    |
-| dragonBlackMin | <mark style="color:blue;">number</mark> | 有效投注。                                                      |
-| dragonBlackMax | <mark style="color:blue;">number</mark> | 返水。                                                        |
-| dragonRedMin   | <mark style="color:blue;">number</mark> | 盈余。                                                        |
-| dragonRedMax   | <mark style="color:blue;">number</mark> | 用户名。                                                       |
-| tigerBlackMin  | <mark style="color:blue;">number</mark> | 用户ID。                                                      |
-| tigerBlackMax  | <mark style="color:blue;">number</mark> | 游戏平台。                                                      |
-| tigerRedMin    | <mark style="color:blue;">number</mark> |                                                            |
-| tigerRedMax    | <mark style="color:blue;">number</mark> |                                                            |
+| 参数             | 格式                                      | 描述                       |
+| -------------- | --------------------------------------- | ------------------------ |
+| gameType       | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>3: 龙虎</p> |
+| dragonMin      | <mark style="color:blue;">number</mark> | 龙 最低下注限额。                |
+| dragonMax      | <mark style="color:blue;">number</mark> | 龙 最高下注限额。                |
+| tigerMin       | <mark style="color:blue;">number</mark> | 虎 最低下注限额。                |
+| tigerMax       | <mark style="color:blue;">number</mark> | 虎 最高下注限额。                |
+| tieMin         | <mark style="color:blue;">number</mark> | 和 最低下注限额。                |
+| tieMax         | <mark style="color:blue;">number</mark> | 和 最高下注限额。                |
+| dragonOddMin   | <mark style="color:blue;">number</mark> | 龙单 最低下注限额。               |
+| dragonOddMax   | <mark style="color:blue;">number</mark> | 龙单 最高下注限额。               |
+| dragonEvenMin  | <mark style="color:blue;">number</mark> | 龙双 最低下注限额。               |
+| dragonEvenMax  | <mark style="color:blue;">number</mark> | 龙双 最高下注限额。               |
+| tigerOddMin    | <mark style="color:blue;">number</mark> | 虎单 最低下注限额。               |
+| tigerOddMax    | <mark style="color:blue;">number</mark> | 虎单 最高下注限额。               |
+| tigerEvenMin   | <mark style="color:blue;">number</mark> | 虎双 最低下注限额。               |
+| tigerEvenMax   | <mark style="color:blue;">number</mark> | 虎双 最高下注限额。               |
+| dragonBlackMin | <mark style="color:blue;">number</mark> | 龙黑 最低下注限额。               |
+| dragonBlackMax | <mark style="color:blue;">number</mark> | 龙黑 最高下注限额。               |
+| dragonRedMin   | <mark style="color:blue;">number</mark> | 龙红 最低下注限额。               |
+| dragonRedMax   | <mark style="color:blue;">number</mark> | 龙红 最高下注限额。               |
+| tigerBlackMin  | <mark style="color:blue;">number</mark> | 虎黑 最低下注限额。               |
+| tigerBlackMax  | <mark style="color:blue;">number</mark> | 虎黑 最高下注限额。               |
+| tigerRedMin    | <mark style="color:blue;">number</mark> | 虎红 最低下注限额。               |
+| tigerRedMax    | <mark style="color:blue;">number</mark> | 虎红 最高下注限额。               |
 {% endtab %}
 
 {% tab title="骰子游戏" %}
-| 参数                   | 格式                                        | 描述                                                                    |
-| -------------------- | ----------------------------------------- | --------------------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">number</mark>   | <p>游戏类型。</p><p>3: 骰子游戏</p>                                            |
-| gameName             | <mark style="color:blue;">string</mark>   | 游戏名称。                                                                 |
-| betMap               | <mark style="color:orange;">array</mark>  | 投注详细信息。阵列值为物件，下表为物件参数说明。                                              |
-| bet                  | <mark style="color:blue;">number</mark>   | 总投注额。                                                                 |
-| roundNo              | <mark style="color:blue;">string</mark>   | 牌局号码。                                                                 |
-| payout               | <mark style="color:blue;">number</mark>   | 总派彩金额。                                                                |
-| payoutDetail         | <mark style="color:purple;">object</mark> | <p>每个投注项目的派彩金额。 </p><p>骰宝的155.156后面会带开出的骰子点数，例如"155:1,1,6": 100. </p> |
-| judgeResult          | <mark style="color:orange;">array</mark>  | 中奖奖项。                                                                 |
-| oddsMap              | <mark style="color:orange;">array</mark>  | <p>赔率。 </p><p>Noted:</p><p>1.仅派彩成功有此参数</p><p>2.赔率不含投注额</p>            |
-| allDices             | <mark style="color:orange;">array</mark>  | 骰子点数。                                                                 |
-| payoutWithoutholding | <mark style="color:blue;">number</mark>   | 纯派彩总额。                                                                |
-| createTime           | <mark style="color:blue;">number</mark>   | 下注时间。 以秒为单位。格式为Unix Time。                                             |
-| payoutTime           | <mark style="color:blue;">number</mark>   | 派彩时间。 以秒为单位。格式为Unix Time。                                             |
-| betHistoryId         | <mark style="color:blue;">string</mark>   | 投注记录ID。                                                               |
-| validBet             | <mark style="color:blue;">number</mark>   | 有效投注。                                                                 |
-| rebateAmount         | <mark style="color:blue;">number</mark>   | 返水。                                                                   |
-| balance              | <mark style="color:blue;">number</mark>   | 盈余。                                                                   |
-| username             | <mark style="color:blue;">string</mark>   | 用户名。                                                                  |
-| userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                                 |
-| platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                                 |
-| maxPayout            | <mark style="color:blue;">number</mark>   | 最高赔付金额。                                                               |
+| 参数             | 格式                                      | 描述                         |
+| -------------- | --------------------------------------- | -------------------------- |
+| gameType       | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>4: 骰子游戏</p> |
+| oddMin         | <mark style="color:blue;">number</mark> | 单 最低下注限额。                  |
+| oddMax         | <mark style="color:blue;">number</mark> | 单 最高下注限额。                  |
+| evenMin        | <mark style="color:blue;">number</mark> | 双 最低下注限额。                  |
+| evenMax        | <mark style="color:blue;">number</mark> | 双 最高下注限额。                  |
+| bigMin         | <mark style="color:blue;">number</mark> | 大 最低下注限额。                  |
+| bigMax         | <mark style="color:blue;">number</mark> | 大 最高下注限额。                  |
+| smallMin       | <mark style="color:blue;">number</mark> | 小 最低下注限额。                  |
+| smallMax       | <mark style="color:blue;">number</mark> | 小 最高下注限额。                  |
+| pairMin        | <mark style="color:blue;">number</mark> | 对子1-6 最低下注限额。              |
+| pairMax        | <mark style="color:blue;">number</mark> | 对子1-6 最高下注限额。              |
+| tripMin        | <mark style="color:blue;">number</mark> | 围骰1-6 最低下注限额。              |
+| tripMax        | <mark style="color:blue;">number</mark> | 围骰1-6 最高下注限额。              |
+| allTripMin     | <mark style="color:blue;">number</mark> | 全围 最低下注限额。                 |
+| allTripMax     | <mark style="color:blue;">number</mark> | 全围 最高下注限额。                 |
+| fourMin        | <mark style="color:blue;">number</mark> | 4点 最低下注限额。                 |
+| fourMax        | <mark style="color:blue;">number</mark> | 4点 最高下注限额。                 |
+| fiveMin        | <mark style="color:blue;">number</mark> | 5点 最低下注限额。                 |
+| fiveMax        | <mark style="color:blue;">number</mark> | 5点 最高下注限额。                 |
+| sixMin         | <mark style="color:blue;">number</mark> | 6点 最低下注限额。                 |
+| sixMax         | <mark style="color:blue;">number</mark> | 6点 最高下注限额。                 |
+| sevenMin       | <mark style="color:blue;">number</mark> | 7点 最低下注限额。                 |
+| sevenMax       | <mark style="color:blue;">number</mark> | 7点 最高下注限额。                 |
+| eightMin       | <mark style="color:blue;">number</mark> | 8点 最低下注限额。                 |
+| eightMax       | <mark style="color:blue;">number</mark> | 8点 最高下注限额。                 |
+| nineMin        | <mark style="color:blue;">number</mark> | 9点 最低下注限额。                 |
+| nineMax        | <mark style="color:blue;">number</mark> | 9点 最高下注限额。                 |
+| tenMin         | <mark style="color:blue;">number</mark> | 10点 最低下注限额。                |
+| tenMax         | <mark style="color:blue;">number</mark> | 10点 最高下注限额。                |
+| elevenMin      | <mark style="color:blue;">number</mark> | 11点 最低下注限额。                |
+| elevenMax      | <mark style="color:blue;">number</mark> | 11点 最高下注限额。                |
+| twelveMin      | <mark style="color:blue;">number</mark> | 12点 最低下注限额。                |
+| twelveMax      | <mark style="color:blue;">number</mark> | 12点 最高下注限额。                |
+| thirteenMin    | <mark style="color:blue;">number</mark> | 13点 最低下注限额。                |
+| thirteenMax    | <mark style="color:blue;">number</mark> | 13点 最高下注限额。                |
+| fourteenMin    | <mark style="color:blue;">number</mark> | 14点 最低下注限额。                |
+| fourteenMax    | <mark style="color:blue;">number</mark> | 14点 最高下注限额。                |
+| fifteenMin     | <mark style="color:blue;">number</mark> | 15点 最低下注限额。                |
+| fifteenMax     | <mark style="color:blue;">number</mark> | 15点 最高下注限额。                |
+| sixteenMin     | <mark style="color:blue;">number</mark> | 16点 最低下注限额。                |
+| sixteenMax     | <mark style="color:blue;">number</mark> | 16点 最高下注限额。                |
+| seventeenMin   | <mark style="color:blue;">number</mark> | 17点 最低下注限额。                |
+| seventeenMax   | <mark style="color:blue;">number</mark> | 17点 最高下注限额。                |
+| singleDiceMin  | <mark style="color:blue;">number</mark> | 单点数1-6 最低下注限额。             |
+| singleDiceMax  | <mark style="color:blue;">number</mark> | 单点数1-6 最高下注限额。             |
+| combinationMin | <mark style="color:blue;">number</mark> | 组合 最低下注限额。                 |
+| combinationMax | <mark style="color:blue;">number</mark> | 组合 最高下注限额。                 |
+| moreLeftMin    | <mark style="color:blue;">number</mark> | 二同号 最低下注限额。                |
+| moreLeftMax    | <mark style="color:blue;">number</mark> | 二同号 最高下注限额。                |
+| moreRightMin   | <mark style="color:blue;">number</mark> | 三不同 最低下注限额。                |
+| moreRightMax   | <mark style="color:blue;">number</mark> | 三不同 最高下注限额。                |
 {% endtab %}
 
 {% tab title="轮盘" %}
-| 参数                   | 格式                                        | 描述                                                                                                             |
-| -------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">number</mark>   | <p>游戏类型。</p><p>4: 轮盘</p>                                                                                       |
-| gameName             | <mark style="color:blue;">string</mark>   | 游戏名称。                                                                                                          |
-| betMap               | <mark style="color:orange;">array</mark>  | 投注详细信息。                                                                                                        |
-| bet                  | <mark style="color:blue;">number</mark>   | 总投注额。                                                                                                          |
-| roundNo              | <mark style="color:blue;">string</mark>   | 牌局号码。                                                                                                          |
-| payout               | <mark style="color:blue;">number</mark>   | 总派彩金额。                                                                                                         |
-| payoutDetail         | <mark style="color:purple;">object</mark> | <p>每个投注项目的派彩金额。 </p><p>轮盘名称后面会携带该局的点数或betTypeInterval的參數，例如"200:17": 3600, "207:1": 300, "201:14,17": 1800</p> |
-| judgeResult          | <mark style="color:orange;">array</mark>  | 中奖奖项。                                                                                                          |
-| oddsMap              | <mark style="color:orange;">array</mark>  | <p>赔率。 </p><p>Noted:</p><p>1.仅派彩成功有此参数</p><p>2.赔率不含投注额</p>                                                     |
-| number               | <mark style="color:blue;">number</mark>   | 结果号码。                                                                                                          |
-| payoutWithoutholding | <mark style="color:blue;">number</mark>   | 纯派彩总额。                                                                                                         |
-| createTime           | <mark style="color:blue;">number</mark>   | 下注时间。 以秒为单位。格式为Unix Time。                                                                                      |
-| payoutTime           | <mark style="color:blue;">number</mark>   | 派彩时间。 以秒为单位。格式为Unix Time。                                                                                      |
-| betHistoryId         | <mark style="color:blue;">string</mark>   | 投注记录ID。                                                                                                        |
-| validBet             | <mark style="color:blue;">number</mark>   | 有效投注。                                                                                                          |
-| rebateAmount         | <mark style="color:blue;">number</mark>   | 返水。                                                                                                            |
-| balance              | <mark style="color:blue;">number</mark>   | 盈余。                                                                                                            |
-| username             | <mark style="color:blue;">string</mark>   | 用户名。                                                                                                           |
-| userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                                                                          |
-| platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                                                                          |
+| 参数          | 格式                                      | 描述                                   |
+| ----------- | --------------------------------------- | ------------------------------------ |
+| gameType    | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>5: 轮盘<br>10: 财富轮盘</p> |
+| oddMin      | <mark style="color:blue;">number</mark> | 单 最低下注限额。                            |
+| oddMax      | <mark style="color:blue;">number</mark> | 单 最高下注限额。                            |
+| evenMin     | <mark style="color:blue;">number</mark> | 双 最低下注限额。                            |
+| evenMax     | <mark style="color:blue;">number</mark> | 双 最高下注限额。                            |
+| bigMin      | <mark style="color:blue;">number</mark> | 大 最低下注限额。                            |
+| bigMax      | <mark style="color:blue;">number</mark> | 大 最高下注限额。                            |
+| smallMin    | <mark style="color:blue;">number</mark> | 小 最低下注限额。                            |
+| smallMax    | <mark style="color:blue;">number</mark> | 小 最高下注限额。                            |
+| redMin      | <mark style="color:blue;">number</mark> | 红 最低下注限额。                            |
+| redMax      | <mark style="color:blue;">number</mark> | 红 最高下注限额。                            |
+| blackMin    | <mark style="color:blue;">number</mark> | 黑 最低下注限额。                            |
+| blackMax    | <mark style="color:blue;">number</mark> | 黑 最高下注限额。                            |
+| dozenMin    | <mark style="color:blue;">number</mark> | 打注 最低下注限额。                           |
+| dozenMax    | <mark style="color:blue;">number</mark> | 打注 最高下注限额。                           |
+| columnMin   | <mark style="color:blue;">number</mark> | 列注 最低下注限额。                           |
+| columnMax   | <mark style="color:blue;">number</mark> | 列注 最高下注限额。                           |
+| lineMin     | <mark style="color:blue;">number</mark> | 线注 最低下注限额。                           |
+| lineMax     | <mark style="color:blue;">number</mark> | 线注 最高下注限额。                           |
+| basketMin   | <mark style="color:blue;">number</mark> | 四个号码 最低下注限额。                         |
+| basketMax   | <mark style="color:blue;">number</mark> | 四个号码 最高下注限额。                         |
+| connerMin   | <mark style="color:blue;">number</mark> | 角注 最低下注限额。                           |
+| connerMax   | <mark style="color:blue;">number</mark> | 角注 最高下注限额。                           |
+| trioMin     | <mark style="color:blue;">number</mark> | 三数 最低下注限额。                           |
+| trioMax     | <mark style="color:blue;">number</mark> | 三数 最高下注限额。                           |
+| streetMin   | <mark style="color:blue;">number</mark> | 街注 最低下注限额。                           |
+| streetMax   | <mark style="color:blue;">number</mark> | 街注 最高下注限额。                           |
+| splitMin    | <mark style="color:blue;">number</mark> | 分注 最低下注限额。                           |
+| splitMax    | <mark style="color:blue;">number</mark> | 分注 最高下注限额。                           |
+| straightMin | <mark style="color:blue;">number</mark> | 直接注 最低下注限额。                          |
+| straightMax | <mark style="color:blue;">number</mark> | 直接注 最高下注限额。                          |
 {% endtab %}
 
-{% tab title="老虎机" %}
-| 参数                   | 格式                                        | 描述                                                           |
-| -------------------- | ----------------------------------------- | ------------------------------------------------------------ |
-| gameType             | <mark style="color:blue;">number</mark>   | <p>游戏类型。</p><p>5: 老虎机</p>                                    |
-| gameName             | <mark style="color:blue;">string</mark>   | 游戏的gameID                                                    |
-| betMap               | <mark style="color:orange;">array</mark>  | 投注详细信息。                                                      |
-| bet                  | <mark style="color:blue;">number</mark>   | 总投注额。                                                        |
-| roundNo              | <mark style="color:blue;">string</mark>   | 牌局号码。                                                        |
-| payout               | <mark style="color:blue;">double</mark>   | 总派彩金额。                                                       |
-| payoutDetail         | <mark style="color:purple;">object</mark> | 每个投注项目的派彩金额。                                                 |
-| oddsMap              | <mark style="color:orange;">array</mark>  | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p> |
-| payoutWithoutholding | <mark style="color:blue;">number</mark>   | 纯派彩总额。                                                       |
-| createTime           | <mark style="color:blue;">number</mark>   | 下注时间。 以秒为单位。格式为Unix Time。                                    |
-| payoutTime           | <mark style="color:blue;">number</mark>   | 派彩时间。 以秒为单位。格式为Unix Time。                                    |
-| betHistoryId         | <mark style="color:blue;">string</mark>   | 投注记录ID。                                                      |
-| validBet             | <mark style="color:blue;">number</mark>   | 有效投注。                                                        |
-| rebateAmount         | <mark style="color:blue;">number</mark>   | 返水。                                                          |
-| balance              | <mark style="color:blue;">number</mark>   | 盈余。                                                          |
-| username             | <mark style="color:blue;">string</mark>   | 用户名。 不可使用http保留字元。                                           |
-| userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                        |
-| providerId           | <mark style="color:blue;">string</mark>   | 游戏供应商ID。仅电子类游戏有此参数。                                          |
-| platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                        |
+{% tab title="牛牛" %}
+| 参数                  | 格式                                      | 描述                       |
+| ------------------- | --------------------------------------- | ------------------------ |
+| gameType            | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>6: 牛牛</p> |
+| betPlayer1Min       | <mark style="color:blue;">number</mark> | 闲 1 最低下注限额。              |
+| betPlayer1Max       | <mark style="color:blue;">number</mark> | 闲 1 最高下注限额。              |
+| betPlayer1DoubleMin | <mark style="color:blue;">number</mark> | 闲1翻倍 最低下注限额。             |
+| betPlayer1DoubleMax | <mark style="color:blue;">number</mark> | 闲1翻倍 最高下注限额。             |
+| betPlayer2Min       | <mark style="color:blue;">number</mark> | 闲 2 最低下注限额。              |
+| betPlayer2Max       | <mark style="color:blue;">number</mark> | 闲 2 最高下注限额。              |
+| betPlayer2DoubleMin | <mark style="color:blue;">number</mark> | 闲2翻倍 最低下注限额。             |
+| betPlayer2DoubleMax | <mark style="color:blue;">number</mark> | 闲2翻倍 最高下注限额。             |
+| betPlayer3Min       | <mark style="color:blue;">number</mark> | 闲 3 最低下注限额。              |
+| betPlayer3Max       | <mark style="color:blue;">number</mark> | 闲 3 最高下注限额。              |
+| betPlayer3DoubleMin | <mark style="color:blue;">number</mark> | 闲3翻倍 最低下注限额。             |
+| betPlayer3DoubleMax | <mark style="color:blue;">number</mark> | 闲3翻倍 最高下注限额。             |
 {% endtab %}
 
 {% tab title="财富大转盘" %}
-| 参数                   | 格式                                        | 描述                                                         |
-| -------------------- | ----------------------------------------- | ---------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">number</mark>   | <p>游戏类型。</p><p>23: 财富大转盘</p>                               |
-| gameName             | <mark style="color:blue;">string</mark>   | 游戏名称。                                                      |
-| betMap               | <mark style="color:orange;">array</mark>  | 投注详细信息。                                                    |
-| bet                  | <mark style="color:blue;">number</mark>   | 总投注额。                                                      |
-| roundNo              | <mark style="color:blue;">string</mark>   | 牌局号码。                                                      |
-| payout               | <mark style="color:blue;">number</mark>   | 总派彩金额。                                                     |
-| payoutDetail         | <mark style="color:purple;">object</mark> | 每个投注项目的派彩金额。                                               |
-| judgeResult          | <mark style="color:orange;">array</mark>  | 中奖奖项。                                                      |
-| oddsMap              | <mark style="color:orange;">array</mark>  | <p>赔率。 </p><p>Noted:</p><p>1.仅派彩成功有此参数</p><p>2.赔率不含投注额</p> |
-| maxPayout            | <mark style="color:blue;">number</mark>   | 只有财富大转盘。 最高赔付金额。                                           |
-| payoutWithoutholding | <mark style="color:blue;">number</mark>   | 纯派彩总额。                                                     |
-| createTime           | <mark style="color:blue;">number</mark>   | 下注时间。 以秒为单位。格式为Unix Time。                                  |
-| payoutTime           | <mark style="color:blue;">number</mark>   | 派彩时间。 以秒为单位。格式为Unix Time。                                  |
-| betHistoryId         | <mark style="color:blue;">string</mark>   | 投注记录ID。                                                    |
-| validBet             | <mark style="color:blue;">number</mark>   | 有效投注。                                                      |
-| rebateAmount         | <mark style="color:blue;">number</mark>   | 返水。                                                        |
-| balance              | <mark style="color:blue;">number</mark>   | 盈余。                                                        |
-| username             | <mark style="color:blue;">string</mark>   | 用户名。                                                       |
-| userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                      |
-| platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                      |
-| maxPayout            | <mark style="color:blue;">number</mark>   | 最高赔付金额。                                                    |
+| 参数            | 格式                                      | 描述                          |
+| ------------- | --------------------------------------- | --------------------------- |
+| gameType      | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>7: 财富大转盘</p> |
+| number\_1Min  | <mark style="color:blue;">number</mark> | 号码1 最低下注限额。                 |
+| number\_1Max  | <mark style="color:blue;">number</mark> | 号码1 最高下注限额。                 |
+| number\_2Min  | <mark style="color:blue;">number</mark> | 号码2 最低下注限额。                 |
+| number\_2Max  | <mark style="color:blue;">number</mark> | 号码2 最高下注限额。                 |
+| number\_5Min  | <mark style="color:blue;">number</mark> | 号码5 最低下注限额。                 |
+| number\_5Max  | <mark style="color:blue;">number</mark> | 号码5 最高下注限额。                 |
+| number\_10Min | <mark style="color:blue;">number</mark> | 号码10 最低下注限额。                |
+| number\_10Max | <mark style="color:blue;">number</mark> | 号码10 最高下注限额。                |
+| number\_20Min | <mark style="color:blue;">number</mark> | 号码20 最低下注限额。                |
+| number\_20Max | <mark style="color:blue;">number</mark> | 号码20 最高下注限额。                |
+| number\_40Min | <mark style="color:blue;">number</mark> | 号码40 最低下注限额。                |
+| number\_40Max | <mark style="color:blue;">number</mark> | 号码40 最高下注限额。                |
+| multipleMin   | <mark style="color:blue;">number</mark> | 2X/8X 最低下注限额。               |
+| multipleMax   | <mark style="color:blue;">number</mark> | 2X/8X 最高下注限额。               |
+| oddMin        | <mark style="color:blue;">number</mark> | 单 最低下注限额。                   |
+| oddMax        | <mark style="color:blue;">number</mark> | 单 最高下注限额。                   |
+| evenMin       | <mark style="color:blue;">number</mark> | 双 最低下注限额。                   |
+| evenMax       | <mark style="color:blue;">number</mark> | 双 最高下注限额。                   |
 {% endtab %}
+{% endtabs %}
 
+{% tabs %}
 {% tab title="电子21点" %}
-| 参数                   | 格式                                        | 描述                                                              |
-| -------------------- | ----------------------------------------- | --------------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">number</mark>   | <p>游戏类型。</p><p>24: 电子21点</p>                                    |
-| gameName             | <mark style="color:blue;">string</mark>   | 游戏名称。                                                           |
-| betMap               | <mark style="color:orange;">array</mark>  | 投注详细信息。                                                         |
-| bet                  | <mark style="color:blue;">number</mark>   | 总投注额。                                                           |
-| roundNo              | <mark style="color:blue;">string</mark>   | 牌局号码。                                                           |
-| payout               | <mark style="color:blue;">number</mark>   | 总派彩金额。                                                          |
-| payoutDetail         | <mark style="color:purple;">object</mark> | 每个投注项目的派彩金额。                                                    |
-| judgeResult          | <mark style="color:orange;">array</mark>  | 中奖奖项。                                                           |
-| oddsMap              | <mark style="color:orange;">array</mark>  | <p>赔率。 </p><p>Noted: </p><p>1.电子类游戏仅显示空值 </p><p>2.仅派彩成功有此参数</p> |
-| surrender            | <mark style="color:blue;">number</mark>   | 投降派彩(只有21点才會有此参数)                                               |
-| payoutWithoutholding | <mark style="color:blue;">number</mark>   | 纯派彩总额。                                                          |
-| createTime           | <mark style="color:blue;">number</mark>   | 下注时间。 以秒为单位。格式为Unix Time。                                       |
-| payoutTime           | <mark style="color:blue;">number</mark>   | 派彩时间。 以秒为单位。格式为Unix Time。                                       |
-| betHistoryId         | <mark style="color:blue;">string</mark>   | 投注记录ID。                                                         |
-| validBet             | <mark style="color:blue;">number</mark>   | 有效投注。                                                           |
-| rebateAmount         | <mark style="color:blue;">number</mark>   | 返水。                                                             |
-| balance              | <mark style="color:blue;">number</mark>   | 盈余。                                                             |
-| username             | <mark style="color:blue;">string</mark>   | 用户名。                                                            |
-| userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                           |
-| platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                           |
+| 参数           | 格式                                      | 描述                          |
+| ------------ | --------------------------------------- | --------------------------- |
+| gameType     | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>8: 电子21点</p> |
+| baseBet\_Min | <mark style="color:blue;">number</mark> | 投注/底注 最低下注限额。               |
+| baseBet\_Max | <mark style="color:blue;">number</mark> | 投注/底注 最高下注限额。               |
 {% endtab %}
 
 {% tab title="真人21点" %}
-| 参数                   | 格式                                        | 描述                                                                                                              |
-| -------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">number</mark>   | <p>游戏类型。</p><p>25: 真人21点</p>                                                                                    |
-| gameName             | <mark style="color:blue;">string</mark>   | 游戏名称。                                                                                                           |
-| betMap               | <mark style="color:orange;">array</mark>  | 投注详细信息。                                                                                                         |
-| bet                  | <mark style="color:blue;">number</mark>   | 总投注额。                                                                                                           |
-| roundNo              | <mark style="color:blue;">string</mark>   | 牌局号码。                                                                                                           |
-| payout               | <mark style="color:blue;">number</mark>   | 总派彩金额。                                                                                                          |
-| payoutDetail         | <mark style="color:purple;">object</mark> | 每个投注项目的派彩金额。                                                                                                    |
-| judgeResult          | <mark style="color:orange;">array</mark>  | 中奖奖项。                                                                                                           |
-| oddsMap              | <mark style="color:orange;">array</mark>  | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额赔率。 </p><p>Noted:</p><p>1.仅派彩成功有此参数</p><p>2.赔率不含投注额</p> |
-| surrender            | <mark style="color:blue;">number</mark>   | 投降派彩(只有21点才會有此参数)                                                                                               |
-| payoutWithoutholding | <mark style="color:blue;">number</mark>   | 纯派彩总额。                                                                                                          |
-| createTime           | <mark style="color:blue;">number</mark>   | 下注时间。 以秒为单位。格式为Unix Time。                                                                                       |
-| payoutTime           | <mark style="color:blue;">number</mark>   | 派彩时间。 以秒为单位。格式为Unix Time。                                                                                       |
-| betHistoryId         | <mark style="color:blue;">string</mark>   | 投注记录ID。                                                                                                         |
-| validBet             | <mark style="color:blue;">number</mark>   | 有效投注。                                                                                                           |
-| rebateAmount         | <mark style="color:blue;">number</mark>   | 返水。                                                                                                             |
-| balance              | <mark style="color:blue;">number</mark>   | 盈余。                                                                                                             |
-| username             | <mark style="color:blue;">string</mark>   | 用户名。 不可使用http保留字元。                                                                                              |
-| userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                                                                           |
-| platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                                                                           |
+| 参数                | 格式                                      | 描述                          |
+| ----------------- | --------------------------------------- | --------------------------- |
+| gameType          | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>9: 真人21点</p> |
+| baseBet\_Min      | <mark style="color:blue;">number</mark> | 投注/底注 最低下注限额。               |
+| baseBet\_Max      | <mark style="color:blue;">number</mark> | 投注/底注 最高下注限额。               |
+| sideBet\_Min      | <mark style="color:blue;">number</mark> | 旁注 最低下注限额。                  |
+| sideBet\_Max      | <mark style="color:blue;">number</mark> | 旁注 最高下注限额。                  |
+| pairsBet\_Min     | <mark style="color:blue;">number</mark> | 完美对子 最低下注限额。                |
+| pairsBet\_Max     | <mark style="color:blue;">number</mark> | 完美对子 最高下注限额。                |
+| threecardBet\_Min | <mark style="color:blue;">number</mark> | 21+3 最低下注限额。                |
+| threecardBet\_Max | <mark style="color:blue;">number</mark> | 21+3 最高下注限额。                |
 {% endtab %}
 
-{% tab title="迷你游戏" %}
-| 参数                   | 格式                                        | 描述                                                           |
-| -------------------- | ----------------------------------------- | ------------------------------------------------------------ |
-| gameType             | <mark style="color:blue;">number</mark>   | <p>游戏类型。</p><p>27: 迷你游戏</p>                                  |
-| gameName             | <mark style="color:blue;">string</mark>   | 游戏的gameID                                                    |
-| betMap               | <mark style="color:orange;">array</mark>  | 投注详细信息。                                                      |
-| bet                  | <mark style="color:blue;">number</mark>   | 总投注额。                                                        |
-| roundNo              | <mark style="color:blue;">string</mark>   | 牌局号码。                                                        |
-| payout               | <mark style="color:blue;">number</mark>   | 总派彩金额。                                                       |
-| payoutDetail         | <mark style="color:purple;">object</mark> | 每个投注项目的派彩金额。                                                 |
-| oddsMap              | <mark style="color:orange;">array</mark>  | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p> |
-| payoutWithoutholding | <mark style="color:blue;">number</mark>   | 纯派彩总额。                                                       |
-| createTime           | <mark style="color:blue;">number</mark>   | 下注时间。 以秒为单位。格式为Unix Time。                                    |
-| payoutTime           | <mark style="color:blue;">number</mark>   | 派彩时间。 以秒为单位。格式为Unix Time。                                    |
-| betHistoryId         | <mark style="color:blue;">string</mark>   | 投注记录ID。                                                      |
-| validBet             | <mark style="color:blue;">number</mark>   | 有效投注。                                                        |
-| rebateAmount         | <mark style="color:blue;">number</mark>   | 返水。                                                          |
-| balance              | <mark style="color:blue;">number</mark>   | 盈余。                                                          |
-| username             | <mark style="color:blue;">string</mark>   | 用户名。 不可使用http保留字元。                                           |
-| userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                        |
-| providerId           | <mark style="color:blue;">string</mark>   |                                                              |
-| platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                        |
+{% tab title="真人博丁" %}
+| 参数                | 格式                                      | 描述                          |
+| ----------------- | --------------------------------------- | --------------------------- |
+| gameType          | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>11: 真人博丁</p> |
+| betPlayer1Min     | <mark style="color:blue;">number</mark> | 闲1 最低下注限额。                  |
+| betPlayer1Max     | <mark style="color:blue;">number</mark> | 闲1 最高下注限额。                  |
+| betPlayer2Min     | <mark style="color:blue;">number</mark> | 闲2 最低下注限额。                  |
+| betPlayer2Max     | <mark style="color:blue;">number</mark> | 闲2 最高下注限额。                  |
+| betPlayer3Min     | <mark style="color:blue;">number</mark> | 闲3 最低下注限额。                  |
+| betPlayer3Max     | <mark style="color:blue;">number</mark> | 闲3 最高下注限额。                  |
+| betPlayer4Min     | <mark style="color:blue;">number</mark> | 闲4 最低下注限额。                  |
+| betPlayer4Max     | <mark style="color:blue;">number</mark> | 闲4 最高下注限额。                  |
+| betPlayer5Min     | <mark style="color:blue;">number</mark> | 闲5 最低下注限额。                  |
+| betPlayer5Max     | <mark style="color:blue;">number</mark> | 闲5 最高下注限额。                  |
+| betPlayer1PairMin | <mark style="color:blue;">number</mark> | 闲1对 最低下注限额。                 |
+| betPlayer1PairMax | <mark style="color:blue;">number</mark> | 闲1对 最高下注限额。                 |
+| betPlayer2PairMin | <mark style="color:blue;">number</mark> | 闲2对 最低下注限额。                 |
+| betPlayer2PairMax | <mark style="color:blue;">number</mark> | 闲2对 最高下注限额。                 |
+| betPlayer3PairMin | <mark style="color:blue;">number</mark> | 闲3对 最低下注限额。                 |
+| betPlayer3PairMax | <mark style="color:blue;">number</mark> | 闲3对 最高下注限额。                 |
+| betPlayer4PairMin | <mark style="color:blue;">number</mark> | 闲4对 最低下注限额。                 |
+| betPlayer4PairMax | <mark style="color:blue;">number</mark> | 闲4对 最高下注限额。                 |
+| betPlayer5PairMin | <mark style="color:blue;">number</mark> | 闲5对 最低下注限额。                 |
+| betPlayer5PairMax | <mark style="color:blue;">number</mark> | 闲5对 最高下注限额。                 |
 {% endtab %}
 
-{% tab title="电子棋牌" %}
-| 参数                   | 格式                                        | 描述                                                                                                                  |
-| -------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| gameType             | <mark style="color:blue;">number</mark>   | <p>游戏类型。</p><p>30</p>                                                                                               |
-| gameName             | <mark style="color:blue;">string</mark>   | 游戏的gameID                                                                                                           |
-| betMap               | <mark style="color:orange;">array</mark>  | 投注详细信息。                                                                                                             |
-| bet                  | <mark style="color:blue;">number</mark>   | 总投注额。                                                                                                               |
-| roundNo              | <mark style="color:blue;">string</mark>   | 牌局号码。                                                                                                               |
-| payout               | <mark style="color:blue;">number</mark>   | 总派彩金额。                                                                                                              |
-| payoutDetail         | <mark style="color:purple;">object</mark> | 每个投注项目的派彩金额。                                                                                                        |
-| oddsMap              | <mark style="color:orange;">array</mark>  | <p>赔率。 </p><p>Noted: 1.支援所有游戏除了老虎机 2.仅派彩成功有此参数 3.赔率不含投注额</p>                                                        |
-| withHoldingTotal     | <mark style="color:blue;">number</mark>   | 预扣总额。                                                                                                               |
-| withHoldingDetail    | <mark style="color:purple;">object</mark> | 预扣细节。                                                                                                               |
-| payoutWithoutholding | <mark style="color:blue;">number</mark>   | <p>纯派彩总额。</p><p>如果没有预扣金额，则参数值将与派彩相同。 如果有预扣金额，则计算公式为payout-withholdingtotal。</p><p>如果参数值大于0，则玩家获胜；如果参数值等于0是玩家输钱。</p> |
-| createTime           | <mark style="color:blue;">number</mark>   | 下注时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| payoutTime           | <mark style="color:blue;">number</mark>   | 派彩时间。 以秒为单位。格式为Unix Time。                                                                                           |
-| betHistoryId         | <mark style="color:blue;">string</mark>   | 投注记录ID。                                                                                                             |
-| validBet             | <mark style="color:blue;">number</mark>   | 有效投注。                                                                                                               |
-| rebateAmount         | <mark style="color:blue;">number</mark>   | 返水。                                                                                                                 |
-| balance              | <mark style="color:blue;">number</mark>   | 盈余。                                                                                                                 |
-| username             | <mark style="color:blue;">string</mark>   | 用户名。                                                                                                                |
-| userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                                                                               |
-| providerId           | <mark style="color:blue;">string</mark>   | 游戏供应商ID                                                                                                             |
-| platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                                                                               |
+{% tab title="Hi-Lo" %}
+| 参数                     | 格式                                      | 描述                           |
+| ---------------------- | --------------------------------------- | ---------------------------- |
+| gameType               | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>12: Hi-Lo</p> |
+| biggerMin              | <mark style="color:blue;">number</mark> | 更大 最低下注限额。                   |
+| biggerMax              | <mark style="color:blue;">number</mark> | 更大 最高下注限额。                   |
+| smallerMin             | <mark style="color:blue;">number</mark> | 更小 最低下注限额。                   |
+| smallerMax             | <mark style="color:blue;">number</mark> | 更小 最高下注限额。                   |
+| sameMin                | <mark style="color:blue;">number</mark> | 同点 最低下注限额。                   |
+| sameMax                | <mark style="color:blue;">number</mark> | 同点 最高下注限额。                   |
+| sum\_3\_4\_5\_6Min     | <mark style="color:blue;">number</mark> | 3、4、5、6 最低下注限额。              |
+| sum\_3\_4\_5\_6Max     | <mark style="color:blue;">number</mark> | 3、4、5、6 最高下注限额。              |
+| sum\_7\_8\_9\_10Min    | <mark style="color:blue;">number</mark> | 7、8、9、10 最低下注限额。             |
+| sum\_7\_8\_9\_10Max    | <mark style="color:blue;">number</mark> | 7、8、9、10 最高下注限额。             |
+| sum\_11\_12\_13\_14Min | <mark style="color:blue;">number</mark> | 11、12、13、14 最低下注限额。          |
+| sum\_11\_12\_13\_14Max | <mark style="color:blue;">number</mark> | 11、12、13、14 最高下注限额。          |
+| sum\_15\_16\_17\_18Min | <mark style="color:blue;">number</mark> | 15、16、17、18 最低下注限额。          |
+| sum\_15\_16\_17\_18Max | <mark style="color:blue;">number</mark> | 15、16、17、18 最高下注限额。          |
 {% endtab %}
 {% endtabs %}
 

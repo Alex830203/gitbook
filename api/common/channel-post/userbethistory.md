@@ -934,6 +934,43 @@ Content-Type: application/json
 {% endcode %}
 {% endtab %}
 
+{% tab title="牛牛" %}
+| 参数                   | 格式                                        | 描述                                                         |
+| -------------------- | ----------------------------------------- | ---------------------------------------------------------- |
+| gameType             | <mark style="color:blue;">number</mark>   | <p>游戏类型。</p><p>1: 百家乐</p>                                  |
+| gameName             | <mark style="color:blue;">string</mark>   | 游戏名称                                                       |
+| betMap               | <mark style="color:orange;">array</mark>  | 投注详细信息。阵列值为物件，下表为物件参数说明。                                   |
+| bet                  | <mark style="color:blue;">number</mark>   | 总投注额。                                                      |
+| roundNo              | <mark style="color:blue;">string</mark>   | 牌局号码。                                                      |
+| payout               | <mark style="color:blue;">number</mark>   | 总派彩金额。                                                     |
+| payoutDetail         | <mark style="color:purple;">object</mark> | 每个投注项目的派彩金额。                                               |
+| judgeResult          | <mark style="color:orange;">array</mark>  | 中奖奖项。                                                      |
+| oddsMap              | <mark style="color:orange;">array</mark>  | <p>赔率。 </p><p>Noted:</p><p>1.仅派彩成功有此参数</p><p>2.赔率不含投注额</p> |
+| playerCards          | <mark style="color:orange;">array</mark>  | 闲的开牌结果。                                                    |
+| playerResult         | <mark style="color:blue;">number</mark>   | 闲家点数。                                                      |
+| bankerCard           | <mark style="color:orange;">array</mark>  | 庄的开牌结果。                                                    |
+| bankerResult         | <mark style="color:blue;">number</mark>   | 庄家点数。                                                      |
+| payoutWithoutholding | <mark style="color:blue;">number</mark>   | 纯派彩总额。                                                     |
+| createTime           | <mark style="color:blue;">number</mark>   | 下注时间。 以秒为单位。格式为Unix Time。                                  |
+| payoutTime           | <mark style="color:blue;">number</mark>   | 派彩时间。 以秒为单位。格式为Unix Time。                                  |
+| betHistoryId         | <mark style="color:blue;">string</mark>   | 投注记录ID。                                                    |
+| validBet             | <mark style="color:blue;">number</mark>   | 有效投注。                                                      |
+| rebateAmount         | <mark style="color:blue;">number</mark>   | 返水。                                                        |
+| balance              | <mark style="color:blue;">number</mark>   | 盈余。                                                        |
+| username             | <mark style="color:blue;">string</mark>   | 用户名。                                                       |
+| userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                      |
+| brokerageRequired    | <mark style="color:blue;">boolean</mark>  | 是否為免佣金百家乐。<mark style="color:red;">其餘為null。</mark>         |
+| platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                      |
+
+{% code title="Response" overflow="wrap" lineNumbers="true" %}
+```json
+// Some codejson
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
 {% tab title="财富大转盘" %}
 | 参数                   | 格式                                        | 描述                                                         |
 | -------------------- | ----------------------------------------- | ---------------------------------------------------------- |
@@ -959,7 +996,7 @@ Content-Type: application/json
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                      |
 | maxPayout            | <mark style="color:blue;">number</mark>   | 最高赔付金额。                                                    |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Response" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -1074,7 +1111,7 @@ Content-Type: application/json
 | userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                           |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                           |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Response" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -1151,7 +1188,7 @@ Content-Type: application/json
 | userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                                                                           |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                                                                           |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Response" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -1243,7 +1280,7 @@ Content-Type: application/json
 | providerId           | <mark style="color:blue;">string</mark>   |                                                              |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                        |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Response" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -1314,7 +1351,7 @@ Content-Type: application/json
 | providerId           | <mark style="color:blue;">string</mark>   | 游戏供应商ID                                                                                                             |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                                                                               |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Response" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
