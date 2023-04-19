@@ -215,16 +215,16 @@ limit
 | 参数                  | 格式                                      | 描述                       |
 | ------------------- | --------------------------------------- | ------------------------ |
 | gameType            | <mark style="color:blue;">number</mark> | <p>游戏类型。</p><p>6: 牛牛</p> |
-| betPlayer1Min       | <mark style="color:blue;">number</mark> | 闲 1 最低下注限额。              |
-| betPlayer1Max       | <mark style="color:blue;">number</mark> | 闲 1 最高下注限额。              |
+| betPlayer1Min       | <mark style="color:blue;">number</mark> | 闲1 最低下注限额。               |
+| betPlayer1Max       | <mark style="color:blue;">number</mark> | 闲1 最高下注限额。               |
 | betPlayer1DoubleMin | <mark style="color:blue;">number</mark> | 闲1翻倍 最低下注限额。             |
 | betPlayer1DoubleMax | <mark style="color:blue;">number</mark> | 闲1翻倍 最高下注限额。             |
-| betPlayer2Min       | <mark style="color:blue;">number</mark> | 闲 2 最低下注限额。              |
-| betPlayer2Max       | <mark style="color:blue;">number</mark> | 闲 2 最高下注限额。              |
+| betPlayer2Min       | <mark style="color:blue;">number</mark> | 闲2 最低下注限额。               |
+| betPlayer2Max       | <mark style="color:blue;">number</mark> | 闲2 最高下注限额。               |
 | betPlayer2DoubleMin | <mark style="color:blue;">number</mark> | 闲2翻倍 最低下注限额。             |
 | betPlayer2DoubleMax | <mark style="color:blue;">number</mark> | 闲2翻倍 最高下注限额。             |
-| betPlayer3Min       | <mark style="color:blue;">number</mark> | 闲 3 最低下注限额。              |
-| betPlayer3Max       | <mark style="color:blue;">number</mark> | 闲 3 最高下注限额。              |
+| betPlayer3Min       | <mark style="color:blue;">number</mark> | 闲3 最低下注限额。               |
+| betPlayer3Max       | <mark style="color:blue;">number</mark> | 闲3 最高下注限额。               |
 | betPlayer3DoubleMin | <mark style="color:blue;">number</mark> | 闲3翻倍 最低下注限额。             |
 | betPlayer3DoubleMax | <mark style="color:blue;">number</mark> | 闲3翻倍 最高下注限额。             |
 {% endtab %}
