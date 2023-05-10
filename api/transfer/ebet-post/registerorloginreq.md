@@ -20,15 +20,14 @@ Content-Type: application/json
 
 {% tabs %}
 {% tab title="普通登录" %}
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
   "cmd": "RegisterOrLoginReq",
   "eventType": 1,
   "channelId": 1,
-  "username": "apitest01",
+  "username": "demo",
   "password": "password",
-  "accessToken": "accessToken",
   "timestamp": 1577808000,
   "ip": "127.0.0.1",
   "signature": "bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ=="
@@ -38,11 +37,38 @@ Content-Type: application/json
 {% endtab %}
 
 {% tab title="Token登录" %}
-
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+{
+    "cmd": "RegisterOrLoginReq",
+    "eventType": 4,
+    "channelId": 1,
+    "username": "demo",
+    "accessToken": "hidden",
+    "password": "hidden",
+    "timestamp": 1585205819,
+    "ip": "127.0.0.1",
+    "signature": "akFplXO1SzDT/ZNWtxXLbKp8WCh87OzcY6d3nURvpwmk8jx4miNorwqft3AfLJ28ye7qlNnitgKnUOxSL6AAKw=="
+}
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Applink登录" %}
-
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+{
+    "cmd": "RegisterOrLoginReq",
+    "eventType": 3,
+    "channelId": 1,
+    "username": "demo",
+    "password": "hidden",
+    "timestamp": 1585188822,
+    "ip": "127.0.0.1",
+    "signature": "b9vqWDAER2GxKcgOc+RDBhrBxY//ngSq/kN03hmSav2Q3+isYcxy9tcMBPtaL08OUHsDpCnuM+Y7OGxZB23BHw=="
+}
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -63,15 +89,13 @@ Content-Type: application/json
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
-  "accessToken": "accessTokenTest",
-  "subChannelId": 0,
-  "username": "apitest01",
-  "status": 200,
-  "nickname": "用户昵称，预设随机生成",
-  "currency": "CNY"
+    "subChannelId": 0,
+    "accessToken": "TestaccessTokenAPILogin04",
+    "status": 200,
+    "username": "demo"
 }
 ```
 {% endcode %}

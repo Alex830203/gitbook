@@ -2,7 +2,7 @@
 description: 此api为查询一段时间内有登入的用户金额。
 ---
 
-# getusermoney
+# getusermoney\*
 
 ## <mark style="color:green;">POST</mark>
 
@@ -25,20 +25,16 @@ Content-Type: application/json
   <mark style="color:purple;">`startTimeStr, endTimeStr, pageNum, pageSize`</mark>
 {% endhint %}
 
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
-  "channelId": 1,
-  "username": "apitest01",
-  "signature": "ZwV0Upcy93v3S/ChPh/K4FtbQ3VfA9bVomRZxBhp7I/nh2P0+qwl+dfax4QZrLwT3TuFIJGv1+nWBb+oTN5bdg==",
-  "subChannelId": 0,
-  "startTimeStr": "2020-01-01 00:00:00",
-  "endTimeStr": "2020-01-02 00:00:00",
-  "pageNum": 1,
-  "pageSize": 10,
-  "minMoney": 10,
-  "currency": "CNY",
-  "walletType": 0
+    "channelId": 1,
+    "username": "",
+    "pageNum": 1,
+    "pageSize": 5000,
+    "startTimeStr": "2022-10-23 00:00:00",
+    "endTimeStr": "2022-10-24 00:00:00",
+    "signature": "no7MQZTyHXxUZ4dbARNzWHxYzeSjAaSqaoYGNaAKNwBuxu/2tItg+gDgBk5c6FHYngCgPfJf8lv1MsCGGT9GxmLIbY2UeS/rsGh+NfOWFw3ntiD2opiz6AUIL557i+CHZq4mjjfLdb8NviKOOFBOJSFJVuKlsmFHv/1Z4JVy9fc="
 }
 ```
 {% endcode %}
@@ -51,35 +47,55 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td>bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ==</td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td></td></tr><tr><td>results</td><td><mark style="color:blue;">array</mark></td><td>记录.阵列值为物件，下表为物件参数说明。</td><td></td></tr></tbody></table>
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>results</td><td><mark style="color:blue;">array</mark></td><td>记录.阵列值为物件，下表为物件参数说明。</td><td></td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td>bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ==</td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td></td></tr></tbody></table>
 
 #### results:
 
 <table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。 不可使用http保留字元。</td><td></td></tr><tr><td>money</td><td><mark style="color:blue;">number</mark></td><td>用户的金額</td><td></td></tr><tr><td>wallet</td><td><mark style="color:blue;">array</mark></td><td>每个钱包的余额。</td><td></td></tr></tbody></table>
 
-#### wallet:
-
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>typeId</td><td><mark style="color:blue;">number</mark></td><td>钱包类型。默认值为0。</td><td></td></tr><tr><td>money</td><td><mark style="color:blue;">number</mark></td><td>该钱包类型余额。</td><td></td></tr></tbody></table>
-
 {% embed url="https://docs.google.com/spreadsheets/d/1ejxETVOI9kcCAP5eNpT6CIi4ftGHwcYWMHJTEPqLILs" %}
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
-  "results": [
-    {
-      "username": "apitest01",
-      "money": 543.21,
-      "wallet": [
+    "results": [
         {
-          "typeId": 0,
-          "money": 543.21
+            "username": "demo",
+            "money": 1234567.89,
+            "wallet": [
+                {
+                    "typeId": 0,
+                    "money": 1234567.89
+                },
+                {
+                    "typeId": 1,
+                    "money": 0
+                },
+                {
+                    "typeId": 2,
+                    "money": 0
+                },
+                {
+                    "typeId": 3,
+                    "money": 0
+                },
+                {
+                    "typeId": 4,
+                    "money": 0
+                },
+                {
+                    "typeId": 5,
+                    "money": 0
+                },
+                {
+                    "typeId": 6,
+                    "money": 0
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "status": 200,
-  "apiVersion": "1.5.90"
+    ],
+    "status": 200,
+    "apiVersion": "1.3.91"
 }
 ```
 {% endcode %}

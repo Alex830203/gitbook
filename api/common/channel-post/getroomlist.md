@@ -20,7 +20,7 @@ Content-Type: application/json
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
   "channelId": 1,
@@ -52,7 +52,7 @@ Content-Type: application/json
 | tableSubType | <mark style="color:blue;">number</mark> | 游戏桌类型。                                       |
 | isMaintain   | <mark style="color:blue;">number</mark> | <p>游戏桌状态。</p><p>0: 开放中 </p><p>其他参数值: 维护中</p> |
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "count": 3,

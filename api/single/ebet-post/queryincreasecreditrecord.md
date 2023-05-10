@@ -2,7 +2,7 @@
 description: 该API用于查询渠道数据库中的increaseCredit的处理状态。
 ---
 
-# queryIncreaseCreditRecord
+# queryIncreaseCreditRecord\*
 
 * 范例链接：[请求&回应范例](https://github.com/ITsupporteBET/demo\_code/tree/master/API%20for%20single%20wallet/queryIncreaseCreditRecord)
 
@@ -50,11 +50,11 @@ Content-Type: application/json
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">seqNo</mark></td><td><mark style="color:blue;">string</mark></td><td>eBET的序列号。 请返回相同的值。</td><td></td></tr><tr><td><mark style="color:red;">event</mark></td><td><mark style="color:blue;">string</mark></td><td>API 名称</td><td></td></tr><tr><td>timestamp</td><td><mark style="color:blue;">number</mark></td><td>时间戳记,以毫秒为单位。</td><td></td></tr><tr><td><mark style="color:red;">username</mark></td><td><mark style="color:blue;">string</mark></td><td>用户名。不可使用http保留字元。</td><td></td></tr><tr><td>creditRecord</td><td><mark style="color:orange;">array</mark></td><td>渠道数据库的纪录，返回空序列意味着没有记录</td><td></td></tr><tr><td><mark style="color:red;">status</mark></td><td><mark style="color:blue;">number</mark></td><td><mark style="color:purple;"><code>200</code></mark>:建议返回的状态码</td><td></td></tr></tbody></table>
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">seqNo</mark></td><td><mark style="color:blue;">string</mark></td><td>eBET的序列号。 请返回相同的值。</td><td></td></tr><tr><td><mark style="color:red;">event</mark></td><td><mark style="color:blue;">string</mark></td><td>API 名称</td><td></td></tr><tr><td>timestamp</td><td><mark style="color:blue;">number</mark></td><td>时间戳记,以毫秒为单位。</td><td></td></tr><tr><td><mark style="color:red;">username</mark></td><td><mark style="color:blue;">string</mark></td><td>用户名。不可使用http保留字元。</td><td></td></tr><tr><td>creditRecord</td><td><mark style="color:orange;">array</mark></td><td>渠道数据库的纪录，返回空序列意味着没有记录</td><td></td></tr><tr><td><mark style="color:red;">status</mark></td><td><mark style="color:blue;">number</mark></td><td><a href="../../ebet-zhuang-tai-ma.md#jian-yi-xiang-ying-de-zhuang-tai-dai-ma">建议返回的状态码</a></td><td></td></tr></tbody></table>
 
 #### creditRecord:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>querySeqNo</td><td><mark style="color:blue;">string</mark></td><td>要查询的序列号，以逗号分隔。</td><td></td></tr><tr><td>type</td><td><mark style="color:blue;">number</mark></td><td>交易事务类型</td><td></td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。不可使用http保留字元。</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号</td><td></td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>该seqNo的处理状态</td><td></td></tr><tr><td>creditTime</td><td><mark style="color:blue;">number</mark></td><td>事务纪录处理成功时间(毫秒)。时间格式为Unix。</td><td></td></tr><tr><td>moneyBefore</td><td><mark style="color:blue;">number</mark></td><td>变动前金额</td><td></td></tr><tr><td>moneyAfter</td><td><mark style="color:blue;">number</mark></td><td>变动金额</td><td></td></tr></tbody></table>
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>querySeqNo</td><td><mark style="color:blue;">string</mark></td><td>要查询的序列号，以逗号分隔。</td><td></td></tr><tr><td>type</td><td><mark style="color:blue;">number</mark></td><td>交易事务类型</td><td></td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。不可使用http保留字元。</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号</td><td></td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>该seqNo的处理状态，<a href="../../ebet-zhuang-tai-ma.md#jian-yi-xiang-ying-de-zhuang-tai-dai-ma">建议返回的状态码</a></td><td></td></tr><tr><td>creditTime</td><td><mark style="color:blue;">number</mark></td><td>事务纪录处理成功时间(毫秒)。时间格式为Unix。</td><td></td></tr><tr><td>moneyBefore</td><td><mark style="color:blue;">number</mark></td><td>变动前金额</td><td></td></tr><tr><td>moneyAfter</td><td><mark style="color:blue;">number</mark></td><td>变动金额</td><td></td></tr></tbody></table>
 
 {% code title="Responses" overflow="wrap" %}
 ```json

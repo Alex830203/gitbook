@@ -20,7 +20,7 @@ Content-Type: application/json
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -56,7 +56,7 @@ luzhuList / luzhuStat
 
 {% tabs %}
 {% tab title="百家乐" %}
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "count": 30,
@@ -256,7 +256,7 @@ luzhuList / luzhuStat
 {% endtab %}
 
 {% tab title="龙虎" %}
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "count": 30,
@@ -486,7 +486,7 @@ luzhuList / luzhuStat
 {% endtab %}
 
 {% tab title="轮盘" %}
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "count": 30,
@@ -715,7 +715,7 @@ luzhuList / luzhuStat
 {% endtab %}
 
 {% tab title="骰子游戏" %}
-{% code title="tableSubType = 0" overflow="wrap" lineNumbers="true" %}
+{% code title="Responses (tableSubType = 0)" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "count": 30,
@@ -1002,7 +1002,7 @@ luzhuList / luzhuStat
 ```
 {% endcode %}
 
-{% code title="tableSubType = 1" overflow="wrap" lineNumbers="true" %}
+{% code title="Responses (tableSubType = 1)" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "count": 30,

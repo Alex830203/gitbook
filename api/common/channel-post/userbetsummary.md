@@ -35,7 +35,7 @@ Content-Type: application/json
 <mark style="color:blue;">预设时间段是当天。</mark>
 {% endhint %}
 
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -70,7 +70,7 @@ Content-Type: application/json
 | status           | <mark style="color:blue;">number</mark> | 回应状态。[状态码表](../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma) |
 | apiVersion       | <mark style="color:blue;">string</mark> | API版本号。                                                                       |
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "count": 112,

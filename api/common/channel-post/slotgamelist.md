@@ -20,7 +20,7 @@ Content-Type: application/json
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -52,7 +52,7 @@ slotGames
 | providerId  | <mark style="color:blue;">string</mark> | 游戏供应商ID |
 | releaseDate | <mark style="color:blue;">string</mark> | 发布日期    |
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "slotGames": [

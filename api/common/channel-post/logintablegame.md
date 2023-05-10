@@ -40,7 +40,7 @@ Content-Type: application/json
 
 {% tabs %}
 {% tab title="Token登录" %}
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -57,7 +57,7 @@ Content-Type: application/json
 {% endtab %}
 
 {% tab title="普通登录" %}
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -87,7 +87,7 @@ Content-Type: application/json
 </code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>apitest01
 </code></pre></td></tr><tr><td>message</td><td><mark style="color:blue;">string</mark></td><td>错误讯息。</td><td>200</td></tr></tbody></table>
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "url": "https://game.live666.me?token=fd265a57615262336fc8965856276fce-88915679&gamecode=rocket&platform=pc&lang=zh_tw&mode=live",

@@ -25,13 +25,12 @@ Content-Type: application/json
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
-  "channelId": 1,
-  "signature": "PooUUWwXW5lDNzAgk9f6CFEhTbKq/J3b5UScNMl3SnBzCLxLDXZ/s2y8nF8UufSXgrHyS3DfJ6CJxAqjKRg53A==",
-  "rechargeReqId": "rechargeReqId123456",
-  "currency": "CNY"
+    "channelId": 1,
+    "signature": "T5ie27CDkWjS2tO/FPFazIS8PHLB3g6cbPTh7IIC/VPjPeOd7KeKD91wPslBMyRix6px27XTz7CJ6k7ky5i/+w==",
+    "rechargeReqId": "testrecharge"
 }
 ```
 {% endcode %}
@@ -44,14 +43,14 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td>bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ==</td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td></td></tr><tr><td>rechargeReqId</td><td><mark style="color:blue;">string</mark></td><td>充值请求ID。</td><td></td></tr></tbody></table>
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>rechargeReqId</td><td><mark style="color:blue;">string</mark></td><td>充值请求ID。</td><td></td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td>bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ==</td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td></td></tr></tbody></table>
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
-  "status": 200,
-  "apiVersion": "1.3.55",
-  "rechargeReqId": "rechargeReqId123456"
+    "rechargeReqId": "testrecharge",
+    "status": 200,
+    "apiVersion": "1.3.91"
 }
 ```
 {% endcode %}

@@ -35,7 +35,7 @@ Content-Type: application/json
 <mark style="color:blue;">搜索期不能超过7天。</mark>
 {% endhint %}
 
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -80,7 +80,7 @@ games
 | totalBalance      | <mark style="color:blue;">number</mark> | 盈余总额，计算公式( 投注 - 派彩 ) |
 | count             | <mark style="color:blue;">number</mark> | 总投注次数                |
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "results": [

@@ -2,7 +2,7 @@
 description: 此api为取得ebet纪录为失败的序列编号。
 ---
 
-# getseqnorecord
+# getseqnorecord\*
 
 ## <mark style="color:green;">POST</mark>
 
@@ -20,7 +20,7 @@ Content-Type: application/json
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
   "channelId": 1,
@@ -52,7 +52,7 @@ Content-Type: application/json
 
 <table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>seqNo</td><td><mark style="color:blue;">string</mark></td><td>记录序列号</td><td></td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。 不可使用http保留字元。</td><td></td></tr><tr><td>startRequestTime</td><td><mark style="color:blue;">string</mark></td><td>请求发送时间</td><td></td></tr><tr><td>endResponseTime</td><td><mark style="color:blue;">string</mark></td><td>响应结束时间</td><td></td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>纪录的状态码</td><td></td></tr></tbody></table>
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
   "status": 200,

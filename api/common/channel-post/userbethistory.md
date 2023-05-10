@@ -88,7 +88,7 @@ Content-Type: application/json
 | brokerageRequired    | <mark style="color:blue;">boolean</mark>  | 是否為免佣金百家乐。<mark style="color:red;">其餘為null。</mark>         |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                      |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -195,7 +195,7 @@ Content-Type: application/json
 | userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                      |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                      |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -290,7 +290,7 @@ Content-Type: application/json
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                                 |
 | maxPayout            | <mark style="color:blue;">number</mark>   | 最高赔付金额。                                                               |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -500,7 +500,7 @@ Content-Type: application/json
 | userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                                                                          |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                                                                          |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -891,7 +891,7 @@ Content-Type: application/json
 | providerId           | <mark style="color:blue;">string</mark>   | 游戏供应商ID。仅电子类游戏有此参数。                                          |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                        |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -962,7 +962,7 @@ Content-Type: application/json
 | brokerageRequired    | <mark style="color:blue;">boolean</mark>  | 是否為免佣金百家乐。<mark style="color:red;">其餘為null。</mark>         |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                      |
 
-{% code title="Response" overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 // Some codejson
 ```
@@ -996,7 +996,7 @@ Content-Type: application/json
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                      |
 | maxPayout            | <mark style="color:blue;">number</mark>   | 最高赔付金额。                                                    |
 
-{% code title="Response" overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -1111,7 +1111,7 @@ Content-Type: application/json
 | userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                           |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                           |
 
-{% code title="Response" overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -1188,7 +1188,7 @@ Content-Type: application/json
 | userId               | <mark style="color:blue;">number</mark>   | 用户ID。                                                                                                           |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                                                                           |
 
-{% code title="Response" overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -1280,7 +1280,7 @@ Content-Type: application/json
 | providerId           | <mark style="color:blue;">string</mark>   |                                                              |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                        |
 
-{% code title="Response" overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [
@@ -1351,7 +1351,7 @@ Content-Type: application/json
 | providerId           | <mark style="color:blue;">string</mark>   | 游戏供应商ID                                                                                                             |
 | platform             | <mark style="color:blue;">number</mark>   | 游戏平台。                                                                                                               |
 
-{% code title="Response" overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "betHistories": [

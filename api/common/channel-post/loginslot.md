@@ -51,7 +51,7 @@ language参数值
 
 {% tabs %}
 {% tab title="Token 登录" %}
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
   "channelId": 1,
@@ -69,7 +69,7 @@ language参数值
 {% endtab %}
 
 {% tab title="普通登录" %}
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
   "channelId": 1,
@@ -99,7 +99,7 @@ Content-Type: application/json
 </code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>apitest01
 </code></pre></td></tr></tbody></table>
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "slotURL": "https://ugc.kblgg.com/NGM4-0001/HTML5/index.html?turbo=true&mode=real&partner=964dc891-31c1-4579-8628-77ee21c35809&session=322dbbf66403a7e4e947f2e6ebfff110-88915679&language=zh-hant&gs=nurgs-RMX&partnerCode=EbetCNY&referer=ugc.kblgg.com&refererRetries=0&device=DESKTOP",

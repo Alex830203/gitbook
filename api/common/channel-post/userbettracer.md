@@ -28,7 +28,7 @@ Content-Type: application/json
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -52,7 +52,7 @@ Content-Type: application/json
 </code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>apitest01
 </code></pre></td></tr></tbody></table>
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "path": "http://www.ebet2018.com/userBetTracer.html?userName=demo&channelId=1&roundCode=BP1-230331092247&lang=en_us",

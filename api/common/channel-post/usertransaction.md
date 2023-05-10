@@ -35,7 +35,7 @@ Content-Type: application/json
 <mark style="color:blue;">由于数据量可能太大，建议带以下参数减少查询时间。</mark>\ <mark style="color:blue;">(startTimeStr, endTimeStr, pageNum, pageSize)</mark>
 {% endhint %}
 
-{% code title="Request" overflow="wrap" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -74,7 +74,7 @@ transactions
 | bonusId            | <mark style="color:blue;">number</mark> | 活动ID。   |
 | bonusName          | <mark style="color:blue;">string</mark> | 活动名称。   |
 
-{% code title="Responses" overflow="wrap" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "count": 3,

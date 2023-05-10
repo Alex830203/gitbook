@@ -70,7 +70,7 @@ limit
 | super6Min            | <mark style="color:blue;">number</mark> | 暂时不开放使用。可以不添加这个参数。                                      |
 | super6Max            | <mark style="color:blue;">number</mark> | 暂时不开放使用。可以不添加这个参数。                                      |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -193,7 +193,7 @@ limit
 | tigerRedMin    | <mark style="color:blue;">number</mark> | 虎红 最低下注限额。               |
 | tigerRedMax    | <mark style="color:blue;">number</mark> | 虎红 最高下注限额。               |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -287,7 +287,7 @@ limit
 | moreRightMin   | <mark style="color:blue;">number</mark> | 三不同 最低下注限额。                                  |
 | moreRightMax   | <mark style="color:blue;">number</mark> | 三不同 最高下注限额。                                  |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -389,7 +389,7 @@ limit
 | straightMin | <mark style="color:blue;">number</mark> | 直接注 最低下注限额。                               |
 | straightMax | <mark style="color:blue;">number</mark> | 直接注 最高下注限额。                               |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -486,7 +486,7 @@ limit
 | betPlayer3DoubleMin | <mark style="color:blue;">number</mark> | 闲3翻倍 最低下注限额。             |
 | betPlayer3DoubleMax | <mark style="color:blue;">number</mark> | 闲3翻倍 最高下注限额。             |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -538,7 +538,7 @@ limit
 | evenMin       | <mark style="color:blue;">number</mark> | 双 最低下注限额。                   |
 | evenMax       | <mark style="color:blue;">number</mark> | 双 最高下注限额。                   |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -582,7 +582,7 @@ limit
 | baseBet\_Min | <mark style="color:blue;">number</mark> | 投注/底注 最低下注限额。               |
 | baseBet\_Max | <mark style="color:blue;">number</mark> | 投注/底注 最高下注限额。               |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -614,7 +614,7 @@ limit
 | threecardBet\_Min | <mark style="color:blue;">number</mark> | 21+3 最低下注限额。                |
 | threecardBet\_Max | <mark style="color:blue;">number</mark> | 21+3 最高下注限额。                |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -664,7 +664,7 @@ limit
 | betPlayer5PairMin | <mark style="color:blue;">number</mark> | 闲5对 最低下注限额。                 |
 | betPlayer5PairMax | <mark style="color:blue;">number</mark> | 闲5对 最高下注限额。                 |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -720,7 +720,7 @@ limit
 | sum\_15\_16\_17\_18Min | <mark style="color:blue;">number</mark> | 15、16、17、18 最低下注限额。          |
 | sum\_15\_16\_17\_18Max | <mark style="color:blue;">number</mark> | 15、16、17、18 最高下注限额。          |
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "channelId": 1,
@@ -765,7 +765,7 @@ Content-Type: application/json
 </code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>0
 </code></pre></td></tr></tbody></table>
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
     "updateGameList": [
