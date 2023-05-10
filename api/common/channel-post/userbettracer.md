@@ -24,7 +24,7 @@ Content-Type: application/json
 | betHistoryId                              | <mark style="color:blue;">string</mark> | <p>投注记录ID。 <br>如果不使用此参数，则必须使用username和roundCode。</p>                      |
 | lang                                      | <mark style="color:blue;">string</mark> | 语言代码。默认英语。                                                                |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
@@ -74,9 +74,9 @@ Content-Type: application/json
 | <mark style="color:green;">display</mark> | 有效投注栏位。加入display=1可以关闭。                    |
 
 {% hint style="warning" %}
-<mark style="color:red;">signature 需自行用GET method添加上去</mark>
+<mark style="color:orange;">signature 需自行用GET method添加上去</mark>
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="success" %}
 <mark style="color:green;">display预设会显示，可自行添加此参数决定是否要显示</mark>
 {% endhint %}

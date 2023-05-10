@@ -21,7 +21,7 @@ Content-Type: application/json
 | <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。    |
 | <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | 签名。 字串拼接：username+timestamp  |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

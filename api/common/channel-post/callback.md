@@ -5,7 +5,7 @@ description: 如果渠道不想通过 eBET 界面登录，则渠道可以使用�
 # callback
 
 {% hint style="warning" %}
-<mark style="color:red;">渠道需提供登录界面链接，由eBET人員设置开启。</mark>
+<mark style="color:orange;">渠道需提供登录界面链接，由eBET人員设置开启。</mark>
 {% endhint %}
 
 ## <mark style="color:green;">POST</mark>
@@ -27,7 +27,7 @@ Content-Type: application/json
 | <mark style="color:red;">signature</mark>   | <mark style="color:blue;">string</mark> | <p>签名。字串拼接:</p><p>username+channelId+accessToken+timestamp</p> |
 | subChannelId                                | <mark style="color:blue;">number</mark> | 子渠道ID                                                          |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

@@ -21,7 +21,7 @@ Content-Type: application/json
 | <mark style="color:red;">username</mark>  | <mark style="color:blue;">string</mark> | 用户名。 不可使用http保留字元。 |
 | subChannelId                              | <mark style="color:blue;">number</mark> | 子渠道ID              |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

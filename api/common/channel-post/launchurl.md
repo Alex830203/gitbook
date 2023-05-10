@@ -22,7 +22,7 @@ Content-Type: application/json
 | <mark style="color:red;">currency</mark>  | <mark style="color:blue;">string</mark> | 货币。                                                          |
 | china                                     | <mark style="color:blue;">string</mark> | <p>判断提供游戏的地区。</p><p>不加此参数则根据货币判断提供游戏的地区。</p><p>1: 中国加速域名</p> |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 
 <mark style="color:red;">人民币渠道请务必添加china参数。</mark>

@@ -27,7 +27,7 @@ Content-Type: application/json
 | endTimeStr                                | <mark style="color:blue;">string</mark>  | 查询时间范围的结束。                                                                |
 | tradeType                                 | <mark style="color:orange;">array</mark> | 交易记录类型。                                                                   |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

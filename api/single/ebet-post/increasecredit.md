@@ -1,5 +1,5 @@
 ---
-description: 该API是用于通知渠道更改玩家金额。
+description: 通知渠道更改玩家金额。
 ---
 
 # ​​increaseCredit\*
@@ -9,10 +9,6 @@ description: 该API是用于通知渠道更改玩家金额。
 * 如果网路发生或是贵方回传系统错误,系统忙碌, 我方会尝试重送<mark style="color:red;">**`3次`**</mark>。
 * 当<mark style="color:red;">**betMoney = 0**</mark>时，视为<mark style="color:red;">**下注失败**</mark>。
 * 范例链接：[请求&回应范例](https://github.com/ITsupporteBET/demo\_code/tree/master/API%20for%20single%20wallet/increaseCredit)
-
-{% hint style="info" %}
-<mark style="color:blue;">发送请求至接收地址是渠道的服务器url + api E.g.</mark> [<mark style="color:blue;">http://127.0.0.1/increaseCredit</mark>](http://127.0.0.1/increaseCredit)
-{% endhint %}
 
 ## <mark style="color:green;">POST</mark>
 
@@ -54,7 +50,7 @@ Content-Type: application/json
 
 <table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">username</mark></td><td><mark style="color:blue;">string</mark></td><td>用户名。不可使用http保留字元。</td><td>RegisterOrLoginReq</td></tr><tr><td><mark style="color:red;">money</mark></td><td><mark style="color:blue;">number</mark></td><td>经过增减后的金额</td><td></td></tr><tr><td><mark style="color:red;">moneyBefore</mark></td><td><mark style="color:blue;">number</mark></td><td>玩家原始的金额</td><td></td></tr><tr><td><mark style="color:red;">status</mark></td><td><mark style="color:blue;">number</mark></td><td><a href="../../ebet-zhuang-tai-ma.md#jian-yi-xiang-ying-de-zhuang-tai-dai-ma">建议返回的状态码</a></td><td></td></tr><tr><td><mark style="color:red;">event</mark></td><td><mark style="color:blue;">string</mark></td><td>API 名称</td><td></td></tr><tr><td><mark style="color:red;">seqNo</mark></td><td><mark style="color:blue;">string</mark></td><td>eBET的序列号。 请返回相同的值。</td><td></td></tr><tr><td>timestamp</td><td><mark style="color:blue;">number</mark></td><td>时间戳记,以毫秒为单位。</td><td></td></tr></tbody></table>
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

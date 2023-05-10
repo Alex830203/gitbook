@@ -1,5 +1,5 @@
 ---
-description: 此api用于确认用户信息。 在RegisterOrLoginReq响应成功后，它将发送请求。 响应失败不会影响玩家登录
+description: 用于确认用户信息。 在RegisterOrLoginReq响应成功后，它将发送请求。
 ---
 
 # UserInfo
@@ -50,3 +50,6 @@ Content-Type: application/json
 ```
 {% endcode %}
 
+{% hint style="info" %}
+<mark style="color:blue;">响应失败不会影响玩家登录</mark>
+{% endhint %}

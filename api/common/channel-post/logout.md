@@ -4,8 +4,8 @@ description: 为让玩家离开ebet游戏。
 
 # logout
 
-{% hint style="info" %}
-<mark style="color:blue;">必须在eBET后台启用相关功能才能使用。</mark>
+{% hint style="warning" %}
+<mark style="color:orange;">必须在eBET后台启用相关功能才能使用。</mark>
 {% endhint %}
 
 ## <mark style="color:green;">POST</mark>
@@ -25,7 +25,7 @@ Content-Type: application/json
 | <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。             |
 | <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | 签名。 字串拼接：username+channelId+timestamp |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

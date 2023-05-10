@@ -1,10 +1,8 @@
-# netCheck
+---
+description: 檢測渠道接收API的server狀態。
+---
 
-{% hint style="info" %}
-* 該API僅用於檢測渠道接收api的server狀態。&#x20;
-* 會将请求直接发送到渠道提供的服务器URL。&#x20;
-* 在網路狀態不穩時，eBET人員會手動請求確認。
-{% endhint %}
+# netCheck
 
 ## <mark style="color:green;">POST</mark>
 
@@ -36,7 +34,7 @@ Content-Type: application/json
 
 <table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">status</mark></td><td><mark style="color:blue;">number</mark></td><td><a href="../../ebet-zhuang-tai-ma.md#jian-yi-xiang-ying-de-zhuang-tai-dai-ma">建议返回的状态码</a></td><td>bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ==</td></tr></tbody></table>
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

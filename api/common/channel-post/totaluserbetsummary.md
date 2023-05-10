@@ -27,7 +27,7 @@ Content-Type: application/json
 | judgeTime                                    | <mark style="color:blue;">number</mark>  | 判断查询时间。默认为0                                         |
 | isMerge                                      | <mark style="color:blue;">boolean</mark> | <p>是否合并用户游戏报表。默认为false <br>false: 否 <br>true: 是</p> |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

@@ -1,14 +1,10 @@
 ---
-description: 此API是eBET对失败投注進行手动退款请求。
+description: 对投注失败進行手动退款请求。
 ---
 
 # refundSingleWallet\*
 
 * 范例链接：[请求&回应范例](https://github.com/ITsupporteBET/demo\_code/tree/master/API%20for%20single%20wallet/refundSingleWallet)
-
-{% hint style="info" %}
-<mark style="color:blue;">发送请求至接收地址是渠道的服务器url + api E.g. http://127.0.0.1/refundSingleWallet</mark>
-{% endhint %}
 
 ## <mark style="color:green;">POST</mark>
 
@@ -58,11 +54,11 @@ Content-Type: application/json
 
 #### Body:
 
-{% hint style="warning" %}
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">status</mark></td><td><mark style="color:blue;">number</mark></td><td><a href="../../ebet-zhuang-tai-ma.md#jian-yi-xiang-ying-de-zhuang-tai-dai-ma">建议返回的状态码</a></td><td></td></tr><tr><td><mark style="color:red;">seqNo</mark></td><td><mark style="color:blue;">string</mark></td><td>eBET的序列号。 请返回相同的值。</td><td></td></tr><tr><td><mark style="color:red;">event</mark></td><td><mark style="color:blue;">string</mark></td><td>API 名称</td><td></td></tr><tr><td><mark style="color:red;">timestamp</mark></td><td><mark style="color:blue;">number</mark></td><td>时间戳记,以毫秒为单位。</td><td></td></tr><tr><td>moneyBefore</td><td><mark style="color:blue;">number</mark></td><td>退款前的总金额</td><td></td></tr><tr><td>moneyAfter</td><td><mark style="color:blue;">number</mark></td><td>退款後的总金额</td><td></td></tr><tr><td>refundMoney</td><td><mark style="color:blue;">number</mark></td><td>需要退款的金额</td><td></td></tr><tr><td>resultList</td><td><mark style="color:orange;">array</mark></td><td>退款处理结果。</td><td></td></tr></tbody></table>
+
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
-
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">status</mark></td><td><mark style="color:blue;">number</mark></td><td><a href="../../ebet-zhuang-tai-ma.md#jian-yi-xiang-ying-de-zhuang-tai-dai-ma">建议返回的状态码</a></td><td></td></tr><tr><td><mark style="color:red;">seqNo</mark></td><td><mark style="color:blue;">string</mark></td><td>eBET的序列号。 请返回相同的值。</td><td></td></tr><tr><td><mark style="color:red;">event</mark></td><td><mark style="color:blue;">string</mark></td><td>API 名称</td><td></td></tr><tr><td><mark style="color:red;">timestamp</mark></td><td><mark style="color:blue;">number</mark></td><td>时间戳记,以毫秒为单位。</td><td></td></tr><tr><td>moneyBefore</td><td><mark style="color:blue;">number</mark></td><td>退款前的总金额</td><td></td></tr><tr><td>moneyAfter</td><td><mark style="color:blue;">number</mark></td><td>退款後的总金额</td><td></td></tr><tr><td>refundMoney</td><td><mark style="color:blue;">number</mark></td><td>需要退款的金额</td><td></td></tr><tr><td>resultList</td><td><mark style="color:orange;">array</mark></td><td>退款处理结果。</td><td></td></tr></tbody></table>
 
 #### resultList:
 

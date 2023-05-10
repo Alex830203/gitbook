@@ -15,7 +15,7 @@
     * [渠道 POST](api/transfer/channel-post/README.md)
       * [recharge](api/transfer/channel-post/recharge.md)
       * [rechargestatus](api/transfer/channel-post/rechargestatus.md)
-      * [getusermoney\*](api/transfer/channel-post/getusermoney.md)
+      * [getusermoney](api/transfer/channel-post/getusermoney.md)
   * [单一钱包](api/single/README.md)
     * [eBET POST](api/single/ebet-post/README.md)
       * [​registerOrLogin\*](api/single/ebet-post/registerorlogin.md)

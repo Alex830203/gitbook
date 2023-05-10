@@ -27,7 +27,7 @@ Content-Type: application/json
 | judgeTime                                 | <mark style="color:blue;">number</mark> | 判断查询时间。默认为0。                                                              |
 | userId                                    | <mark style="color:blue;">number</mark> | 用户ID。                                                                     |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

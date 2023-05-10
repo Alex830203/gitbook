@@ -4,8 +4,8 @@ description: 获取链接以直接登录到老虎机游戏。
 
 # loginslot
 
-{% hint style="info" %}
-<mark style="color:blue;">使用此方法仍会发送验证登录请求。 只有成功验证后，才会提供登录链接。</mark>
+{% hint style="warning" %}
+<mark style="color:orange;">使用此方法仍会发送验证登录请求。 只有成功验证后，才会提供登录链接。</mark>
 {% endhint %}
 
 ## <mark style="color:green;">POST</mark>
@@ -32,7 +32,7 @@ Content-Type: application/json
 | ip                                             | <mark style="color:blue;">string</mark> | 登录IP                                   |
 | language                                       | <mark style="color:blue;">string</mark> | 用户语言                                   |
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

@@ -16,7 +16,7 @@ Content-Type: application/json
 
 <table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">channelId</mark></td><td><mark style="color:blue;">number</mark></td><td>渠道ID。</td><td>RegisterOrLoginReq</td></tr><tr><td><mark style="color:red;">timestamp</mark></td><td><mark style="color:blue;">number</mark></td><td>时间戳记。以毫秒为单位。格式为Unix Time。</td><td>1</td></tr><tr><td><mark style="color:red;">signature</mark></td><td><mark style="color:blue;">string</mark></td><td>签名。 字串拼接：timestamp</td><td>1</td></tr><tr><td><mark style="color:red;">tableCode</mark></td><td><mark style="color:blue;">string</mark></td><td>游戏桌号码。</td><td></td></tr><tr><td><mark style="color:red;">tableType</mark></td><td><mark style="color:blue;">number</mark></td><td>游戏类型。</td><td></td></tr><tr><td><mark style="color:red;">tableSubType</mark></td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型。</td><td></td></tr></tbody></table>
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

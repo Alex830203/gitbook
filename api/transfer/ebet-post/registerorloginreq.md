@@ -1,5 +1,5 @@
 ---
-description: 此api用于验证用户登录。 将请求直接发送到渠道提供的服务器URL。
+description: 用于验证用户登录。 将请求直接发送到渠道提供的服务器URL。
 ---
 
 # RegisterOrLoginReq
@@ -85,7 +85,7 @@ Content-Type: application/json
 </code></pre></td></tr><tr><td><mark style="color:red;">username</mark></td><td><mark style="color:blue;">string</mark></td><td>用户名。</td><td><pre><code>apitest01
 </code></pre></td></tr><tr><td><mark style="color:red;">status</mark></td><td><mark style="color:blue;">number</mark></td><td><a href="../../ebet-zhuang-tai-ma.md#jian-yi-xiang-ying-de-zhuang-tai-dai-ma">建议返回的状态码</a></td><td>200</td></tr><tr><td>nickname</td><td><mark style="color:blue;">string</mark></td><td>用户昵称</td><td>预设随机生成</td></tr><tr><td>currency</td><td><mark style="color:blue;">string</mark></td><td>货币</td><td>CNY</td></tr></tbody></table>
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 

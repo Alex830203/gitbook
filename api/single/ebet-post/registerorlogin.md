@@ -1,13 +1,8 @@
 ---
-description: 此api用于验证用户登录。
+description: 验证用户登录。
 ---
 
 # ​registerOrLogin\*
-
-{% hint style="info" %}
-发送请求至接收地址是渠道的服务器url + api。 \
-E.g. http://127.0.0.1/registerOrLogin
-{% endhint %}
 
 ## <mark style="color:green;">POST</mark>
 
@@ -85,7 +80,7 @@ Content-Type: application/json
 </code></pre></td></tr><tr><td><mark style="color:red;">username</mark></td><td><mark style="color:blue;">string</mark></td><td>用户名。不可使用http保留字元。</td><td><pre><code>apitest01
 </code></pre></td></tr><tr><td><mark style="color:red;">sessionToken</mark></td><td><mark style="color:blue;">string</mark></td><td>由渠道提供或随机生成</td><td></td></tr><tr><td><mark style="color:red;">currency</mark></td><td><mark style="color:blue;">string</mark></td><td>货币event</td><td></td></tr><tr><td><mark style="color:red;">status</mark></td><td><mark style="color:blue;">number</mark></td><td><a href="../../ebet-zhuang-tai-ma.md#jian-yi-xiang-ying-de-zhuang-tai-dai-ma">建议返回的状态码</a></td><td>200</td></tr><tr><td><mark style="color:red;">event</mark></td><td><mark style="color:blue;">string</mark></td><td>API 名称</td><td></td></tr><tr><td><mark style="color:red;">seqNo</mark></td><td><mark style="color:blue;">string</mark></td><td>eBET的序列号。 请返回相同的值。</td><td></td></tr><tr><td>nickname</td><td><mark style="color:blue;">string</mark></td><td>用户昵称</td><td>预设随机生成</td></tr></tbody></table>
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
 {% endhint %}
 
