@@ -40,7 +40,7 @@ Content-Type: application/json
 #### Body:
 
 <table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>username</td><td><mark style="color:blue;">number</mark></td><td>用户名。</td><td><pre><code>apitest01
-</code></pre></td></tr><tr><td>channelId</td><td><mark style="color:blue;">number</mark></td><td>渠道ID。</td><td>200</td></tr><tr><td>limit</td><td><mark style="color:orange;">array</mark></td><td>限额资讯详情。阵列值为物件，下表为物件参数说明。</td><td>预设随机生成</td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>eBET回应状态。</td><td><pre><code>accessTokenTest
+</code></pre></td></tr><tr><td>channelId</td><td><mark style="color:blue;">number</mark></td><td>渠道ID。</td><td>200</td></tr><tr><td>limit</td><td><mark style="color:blue;">array</mark></td><td>限额资讯详情。阵列值为物件，下表为物件参数说明。</td><td>预设随机生成</td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>eBET回应状态。</td><td><pre><code>accessTokenTest
 </code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>0
 </code></pre></td></tr></tbody></table>
 

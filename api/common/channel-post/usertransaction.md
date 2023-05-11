@@ -14,18 +14,18 @@ Content-Type: application/json
 
 #### Body:
 
-| 参数                                        | 格式                                       | 描述                                                                        |
-| ----------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------- |
-| <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark>  | 渠道ID                                                                      |
-| <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark>  | 时间戳记。以毫秒为单位。格式为Unix Time。                                                 |
-| <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark>  | <p>签名。 字串拼接：username+timestamp <br>Note: 如API用户名参数非必要，可以单独使用timestamp</p> |
-| username                                  | <mark style="color:blue;">string</mark>  | 用户名。                                                                      |
-| subChannelId                              | <mark style="color:blue;">number</mark>  | 子渠道ID                                                                     |
-| pageNum                                   | <mark style="color:blue;">number</mark>  | 页码。 默认值为1。                                                                |
-| pageSize                                  | <mark style="color:blue;">number</mark>  | 每页上显示的记录数。 默认值为10。最大为5000。                                                |
-| startTimeStr                              | <mark style="color:blue;">string</mark>  | 查询时间范围的开始。                                                                |
-| endTimeStr                                | <mark style="color:blue;">string</mark>  | 查询时间范围的结束。                                                                |
-| tradeType                                 | <mark style="color:orange;">array</mark> | 交易记录类型。                                                                   |
+| 参数                                        | 格式                                      | 描述                                                                        |
+| ----------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------- |
+| <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID                                                                      |
+| <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。                                                 |
+| <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | <p>签名。 字串拼接：username+timestamp <br>Note: 如API用户名参数非必要，可以单独使用timestamp</p> |
+| username                                  | <mark style="color:blue;">string</mark> | 用户名。                                                                      |
+| subChannelId                              | <mark style="color:blue;">number</mark> | 子渠道ID                                                                     |
+| pageNum                                   | <mark style="color:blue;">number</mark> | 页码。 默认值为1。                                                                |
+| pageSize                                  | <mark style="color:blue;">number</mark> | 每页上显示的记录数。 默认值为10。最大为5000。                                                |
+| startTimeStr                              | <mark style="color:blue;">string</mark> | 查询时间范围的开始。                                                                |
+| endTimeStr                                | <mark style="color:blue;">string</mark> | 查询时间范围的结束。                                                                |
+| tradeType                                 | <mark style="color:blue;">array</mark>  | 交易记录类型。                                                                   |
 
 {% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
@@ -54,7 +54,7 @@ Content-Type: application/json
 #### Body:
 
 <table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>count</td><td><mark style="color:blue;">number</mark></td><td>总数。</td><td></td></tr><tr><td>remainingVisits</td><td><mark style="color:blue;">number</mark></td><td>剩余请求数，每分钟500次。</td><td></td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td><pre><code>0
-</code></pre></td></tr><tr><td>transactions</td><td><mark style="color:orange;">array</mark></td><td>交易记录。</td><td></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>apitest01
+</code></pre></td></tr><tr><td>transactions</td><td><mark style="color:blue;">array</mark></td><td>交易记录。</td><td></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>apitest01
 </code></pre></td></tr></tbody></table>
 
 transactions
