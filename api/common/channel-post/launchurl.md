@@ -19,7 +19,7 @@ Content-Type: application/json
 | <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID                                                         |
 | <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。                                    |
 | <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | 签名。 字串拼接：channelId+timestamp                                 |
-| <mark style="color:red;">currency</mark>  | <mark style="color:blue;">string</mark> | 货币。                                                          |
+| <mark style="color:red;">currency</mark>  | <mark style="color:blue;">string</mark> | 货币。参数值定义请参考下表。                                               |
 | china                                     | <mark style="color:blue;">string</mark> | <p>判断提供游戏的地区。</p><p>不加此参数则根据货币判断提供游戏的地区。</p><p>1: 中国加速域名</p> |
 
 {% hint style="danger" %}

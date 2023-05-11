@@ -7,17 +7,17 @@ description: 从渠道的APP或web跳转至eBET web
 <figure><img src="../.gitbook/assets/token login.png" alt=""><figcaption><p>Token登入的API操作流程</p></figcaption></figure>
 
 {% hint style="info" %}
-游戏连结如何变成Token登入连结？&#x20;
+<mark style="color:blue;">Q：游戏连结如何变成Token登入连结？</mark>&#x20;
 
-在取得的游戏连结后面添加"?"和参数"username" & "accessToken"
+<mark style="color:blue;">A：在取得的游戏连结后面添加"?"和参数"username" & "accessToken"</mark>
 
-url example : http://\<eBET提供的H5 Game连结>?username=testmember\&accessToken=testaccesstoken
+<mark style="color:blue;">url example : http://\<eBET提供的H5 Game连结>?username=testmember\&accessToken=testaccesstoken</mark>
 {% endhint %}
 
 {% hint style="warning" %}
-?：路径与参数分隔符 ； &：参数之间的分隔符&#x20;
+<mark style="color:orange;">?：路径与参数分隔符 ； &：参数之间的分隔符</mark>&#x20;
 
-以"?"(问号)开始第一个参数，同"&"(连接符)来串联多个参数和值。
+<mark style="color:orange;">以"?"(问号)开始第一个参数，同"&"(连接符)来串联多个参数和值。</mark>
 {% endhint %}
 
 ## 可以串连的其他参数

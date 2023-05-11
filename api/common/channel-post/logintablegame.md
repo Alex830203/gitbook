@@ -18,19 +18,19 @@ Content-Type: application/json
 
 #### Body:
 
-| 参数                                             | 格式                                      | 描述                                 |
-| ---------------------------------------------- | --------------------------------------- | ---------------------------------- |
-| <mark style="color:red;">channelId</mark>      | <mark style="color:blue;">number</mark> | 渠道ID                               |
-| <mark style="color:red;">username</mark>       | <mark style="color:blue;">string</mark> | 用户名。 不可使用http保留字元。                 |
-| <mark style="color:red;">timestamp</mark>      | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。          |
-| <mark style="color:red;">signature</mark>      | <mark style="color:blue;">string</mark> | 签名。 字串拼接：username+timestamp        |
-| <mark style="color:red;">gameID</mark>         | <mark style="color:blue;">string</mark> | 电子游戏 ID                            |
-| <mark style="color:red;">providerId</mark>     | <mark style="color:blue;">string</mark> | 电子游戏供应商 ID                         |
-| <mark style="color:red;">loginEventType</mark> | <mark style="color:blue;">number</mark> | 登录方式                               |
-| pwd                                            | <mark style="color:blue;">string</mark> | 密码。当loginEventType = 1时必需          |
-| token                                          | <mark style="color:blue;">string</mark> | accessToken。当loginEventType = 4时必需 |
-| ip                                             | <mark style="color:blue;">string</mark> | 登录IP                               |
-| language                                       | <mark style="color:blue;">string</mark> | 用户语言                               |
+| 参数                                             | 格式                                      | 描述                                  |
+| ---------------------------------------------- | --------------------------------------- | ----------------------------------- |
+| <mark style="color:red;">channelId</mark>      | <mark style="color:blue;">number</mark> | 渠道ID。                               |
+| <mark style="color:red;">username</mark>       | <mark style="color:blue;">string</mark> | 用户名。 不可使用http保留字元。                  |
+| <mark style="color:red;">timestamp</mark>      | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。           |
+| <mark style="color:red;">signature</mark>      | <mark style="color:blue;">string</mark> | 签名。 字串拼接：username+timestamp         |
+| <mark style="color:red;">gameID</mark>         | <mark style="color:blue;">string</mark> | 电子游戏 ID。                            |
+| <mark style="color:red;">providerId</mark>     | <mark style="color:blue;">string</mark> | 电子游戏供应商 ID。                         |
+| <mark style="color:red;">loginEventType</mark> | <mark style="color:blue;">number</mark> | 登录方式。参数值定义请参考下表。                    |
+| pwd                                            | <mark style="color:blue;">string</mark> | 密码。当loginEventType = 1时必需。          |
+| token                                          | <mark style="color:blue;">string</mark> | accessToken。当loginEventType = 4时必需。 |
+| ip                                             | <mark style="color:blue;">string</mark> | 登录IP。                               |
+| language                                       | <mark style="color:blue;">string</mark> | 用户语言。参数值定义请参考下表。                    |
 
 {% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
