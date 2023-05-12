@@ -4,6 +4,12 @@ description: 通知eBET变更用户额度
 
 # recharge
 
+<div data-full-width="false">
+
+<figure><img src="../../../.gitbook/assets/擷取選取區域_419.png" alt="变更额度处理流程（转帐钱包）"><figcaption><p>变更额度处理流程（转帐钱包）</p></figcaption></figure>
+
+</div>
+
 ## <mark style="color:green;">POST</mark>
 
 ### **Request**
@@ -65,5 +71,5 @@ Content-Type: application/json
 {% endcode %}
 
 {% hint style="warning" %}
-<mark style="color:orange;">返回成功是表示已接收到通知，但处理不一定完成。请使用API: rechargeStatus做处理状态的确认</mark>
+<mark style="color:orange;">返回成功是表示已接收到通知，但处理不一定完成。请使用API:</mark> [rechargeStatus](rechargestatus.md)<mark style="color:orange;">做处理状态的确认</mark>
 {% endhint %}

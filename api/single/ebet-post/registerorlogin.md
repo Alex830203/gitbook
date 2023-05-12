@@ -4,6 +4,8 @@ description: 用户验证登入（单钱包）
 
 # ​registerOrLogin
 
+<figure><img src="../../../.gitbook/assets/login single.png" alt="登入的系统处理流程（单钱包）"><figcaption><p>登入的系统处理流程（单钱包）</p></figcaption></figure>
+
 ## <mark style="color:green;">POST</mark>
 
 ### **Request**

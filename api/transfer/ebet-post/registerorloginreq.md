@@ -4,7 +4,7 @@ description: 用户验证登入（转帐钱包）
 
 # RegisterOrLoginReq
 
-<figure><img src="../../../.gitbook/assets/擷取選取區域_417.png" alt=""><figcaption><p>登入的系统处理流程（转帐钱包）</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/login transfer.png" alt="登入的系统处理流程（转帐钱包）"><figcaption><p>登入的系统处理流程（转帐钱包）</p></figcaption></figure>
 
 ## <mark style="color:green;">POST</mark>
 
