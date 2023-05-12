@@ -1,5 +1,5 @@
 ---
-description: 检查eBET是否有收到并处理完成充值请求。
+description: 检查eBET是否有收到并处理完成充值请求
 ---
 
 # rechargestatus

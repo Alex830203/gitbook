@@ -1,5 +1,5 @@
 ---
-description: 查询时间段内的总计报告。
+description: 查询时间段内的总计报告
 ---
 
 # userbetsummary
@@ -19,7 +19,7 @@ Content-Type: application/json
 | <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID                                                                      |
 | <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。                                                 |
 | <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | <p>签名。 字串拼接：username+timestamp <br>Note: 如API用户名参数非必要，可以单独使用timestamp</p> |
-| username                                  | <mark style="color:blue;">string</mark> | 用户名。                                                                      |
+| username                                  | <mark style="color:blue;">string</mark> | 用户名。预设使用小写和数字。不可使用http保留字元。                                               |
 | subChannelId                              | <mark style="color:blue;">number</mark> | 子渠道ID。                                                                    |
 | startTimeStr                              | <mark style="color:blue;">string</mark> | 查询时间范围的开始。                                                                |
 | endTimeStr                                | <mark style="color:blue;">string</mark> | 查询时间范围的结束。                                                                |

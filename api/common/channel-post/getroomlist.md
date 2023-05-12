@@ -1,5 +1,5 @@
 ---
-description: 取得最新真人游戏桌台资讯。
+description: 取得最新真人游戏桌台资讯
 ---
 
 # getroomlist

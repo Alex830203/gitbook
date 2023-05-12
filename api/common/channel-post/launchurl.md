@@ -1,5 +1,5 @@
 ---
-description: 取得最新的 H5 游戏连结。
+description: 取得最新的 H5 游戏连结
 ---
 
 # launchUrl

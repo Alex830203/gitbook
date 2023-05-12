@@ -1,5 +1,5 @@
 ---
-description: 提供用户投注历史的URL。
+description: 提供用户投注历史的URL
 ---
 
 # userBetTracer
@@ -19,7 +19,7 @@ Content-Type: application/json
 | <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID                                                                      |
 | <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。                                                 |
 | <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | <p>签名。 字串拼接：username+timestamp <br>Note: 如API用户名参数非必要，可以单独使用timestamp</p> |
-| username                                  | <mark style="color:blue;">string</mark> | 用户名。                                                                      |
+| username                                  | <mark style="color:blue;">string</mark> | 用户名。预设使用小写和数字。不可使用http保留字元。                                               |
 | roundCode                                 | <mark style="color:blue;">string</mark> | 牌局号码。                                                                     |
 | betHistoryId                              | <mark style="color:blue;">string</mark> | <p>投注记录ID。 <br>如果不使用此参数，则必须使用username和roundCode。</p>                      |
 | lang                                      | <mark style="color:blue;">string</mark> | 语言代码。默认英语。                                                                |
@@ -66,7 +66,7 @@ Content-Type: application/json
 
 | 参数                                        |                                            |
 | ----------------------------------------- | ------------------------------------------ |
-| userName                                  | 用户名。                                       |
+| userName                                  | 用户名。预设使用小写和数字。不可使用http保留字元。                |
 | channelId                                 | 渠道ID                                       |
 | roundCode                                 | 牌局号码。                                      |
 | lang                                      | 语言代码。                                      |

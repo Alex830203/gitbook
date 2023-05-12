@@ -14,12 +14,12 @@ Content-Type: application/json
 
 #### Body:
 
-| 参数                                        | 格式                                      | 描述                 |
-| ----------------------------------------- | --------------------------------------- | ------------------ |
-| <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID               |
-| <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | 签名。 字串拼接：username  |
-| <mark style="color:red;">username</mark>  | <mark style="color:blue;">string</mark> | 用户名。 不可使用http保留字元。 |
-| subChannelId                              | <mark style="color:blue;">number</mark> | 子渠道ID              |
+| 参数                                        | 格式                                      | 描述                          |
+| ----------------------------------------- | --------------------------------------- | --------------------------- |
+| <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID                        |
+| <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | 签名。 字串拼接：username           |
+| <mark style="color:red;">username</mark>  | <mark style="color:blue;">string</mark> | 用户名。预设使用小写和数字。不可使用http保留字元。 |
+| subChannelId                              | <mark style="color:blue;">number</mark> | 子渠道ID                       |
 
 {% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>

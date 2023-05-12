@@ -1,5 +1,5 @@
 ---
-description: 自动对一段时间内的投注失败纪录进行退款通知。
+description: 对一段时间内的投注失败纪录自动进行退款通知。
 ---
 
 # autoBatchRefund
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 #### batchRefundList
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>seqNo</td><td><mark style="color:blue;">string</mark></td><td>退款投注序列号。</td><td>RegisterOrLoginReq</td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。不可使用http保留字元。</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号。</td><td></td></tr><tr><td>refundMoney</td><td><mark style="color:blue;">number</mark></td><td>退款金额。 该值为正。</td><td></td></tr><tr><td>detail</td><td><mark style="color:blue;">array</mark></td><td>明細。</td><td></td></tr></tbody></table>
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>seqNo</td><td><mark style="color:blue;">string</mark></td><td>退款投注序列号。</td><td>RegisterOrLoginReq</td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。预设使用小写和数字。不可使用http保留字元。</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号。</td><td></td></tr><tr><td>refundMoney</td><td><mark style="color:blue;">number</mark></td><td>退款金额。 该值为正。</td><td></td></tr><tr><td>detail</td><td><mark style="color:blue;">array</mark></td><td>明細。</td><td></td></tr></tbody></table>
 
 #### detail
 
@@ -71,7 +71,7 @@ Content-Type: application/json
 
 #### refundResultList
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号。</td><td></td></tr><tr><td>refundTotalMoney</td><td><mark style="color:blue;">number</mark></td><td>成功处理的退款总金额</td><td></td></tr><tr><td>sucRefundSeqNoList</td><td><mark style="color:blue;">array</mark></td><td>成功进行投注退款处理的处理列表。 <br>如果所有处理失败，请返回空数组。</td><td></td></tr></tbody></table>
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。预设使用小写和数字。不可使用http保留字元。</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号。</td><td></td></tr><tr><td>refundTotalMoney</td><td><mark style="color:blue;">number</mark></td><td>成功处理的退款总金额</td><td></td></tr><tr><td>sucRefundSeqNoList</td><td><mark style="color:blue;">array</mark></td><td>成功进行投注退款处理的处理列表。 <br>如果所有处理失败，请返回空数组。</td><td></td></tr></tbody></table>
 
 #### sucRefundSeqNoList
 

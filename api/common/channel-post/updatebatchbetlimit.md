@@ -1,5 +1,5 @@
 ---
-description: 批量变更用户在各游戏类型设置的投注限制清单。
+description: 批量变更用户的各游戏投注限制清单。
 ---
 
 # updateBatchBetlimit

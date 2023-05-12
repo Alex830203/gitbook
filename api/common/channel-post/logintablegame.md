@@ -1,5 +1,5 @@
 ---
-description: 获取链接以直接登录到迷你游戏。
+description: 直接登入电子游戏界面
 ---
 
 # loginTableGame
@@ -21,7 +21,7 @@ Content-Type: application/json
 | 参数                                             | 格式                                      | 描述                                  |
 | ---------------------------------------------- | --------------------------------------- | ----------------------------------- |
 | <mark style="color:red;">channelId</mark>      | <mark style="color:blue;">number</mark> | 渠道ID。                               |
-| <mark style="color:red;">username</mark>       | <mark style="color:blue;">string</mark> | 用户名。 不可使用http保留字元。                  |
+| <mark style="color:red;">username</mark>       | <mark style="color:blue;">string</mark> | 用户名。预设使用小写和数字。不可使用http保留字元。         |
 | <mark style="color:red;">timestamp</mark>      | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。           |
 | <mark style="color:red;">signature</mark>      | <mark style="color:blue;">string</mark> | 签名。 字串拼接：username+timestamp         |
 | <mark style="color:red;">gameID</mark>         | <mark style="color:blue;">string</mark> | 电子游戏 ID。                            |

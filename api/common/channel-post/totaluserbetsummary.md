@@ -1,5 +1,5 @@
 ---
-description: 查询每个玩家在每个游戏中的下注数量，下注金額，有效下注和盈余。
+description: 查询时间段内每个玩家在每个游戏中的总计报告
 ---
 
 # totaluserbetsummary
@@ -63,10 +63,10 @@ Content-Type: application/json
 
 results
 
-|          |                                         |                        |
-| -------- | --------------------------------------- | ---------------------- |
-| userName | <mark style="color:blue;">string</mark> | 用户名。                   |
-| games    | <mark style="color:blue;">array</mark>  | 游戏记录。阵列值为物件，下表为物件参数说明。 |
+|          |                                         |                             |
+| -------- | --------------------------------------- | --------------------------- |
+| userName | <mark style="color:blue;">string</mark> | 用户名。预设使用小写和数字。不可使用http保留字元。 |
+| games    | <mark style="color:blue;">array</mark>  | 游戏记录。阵列值为物件，下表为物件参数说明。      |
 
 games
 

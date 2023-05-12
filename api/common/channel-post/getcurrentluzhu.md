@@ -1,5 +1,5 @@
 ---
-description: 查询当前已经结束的 30 笔牌局结果且转换成路书资讯
+description: 查询当前已经结束的 30 局牌局结果
 ---
 
 # getcurrentluzhu

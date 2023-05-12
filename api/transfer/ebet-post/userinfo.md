@@ -1,5 +1,5 @@
 ---
-description: 用于确认用户信息。 在RegisterOrLoginReq响应成功后，它将发送请求。
+description: 提供用户当前资讯
 ---
 
 # UserInfo
@@ -14,7 +14,7 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>cmd</td><td><mark style="color:blue;">string</mark></td><td>API 名称。</td><td>RegisterOrLoginReq</td></tr><tr><td>money</td><td><mark style="color:blue;">number</mark></td><td>用户当前金额。</td><td></td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。</td><td>apitest01</td></tr><tr><td>channelId</td><td><mark style="color:blue;">number</mark></td><td>渠道 ID。</td><td>1</td></tr><tr><td>subChannelId</td><td><mark style="color:blue;">number</mark></td><td>子渠道 ID。 </td><td></td></tr><tr><td>timestamp</td><td><mark style="color:blue;">number</mark></td><td>当前时间，格式为Unix。</td><td>1577808000</td></tr><tr><td>userId</td><td><mark style="color:blue;">number</mark></td><td>用户 ID。</td><td></td></tr><tr><td>ip</td><td><mark style="color:blue;">string</mark></td><td>用户登录IP。</td><td>127.0.0.1</td></tr><tr><td>signature</td><td><mark style="color:blue;">string</mark></td><td>签名。 字符串拼接: username+timestamp</td><td>bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ==</td></tr></tbody></table>
+<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>cmd</td><td><mark style="color:blue;">string</mark></td><td>API 名称。</td><td>RegisterOrLoginReq</td></tr><tr><td>money</td><td><mark style="color:blue;">number</mark></td><td>用户当前金额。</td><td></td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。预设使用小写和数字。不可使用http保留字元。</td><td>apitest01</td></tr><tr><td>channelId</td><td><mark style="color:blue;">number</mark></td><td>渠道 ID。</td><td>1</td></tr><tr><td>subChannelId</td><td><mark style="color:blue;">number</mark></td><td>子渠道 ID。 </td><td></td></tr><tr><td>timestamp</td><td><mark style="color:blue;">number</mark></td><td>当前时间，格式为Unix。</td><td>1577808000</td></tr><tr><td>userId</td><td><mark style="color:blue;">number</mark></td><td>用户 ID。</td><td></td></tr><tr><td>ip</td><td><mark style="color:blue;">string</mark></td><td>用户登录IP。</td><td>127.0.0.1</td></tr><tr><td>signature</td><td><mark style="color:blue;">string</mark></td><td>签名。 字符串拼接: username+timestamp</td><td>bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ==</td></tr></tbody></table>
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json

@@ -1,5 +1,5 @@
 ---
-description: 檢測渠道接收API的server狀態。
+description: 检测渠道的API server连线状态
 ---
 
 # netCheck

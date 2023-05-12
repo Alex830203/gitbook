@@ -1,5 +1,5 @@
 ---
-description: 查询一段时间内登录用户的当前金额。
+description: 查询时间段内用户的额度变化纪录
 ---
 
 # usertransaction
@@ -19,7 +19,7 @@ Content-Type: application/json
 | <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID                                                                      |
 | <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。                                                 |
 | <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | <p>签名。 字串拼接：username+timestamp <br>Note: 如API用户名参数非必要，可以单独使用timestamp</p> |
-| username                                  | <mark style="color:blue;">string</mark> | 用户名。                                                                      |
+| username                                  | <mark style="color:blue;">string</mark> | 用户名。预设使用小写和数字。不可使用http保留字元。                                               |
 | subChannelId                              | <mark style="color:blue;">number</mark> | 子渠道ID                                                                     |
 | pageNum                                   | <mark style="color:blue;">number</mark> | 页码。 默认值为1。                                                                |
 | pageSize                                  | <mark style="color:blue;">number</mark> | 每页上显示的记录数。 默认值为10。最大为5000。                                                |
@@ -59,20 +59,20 @@ Content-Type: application/json
 
 transactions
 
-| 参数                 | 格式                                      | 描述      |
-| ------------------ | --------------------------------------- | ------- |
-| userId             | <mark style="color:blue;">number</mark> | 用户ID    |
-| username           | <mark style="color:blue;">string</mark> | 用户名。    |
-| tradeType          | <mark style="color:blue;">number</mark> | 事务代码    |
-| roundNo            | <mark style="color:blue;">string</mark> | 牌局号码。   |
-| transBeforeBalance | <mark style="color:blue;">number</mark> | 更改前的金额。 |
-| transBalance       | <mark style="color:blue;">number</mark> | 更改金额。   |
-| transAfterBalance  | <mark style="color:blue;">number</mark> | 更改后的金额。 |
-| transactionId      | <mark style="color:blue;">string</mark> | 交易编号    |
-| time               | <mark style="color:blue;">string</mark> | 交易时间    |
-| subChannelId       | <mark style="color:blue;">number</mark> | 子渠道ID。  |
-| bonusId            | <mark style="color:blue;">number</mark> | 活动ID。   |
-| bonusName          | <mark style="color:blue;">string</mark> | 活动名称。   |
+| 参数                 | 格式                                      | 描述                          |
+| ------------------ | --------------------------------------- | --------------------------- |
+| userId             | <mark style="color:blue;">number</mark> | 用户ID                        |
+| username           | <mark style="color:blue;">string</mark> | 用户名。预设使用小写和数字。不可使用http保留字元。 |
+| tradeType          | <mark style="color:blue;">number</mark> | 事务代码                        |
+| roundNo            | <mark style="color:blue;">string</mark> | 牌局号码。                       |
+| transBeforeBalance | <mark style="color:blue;">number</mark> | 更改前的金额。                     |
+| transBalance       | <mark style="color:blue;">number</mark> | 更改金额。                       |
+| transAfterBalance  | <mark style="color:blue;">number</mark> | 更改后的金额。                     |
+| transactionId      | <mark style="color:blue;">string</mark> | 交易编号                        |
+| time               | <mark style="color:blue;">string</mark> | 交易时间                        |
+| subChannelId       | <mark style="color:blue;">number</mark> | 子渠道ID。                      |
+| bonusId            | <mark style="color:blue;">number</mark> | 活动ID。                       |
+| bonusName          | <mark style="color:blue;">string</mark> | 活动名称。                       |
 
 {% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
