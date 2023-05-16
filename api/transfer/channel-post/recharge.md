@@ -6,7 +6,7 @@ description: 通知eBET变更用户额度
 
 <div data-full-width="false">
 
-<figure><img src="../../../.gitbook/assets/擷取選取區域_419.png" alt="变更额度处理流程（转帐钱包）"><figcaption><p>变更额度处理流程（转帐钱包）</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/recharge double.png" alt="变更额度处理流程（转帐钱包）"><figcaption><p>变更额度处理流程（转帐钱包）</p></figcaption></figure>
 
 </div>
 
