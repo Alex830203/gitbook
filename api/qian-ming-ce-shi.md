@@ -1,3 +1,7 @@
+---
+description: 产生签名的范例代码和测试页
+---
+
 # 签名测试
 
 {% tabs %}
@@ -66,7 +70,7 @@ return signature.verify(Base64.getDecoder().decode(sign));
 {% endcode %}
 {% endtab %}
 
-{% tab title="PHP" %}
+{% tab title="PHP 1.0" %}
 {% code overflow="wrap" lineNumbers="true" %}
 ```php
 //RSA PHP URL：https://github.com/phpseclib/phpseclib/tree/1.0
@@ -109,3 +113,4 @@ return verify.verify(publicKey, signature, 'base64');
 {% endtab %}
 {% endtabs %}
 
+{% embed url="http://ebetapi.oplive.info/swaggernew/alex/ts_index.html" fullWidth="false" %}
