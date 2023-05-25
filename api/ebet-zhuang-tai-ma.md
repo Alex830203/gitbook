@@ -6,65 +6,8 @@ description: 此页提供eBET响应的状态代码及建议响应的状态代码
 
 ## eBET响应的状态代码
 
-|  代码  | 描述                          |
-| :--: | --------------------------- |
-|  -1  | 充值纪录不存                      |
-|   0  | 充值中                         |
-|  200 | 成功                          |
-|  201 | 重复的充值请求ID                   |
-|  202 | 渠道不存在                       |
-|  203 | 充值 ID 不能为空                  |
-|  204 | 充值金额不能为 0                   |
-|  205 | 充值金额太小                      |
-|  206 | seqNo 不存在                   |
-|  207 | 退款金额不一致                     |
-|  208 | 记录不存在                       |
-|  209 | 已经退款的数据                     |
-|  401 | 用户名或密码不正确                   |
-|  410 | 无效的Token                    |
-|  500 | 系统错误                        |
-|  505 | 渠道服务器在维护中                   |
-| 1003 | 余额不足                        |
-| 4003 | 系统繁忙，请稍后再试                  |
-| 4025 | 参数不对                        |
-| 4026 | 签名不对                        |
-| 4027 | IP 不允许                      |
-| 4028 | 试玩玩家不能充值                    |
-| 4029 | 功能无效                        |
-| 4030 | 资料类型错误                      |
-| 4037 | 用户不存在                       |
-| 4038 | 频繁请求                        |
-| 4202 | 接口调用次数不足                    |
-| 5001 | 充值失败                        |
-| 5002 | 余额不足，取款失败(或该帐号已被冻结、禁止取款)    |
-| 5003 | 子渠道不存在                      |
-| 5005 | 钱包尚未开启                      |
-| 5006 | 游戏中无法提领                     |
-| 5009 | 该游戏未开放（目前仅未申请正式老虎机会出现此错误代码） |
-| 5010 | 渠道请求非该渠道申请币种                |
-| 5011 | 这个帐号被冻结，无法进行此操作             |
+<table><thead><tr><th width="234" align="center">代码</th><th>描述</th></tr></thead><tbody><tr><td align="center">-1</td><td>充值纪录不存</td></tr><tr><td align="center">0</td><td>充值中</td></tr><tr><td align="center">200</td><td>成功</td></tr><tr><td align="center">201</td><td>重复的充值请求ID</td></tr><tr><td align="center">202</td><td>渠道不存在</td></tr><tr><td align="center">203</td><td>充值 ID 不能为空</td></tr><tr><td align="center">204</td><td>充值金额不能为 0</td></tr><tr><td align="center">205</td><td>充值金额太小</td></tr><tr><td align="center">206</td><td>seqNo 不存在</td></tr><tr><td align="center">207</td><td>退款金额不一致</td></tr><tr><td align="center">208</td><td>记录不存在</td></tr><tr><td align="center">209</td><td>已经退款的数据</td></tr><tr><td align="center">401</td><td>用户名或密码不正确</td></tr><tr><td align="center">410</td><td>无效的Token</td></tr><tr><td align="center">500</td><td>系统错误</td></tr><tr><td align="center">505</td><td>渠道服务器在维护中</td></tr><tr><td align="center">1003</td><td>余额不足</td></tr><tr><td align="center">4003</td><td>系统繁忙，请稍后再试</td></tr><tr><td align="center">4025</td><td>参数不对</td></tr><tr><td align="center">4026</td><td>签名不对</td></tr><tr><td align="center">4027</td><td>IP 不允许</td></tr><tr><td align="center">4028</td><td>试玩玩家不能充值</td></tr><tr><td align="center">4029</td><td>功能无效</td></tr><tr><td align="center">4030</td><td>资料类型错误</td></tr><tr><td align="center">4037</td><td>用户不存在</td></tr><tr><td align="center">4038</td><td>频繁请求</td></tr><tr><td align="center">4202</td><td>接口调用次数不足</td></tr><tr><td align="center">5001</td><td>充值失败</td></tr><tr><td align="center">5002</td><td>余额不足，取款失败(或该帐号已被冻结、禁止取款)</td></tr><tr><td align="center">5003</td><td>子渠道不存在</td></tr><tr><td align="center">5005</td><td>钱包尚未开启</td></tr><tr><td align="center">5006</td><td>游戏中无法提领</td></tr><tr><td align="center">5009</td><td>该游戏未开放（目前仅未申请正式老虎机会出现此错误代码）</td></tr><tr><td align="center">5010</td><td>渠道请求非该渠道申请币种</td></tr><tr><td align="center">5011</td><td>这个帐号被冻结，无法进行此操作</td></tr></tbody></table>
 
 ## 建议响应的状态代码
 
-|  代码  | 描述         |
-| :--: | ---------- |
-|  200 | 成功         |
-|  202 | 渠道不存在      |
-|  206 | seqNo 不存在  |
-|  207 | 退款金额不一致    |
-|  208 | 记录不存在      |
-|  209 | 已经退款的数据    |
-|  401 | 用户名或密码不正确  |
-|  410 | 无效的Token   |
-|  500 | 系统错误       |
-|  505 | 渠道服务器在维护中  |
-| 1003 | 余额不足       |
-| 4003 | 系统繁忙，请稍后再试 |
-| 4025 | 参数不对       |
-| 4026 | 签名不对       |
-| 4027 | IP 不允许     |
-| 4029 | 功能无效       |
-| 4030 | 资料类型错误     |
-| 4037 | 用户不存在      |
-| 4038 | 频繁请求       |
-| 5003 | 子渠道不存在     |
+<table><thead><tr><th width="236" align="center">代码</th><th>描述</th></tr></thead><tbody><tr><td align="center">200</td><td>成功</td></tr><tr><td align="center">202</td><td>渠道不存在</td></tr><tr><td align="center">206</td><td>seqNo 不存在</td></tr><tr><td align="center">207</td><td>退款金额不一致</td></tr><tr><td align="center">208</td><td>记录不存在</td></tr><tr><td align="center">209</td><td>已经退款的数据</td></tr><tr><td align="center">401</td><td>用户名或密码不正确</td></tr><tr><td align="center">410</td><td>无效的Token</td></tr><tr><td align="center">500</td><td>系统错误</td></tr><tr><td align="center">505</td><td>渠道服务器在维护中</td></tr><tr><td align="center">1003</td><td>余额不足</td></tr><tr><td align="center">4003</td><td>系统繁忙，请稍后再试</td></tr><tr><td align="center">4025</td><td>参数不对</td></tr><tr><td align="center">4026</td><td>签名不对</td></tr><tr><td align="center">4027</td><td>IP 不允许</td></tr><tr><td align="center">4029</td><td>功能无效</td></tr><tr><td align="center">4030</td><td>资料类型错误</td></tr><tr><td align="center">4037</td><td>用户不存在</td></tr><tr><td align="center">4038</td><td>频繁请求</td></tr><tr><td align="center">5003</td><td>子渠道不存在</td></tr></tbody></table>

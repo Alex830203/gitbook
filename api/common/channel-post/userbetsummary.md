@@ -14,18 +14,7 @@ Content-Type: application/json
 
 #### Body:
 
-| 参数                                        | 格式                                      | 描述                                                                        |
-| ----------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------- |
-| <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID                                                                      |
-| <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。                                                 |
-| <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | <p>签名。 字串拼接：username+timestamp <br>Note: 如API用户名参数非必要，可以单独使用timestamp</p> |
-| username                                  | <mark style="color:blue;">string</mark> | 用户名。预设使用小写和数字。不可使用http保留字元。                                               |
-| subChannelId                              | <mark style="color:blue;">number</mark> | 子渠道ID。                                                                    |
-| startTimeStr                              | <mark style="color:blue;">string</mark> | 查询时间范围的开始。                                                                |
-| endTimeStr                                | <mark style="color:blue;">string</mark> | 查询时间范围的结束。                                                                |
-| gameType                                  | <mark style="color:blue;">number</mark> | 游戏类型。                                                                     |
-| judgeTime                                 | <mark style="color:blue;">number</mark> | 判断查询时间。默认为0。                                                              |
-| userId                                    | <mark style="color:blue;">number</mark> | 用户ID。                                                                     |
+<table><thead><tr><th width="169">参数</th><th width="117">格式</th><th>描述</th></tr></thead><tbody><tr><td><mark style="color:red;">channelId</mark></td><td><mark style="color:blue;">number</mark></td><td>渠道ID</td></tr><tr><td><mark style="color:red;">timestamp</mark></td><td><mark style="color:blue;">number</mark></td><td>时间戳记。以毫秒为单位。格式为Unix Time。</td></tr><tr><td><mark style="color:red;">signature</mark></td><td><mark style="color:blue;">string</mark></td><td>签名。 字串拼接：username+timestamp <br>Note: 如API用户名参数非必要，可以单独使用timestamp</td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。预设使用小写和数字。不可使用http保留字元。</td></tr><tr><td>subChannelId</td><td><mark style="color:blue;">number</mark></td><td>子渠道ID。</td></tr><tr><td>startTimeStr</td><td><mark style="color:blue;">string</mark></td><td>查询时间范围的开始。</td></tr><tr><td>endTimeStr</td><td><mark style="color:blue;">string</mark></td><td>查询时间范围的结束。</td></tr><tr><td>gameType</td><td><mark style="color:blue;">number</mark></td><td>游戏类型。</td></tr><tr><td>judgeTime</td><td><mark style="color:blue;">number</mark></td><td>判断查询时间。默认为0。</td></tr><tr><td>userId</td><td><mark style="color:blue;">number</mark></td><td>用户ID。</td></tr></tbody></table>
 
 {% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
@@ -57,18 +46,7 @@ Content-Type: application/json
 
 #### Body:
 
-|                  |                                         |                                                                               |
-| ---------------- | --------------------------------------- | ----------------------------------------------------------------------------- |
-| count            | <mark style="color:blue;">number</mark> | 投注成功的总次数                                                                      |
-| totalBet         | <mark style="color:blue;">number</mark> | 投注成功的总额                                                                       |
-| totalPayout      | <mark style="color:blue;">number</mark> | 派彩成功的总额                                                                       |
-| totalWithholding | <mark style="color:blue;">number</mark> | 预扣成功的总额                                                                       |
-| totalBalance     | <mark style="color:blue;">number</mark> | 盈余总额，计算公式( 投注 - 派彩 )                                                          |
-| startTime        | <mark style="color:blue;">number</mark> | 查询的开始时间。以毫秒为单位。格式为Unix Time。                                                  |
-| endTime          | <mark style="color:blue;">number</mark> | 查询的结束时间。以毫秒为单位。格式为Unix Time。                                                  |
-| remainingVisits  | <mark style="color:blue;">number</mark> | 剩余请求数，每分钟500次。                                                                |
-| status           | <mark style="color:blue;">number</mark> | 回应状态。[状态码表](../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma) |
-| apiVersion       | <mark style="color:blue;">string</mark> | API版本号。                                                                       |
+<table><thead><tr><th width="181.33333333333331"></th><th width="116"></th><th></th></tr></thead><tbody><tr><td>count</td><td><mark style="color:blue;">number</mark></td><td>投注成功的总次数</td></tr><tr><td>totalBet</td><td><mark style="color:blue;">number</mark></td><td>投注成功的总额</td></tr><tr><td>totalPayout</td><td><mark style="color:blue;">number</mark></td><td>派彩成功的总额</td></tr><tr><td>totalWithholding</td><td><mark style="color:blue;">number</mark></td><td>预扣成功的总额</td></tr><tr><td>totalBalance</td><td><mark style="color:blue;">number</mark></td><td>盈余总额，计算公式( 投注 - 派彩 )</td></tr><tr><td>startTime</td><td><mark style="color:blue;">number</mark></td><td>查询的开始时间。以毫秒为单位。格式为Unix Time。</td></tr><tr><td>endTime</td><td><mark style="color:blue;">number</mark></td><td>查询的结束时间。以毫秒为单位。格式为Unix Time。</td></tr><tr><td>remainingVisits</td><td><mark style="color:blue;">number</mark></td><td>剩余请求数，每分钟500次。</td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td></tr></tbody></table>
 
 {% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json

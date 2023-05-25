@@ -13,13 +13,7 @@ description: 各参数的详细解释
 当玩家在一局中投注中同时有下列注项的时候，会相互抵销。\
 例如：玩家如果分别下注到 庄 10 个筹码以及闲 20 个筹码，则有效投注为闲 10 个筹码(庄闲会抵销)，但是 投注总额则为 30 个筹码。
 
-| 百家乐      | 龙虎       | 轮盘     | 骰宝     |
-| -------- | -------- | ------ | ------ |
-| 庄 vs 闲   | 龙 vs 虎   | 大 vs 小 | 大 vs 小 |
-| 庄单 vs 庄双 | 龙单 vs 龙双 | 单 vs 双 | 单 vs 双 |
-| 闲单 vs 闲双 | 虎单 vs 虎双 | 紅 vs 黑 |        |
-| 大 vs 小   | 龙黑 vs 龙红 |        |        |
-|          | 虎黑 vs 虎红 |        |        |
+<table><thead><tr><th width="182">百家乐</th><th width="172">龙虎</th><th width="176">轮盘</th><th>骰宝</th></tr></thead><tbody><tr><td>庄 vs 闲</td><td>龙 vs 虎</td><td>大 vs 小</td><td>大 vs 小</td></tr><tr><td>庄单 vs 庄双</td><td>龙单 vs 龙双</td><td>单 vs 双</td><td>单 vs 双</td></tr><tr><td>闲单 vs 闲双</td><td>虎单 vs 虎双</td><td>紅 vs 黑</td><td></td></tr><tr><td>大 vs 小</td><td>龙黑 vs 龙红</td><td></td><td></td></tr><tr><td></td><td>虎黑 vs 虎红</td><td></td><td></td></tr></tbody></table>
 
 ### 2. 龙虎开和
 

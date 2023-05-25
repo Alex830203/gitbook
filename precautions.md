@@ -96,7 +96,7 @@ eBET有提供子渠道/子代理的设置。<mark style="color:red;background-co
 
 ## 9. 建议配置
 
-<table><thead><tr><th>项目</th><th>建议配置</th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td>建议网络速度</td><td><p>PC（高清）: > 8Mbps</p><p>PC（标清）: 无标清选项</p><p>H5（高清）: > 5Mbps</p><p>H5（标清）: > 4Mbps</p><p>无画面： &#x3C; 2Mbps</p></td><td></td><td></td></tr><tr><td>建议手机版本</td><td><p>iOS 13以上</p><p>Android 8以上</p></td><td></td><td></td></tr><tr><td>建议浏览器</td><td><p>Chrome</p><p>Safari</p></td><td></td><td></td></tr><tr><td>系统需求</td><td><p>Windows</p><p>-Windows 7、Windows 8、Windows 8.1 或 Windows 10 以上版本</p><p>-Intel Pentium 4 以上版本处理器 (可支持 SSE2)</p><p>-RAM 8G以上</p><p>Mac</p><p>-OS X Yosemite 10.10 以上版本</p><p>Linux</p><p>-64 位 Ubuntu 14.04 以上版本、Debian 8 以上版本、openSUSE 13.3 以上版本或 Fedora Linux 24 以上版本</p><p>-Intel Pentium 4 以上版本处理器 (可支持 SSE2)</p></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="175">项目</th><th>建议配置</th><th data-hidden></th><th data-hidden></th></tr></thead><tbody><tr><td>建议网络速度</td><td><p>PC（高清）: > 8Mbps</p><p>PC（标清）: 无标清选项</p><p>H5（高清）: > 5Mbps</p><p>H5（标清）: > 4Mbps</p><p>无画面： &#x3C; 2Mbps</p></td><td></td><td></td></tr><tr><td>建议手机版本</td><td><p>iOS 13以上</p><p>Android 8以上</p></td><td></td><td></td></tr><tr><td>建议浏览器</td><td><p>Chrome</p><p>Safari</p></td><td></td><td></td></tr><tr><td>系统需求</td><td><p>Windows</p><p>-Windows 7、Windows 8、Windows 8.1 或 Windows 10 以上版本</p><p>-Intel Pentium 4 以上版本处理器 (可支持 SSE2)</p><p>-RAM 8G以上</p><p>Mac</p><p>-OS X Yosemite 10.10 以上版本</p><p>Linux</p><p>-64 位 Ubuntu 14.04 以上版本、Debian 8 以上版本、openSUSE 13.3 以上版本或 Fedora Linux 24 以上版本</p><p>-Intel Pentium 4 以上版本处理器 (可支持 SSE2)</p></td><td></td><td></td></tr></tbody></table>
 
 ## 10. 备注
 

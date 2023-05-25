@@ -14,7 +14,7 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">channelId</mark></td><td><mark style="color:blue;">number</mark></td><td>渠道ID。</td><td>RegisterOrLoginReq</td></tr><tr><td><mark style="color:red;">timestamp</mark></td><td><mark style="color:blue;">number</mark></td><td>时间戳记。以毫秒为单位。格式为Unix Time。</td><td>1</td></tr><tr><td><mark style="color:red;">signature</mark></td><td><mark style="color:blue;">string</mark></td><td>签名。 字串拼接：timestamp</td><td>1</td></tr><tr><td><mark style="color:red;">tableCode</mark></td><td><mark style="color:blue;">string</mark></td><td>游戏桌号码。</td><td></td></tr><tr><td><mark style="color:red;">tableType</mark></td><td><mark style="color:blue;">number</mark></td><td>游戏类型。</td><td></td></tr><tr><td><mark style="color:red;">tableSubType</mark></td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型。</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="153">参数</th><th width="122">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">channelId</mark></td><td><mark style="color:blue;">number</mark></td><td>渠道ID。</td><td>RegisterOrLoginReq</td></tr><tr><td><mark style="color:red;">timestamp</mark></td><td><mark style="color:blue;">number</mark></td><td>时间戳记。以毫秒为单位。格式为Unix Time。</td><td>1</td></tr><tr><td><mark style="color:red;">signature</mark></td><td><mark style="color:blue;">string</mark></td><td>签名。 字串拼接：timestamp</td><td>1</td></tr><tr><td><mark style="color:red;">tableCode</mark></td><td><mark style="color:blue;">string</mark></td><td>游戏桌号码。</td><td></td></tr><tr><td><mark style="color:red;">tableType</mark></td><td><mark style="color:blue;">number</mark></td><td>游戏类型。</td><td></td></tr><tr><td><mark style="color:red;">tableSubType</mark></td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型。</td><td></td></tr></tbody></table>
 
 {% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
@@ -41,7 +41,7 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>count</td><td><mark style="color:blue;">number</mark></td><td>总数。</td><td><pre><code>apitest01
+<table><thead><tr><th width="176">参数</th><th width="117.66666666666666">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>count</td><td><mark style="color:blue;">number</mark></td><td>总数。</td><td><pre><code>apitest01
 </code></pre></td></tr><tr><td>tableCode</td><td><mark style="color:blue;">string</mark></td><td>游戏桌号码。</td><td></td></tr><tr><td>tableType</td><td><mark style="color:blue;">number</mark></td><td>游戏类型。</td><td></td></tr><tr><td>tableSubType</td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型。</td><td></td></tr><tr><td>luzhuList</td><td><mark style="color:blue;">array</mark></td><td>每局开牌结果。阵列值为阵列，下表为阵列参数值说明。</td><td>预设随机生成</td></tr><tr><td>luzhuStat</td><td><mark style="color:blue;">array</mark></td><td>每局结果。</td><td></td></tr><tr><td>remainingVisits</td><td><mark style="color:blue;">number</mark></td><td>剩余请求数，每分钟500次。</td><td>200</td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>eBET回应状态。</td><td><pre><code>accessTokenTest
 </code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>0
 </code></pre></td></tr></tbody></table>
@@ -52,7 +52,7 @@ Content-Type: application/json
 
 luzhuList / luzhuStat
 
-<table><thead><tr><th data-type="number">游戏类型</th><th>游戏桌类型</th><th>luzhuList阵列参数值</th><th>luzhuStat阵列参数值</th></tr></thead><tbody><tr><td>1</td><td>0, 1</td><td>80, 68, 60</td><td>banker, draw, player</td></tr><tr><td>2</td><td>0</td><td>卡面代码</td><td>dragon, draw, tiger</td></tr><tr><td>3</td><td>0, 1</td><td>轮盘数字</td><td>even, odd<br>red, black<br>zero</td></tr><tr><td>4</td><td>0</td><td>骰子点数</td><td>big, small<br>even, odd<br>allTriple</td></tr><tr><td>4</td><td>1</td><td>骰子点数</td><td>big, small</td></tr></tbody></table>
+<table><thead><tr><th width="121" data-type="number">游戏类型</th><th width="131">游戏桌类型</th><th>luzhuList阵列参数值</th><th>luzhuStat阵列参数值</th></tr></thead><tbody><tr><td>1</td><td>0, 1</td><td>80, 68, 60</td><td>banker, draw, player</td></tr><tr><td>2</td><td>0</td><td>卡面代码</td><td>dragon, draw, tiger</td></tr><tr><td>3</td><td>0, 1</td><td>轮盘数字</td><td>even, odd<br>red, black<br>zero</td></tr><tr><td>4</td><td>0</td><td>骰子点数</td><td>big, small<br>even, odd<br>allTriple</td></tr><tr><td>4</td><td>1</td><td>骰子点数</td><td>big, small</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="百家乐" %}

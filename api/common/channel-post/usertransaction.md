@@ -14,18 +14,7 @@ Content-Type: application/json
 
 #### Body:
 
-| 参数                                        | 格式                                      | 描述                                                                        |
-| ----------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------- |
-| <mark style="color:red;">channelId</mark> | <mark style="color:blue;">number</mark> | 渠道ID                                                                      |
-| <mark style="color:red;">timestamp</mark> | <mark style="color:blue;">number</mark> | 时间戳记。以毫秒为单位。格式为Unix Time。                                                 |
-| <mark style="color:red;">signature</mark> | <mark style="color:blue;">string</mark> | <p>签名。 字串拼接：username+timestamp <br>Note: 如API用户名参数非必要，可以单独使用timestamp</p> |
-| username                                  | <mark style="color:blue;">string</mark> | 用户名。预设使用小写和数字。不可使用http保留字元。                                               |
-| subChannelId                              | <mark style="color:blue;">number</mark> | 子渠道ID                                                                     |
-| pageNum                                   | <mark style="color:blue;">number</mark> | 页码。 默认值为1。                                                                |
-| pageSize                                  | <mark style="color:blue;">number</mark> | 每页上显示的记录数。 默认值为10。最大为5000。                                                |
-| startTimeStr                              | <mark style="color:blue;">string</mark> | 查询时间范围的开始。                                                                |
-| endTimeStr                                | <mark style="color:blue;">string</mark> | 查询时间范围的结束。                                                                |
-| tradeType                                 | <mark style="color:blue;">array</mark>  | 交易记录类型。                                                                   |
+<table><thead><tr><th width="169">参数</th><th width="117">格式</th><th>描述</th></tr></thead><tbody><tr><td><mark style="color:red;">channelId</mark></td><td><mark style="color:blue;">number</mark></td><td>渠道ID</td></tr><tr><td><mark style="color:red;">timestamp</mark></td><td><mark style="color:blue;">number</mark></td><td>时间戳记。以毫秒为单位。格式为Unix Time。</td></tr><tr><td><mark style="color:red;">signature</mark></td><td><mark style="color:blue;">string</mark></td><td>签名。 字串拼接：username+timestamp <br>Note: 如API用户名参数非必要，可以单独使用timestamp</td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。预设使用小写和数字。不可使用http保留字元。</td></tr><tr><td>subChannelId</td><td><mark style="color:blue;">number</mark></td><td>子渠道ID</td></tr><tr><td>pageNum</td><td><mark style="color:blue;">number</mark></td><td>页码。 默认值为1。</td></tr><tr><td>pageSize</td><td><mark style="color:blue;">number</mark></td><td>每页上显示的记录数。 默认值为10。最大为5000。</td></tr><tr><td>startTimeStr</td><td><mark style="color:blue;">string</mark></td><td>查询时间范围的开始。</td></tr><tr><td>endTimeStr</td><td><mark style="color:blue;">string</mark></td><td>查询时间范围的结束。</td></tr><tr><td>tradeType</td><td><mark style="color:blue;">array</mark></td><td>交易记录类型。</td></tr></tbody></table>
 
 {% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
@@ -53,26 +42,13 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th>参数</th><th>格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>count</td><td><mark style="color:blue;">number</mark></td><td>总数。</td><td></td></tr><tr><td>remainingVisits</td><td><mark style="color:blue;">number</mark></td><td>剩余请求数，每分钟500次。</td><td></td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td><pre><code>0
+<table><thead><tr><th width="197">参数</th><th width="117.66666666666666">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>count</td><td><mark style="color:blue;">number</mark></td><td>总数。</td><td></td></tr><tr><td>remainingVisits</td><td><mark style="color:blue;">number</mark></td><td>剩余请求数，每分钟500次。</td><td></td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td><pre><code>0
 </code></pre></td></tr><tr><td>transactions</td><td><mark style="color:blue;">array</mark></td><td>交易记录。</td><td></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>apitest01
 </code></pre></td></tr></tbody></table>
 
 transactions
 
-| 参数                 | 格式                                      | 描述                          |
-| ------------------ | --------------------------------------- | --------------------------- |
-| userId             | <mark style="color:blue;">number</mark> | 用户ID                        |
-| username           | <mark style="color:blue;">string</mark> | 用户名。预设使用小写和数字。不可使用http保留字元。 |
-| tradeType          | <mark style="color:blue;">number</mark> | 事务代码                        |
-| roundNo            | <mark style="color:blue;">string</mark> | 牌局号码。                       |
-| transBeforeBalance | <mark style="color:blue;">number</mark> | 更改前的金额。                     |
-| transBalance       | <mark style="color:blue;">number</mark> | 更改金额。                       |
-| transAfterBalance  | <mark style="color:blue;">number</mark> | 更改后的金额。                     |
-| transactionId      | <mark style="color:blue;">string</mark> | 交易编号                        |
-| time               | <mark style="color:blue;">string</mark> | 交易时间                        |
-| subChannelId       | <mark style="color:blue;">number</mark> | 子渠道ID。                      |
-| bonusId            | <mark style="color:blue;">number</mark> | 活动ID。                       |
-| bonusName          | <mark style="color:blue;">string</mark> | 活动名称。                       |
+<table><thead><tr><th width="200.33333333333331">参数</th><th width="113">格式</th><th>描述</th></tr></thead><tbody><tr><td>userId</td><td><mark style="color:blue;">number</mark></td><td>用户ID</td></tr><tr><td>username</td><td><mark style="color:blue;">string</mark></td><td>用户名。预设使用小写和数字。不可使用http保留字元。</td></tr><tr><td>tradeType</td><td><mark style="color:blue;">number</mark></td><td>事务代码</td></tr><tr><td>roundNo</td><td><mark style="color:blue;">string</mark></td><td>牌局号码。</td></tr><tr><td>transBeforeBalance</td><td><mark style="color:blue;">number</mark></td><td>更改前的金额。</td></tr><tr><td>transBalance</td><td><mark style="color:blue;">number</mark></td><td>更改金额。</td></tr><tr><td>transAfterBalance</td><td><mark style="color:blue;">number</mark></td><td>更改后的金额。</td></tr><tr><td>transactionId</td><td><mark style="color:blue;">string</mark></td><td>交易编号</td></tr><tr><td>time</td><td><mark style="color:blue;">string</mark></td><td>交易时间</td></tr><tr><td>subChannelId</td><td><mark style="color:blue;">number</mark></td><td>子渠道ID。</td></tr><tr><td>bonusId</td><td><mark style="color:blue;">number</mark></td><td>活动ID。</td></tr><tr><td>bonusName</td><td><mark style="color:blue;">string</mark></td><td>活动名称。</td></tr></tbody></table>
 
 {% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
