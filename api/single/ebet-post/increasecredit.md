@@ -4,10 +4,11 @@ description: 通知用户额度变动
 
 # ​​increaseCredit\*
 
-* seqNo是<mark style="color:red;">**`唯一值`**</mark>。 避免重复处理金額，请勿记录相同的支出seqNo。
-* 我们有一个**retry**机制。如果之前已经成功处理过，请向eBET返回<mark style="color:red;">**`201（重复seqNo）`**</mark>。
-* 如果网路发生或是贵方回传系统错误,系统忙碌, 我方会尝试重送<mark style="color:red;">**`3次`**</mark>。
-* 当<mark style="color:red;">**betMoney = 0**</mark>时，视为<mark style="color:red;">**下注失败**</mark>。
+{% hint style="info" %}
+seqNo是唯一值。 避免重复处理金額，请勿记录相同的支出seqNo。\
+我们有一个retry机制。如果之前已经成功处理过，请向eBET返回201（重复seqNo）。\
+如果网路发生或是贵方回传系统错误,系统忙碌, 我方会尝试重送3次
+{% endhint %}
 
 {% tabs %}
 {% tab title="一般处理流程" %}
@@ -17,7 +18,9 @@ description: 通知用户额度变动
 {% endtab %}
 
 {% tab title="预扣独立处理流程" %}
+<figure><img src="../../../.gitbook/assets/withholding bet.png" alt=""><figcaption><p>先预扣再投注的处理流程</p></figcaption></figure>
 
+<figure><img src="../../../.gitbook/assets/refund payout.png" alt=""><figcaption><p>先预扣返还再派彩的处理流程</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
