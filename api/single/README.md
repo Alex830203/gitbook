@@ -1,2 +1,3 @@
 # 单一钱包
 
+<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>由eBET发送相关请求</td><td><a href="ebet-post/registerorlogin.md">registerOrLogin</a></td><td><a href="ebet-post/synccredit.md">syncCredit</a></td><td><a href="ebet-post/increasecredit.md">increaseCredit</a></td><td><a href="ebet-post/queryincreasecreditrecord.md">queryIncreaseCreditRecord</a></td><td><a href="ebet-post/refundsinglewallet.md">refundSingleWaller</a></td><td><a href="ebet-post/autobatchrefund.md">autoBatchRefund</a></td></tr><tr><td>由渠道发送相关请求</td><td><a href="channel-post/getseqnorecord.md">getseqnorecord</a></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>

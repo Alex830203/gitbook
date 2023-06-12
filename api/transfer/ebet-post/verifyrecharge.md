@@ -10,7 +10,7 @@ description: 确认recharge请求
 
 </div>
 
-<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>与流程相关的API页面</td><td><a href="../channel-post/recharge.md">recharge</a></td><td><a href="../channel-post/rechargestatus.md">rechargeStatus</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>与流程相关的API页面</td><td><a href="../channel-post/recharge.md">recharge</a></td><td><a href="../channel-post/rechargestatus.md">rechargestatus</a></td></tr></tbody></table>
 
 ## <mark style="color:green;">POST</mark>
 

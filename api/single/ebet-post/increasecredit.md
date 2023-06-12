@@ -1,5 +1,5 @@
 ---
-description: 通知用户额度变动
+description: 通知渠道用户额度变动
 ---
 
 # ​​increaseCredit\*

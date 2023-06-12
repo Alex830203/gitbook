@@ -10,7 +10,7 @@ description: 通知eBET变更用户额度
 
 </div>
 
-<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>与流程相关的API页面</td><td><a href="../ebet-post/verifyrecharge.md">verifyRecharge</a></td><td><a href="rechargestatus.md">rechargeStatus</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>与流程相关的API页面</td><td><a href="../ebet-post/verifyrecharge.md">verifyRecharge</a></td><td><a href="rechargestatus.md">rechargestatus</a></td></tr></tbody></table>
 
 ## <mark style="color:green;">POST</mark>
 

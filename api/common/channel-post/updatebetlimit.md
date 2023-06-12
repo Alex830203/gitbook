@@ -1,5 +1,5 @@
 ---
-description: 变更单一用户的各游戏投注限制清单。
+description: 变更单一用户的各游戏投注限制清单
 ---
 
 # updatebetlimit
