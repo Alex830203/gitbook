@@ -114,3 +114,5 @@ return verify.verify(publicKey, signature, 'base64');
 {% endtabs %}
 
 {% embed url="http://ebetapi.oplive.info/swaggernew/alex/ts_index.html" fullWidth="false" %}
+eBET提供的测试工具页
+{% endembed %}
