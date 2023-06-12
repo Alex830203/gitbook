@@ -1,8 +1,8 @@
 ---
-description: 通知eBET变更用户额度
+description: 确认recharge请求
 ---
 
-# recharge
+# verifyRecharge
 
 <div data-full-width="false">
 
@@ -10,7 +10,7 @@ description: 通知eBET变更用户额度
 
 </div>
 
-<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>与流程相关的API页面</td><td><a href="../ebet-post/verifyrecharge.md">verifyRecharge</a></td><td><a href="rechargestatus.md">rechargeStatus</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>与流程相关的API页面</td><td><a href="../channel-post/recharge.md">recharge</a></td><td><a href="../channel-post/rechargestatus.md">rechargeStatus</a></td></tr></tbody></table>
 
 ## <mark style="color:green;">POST</mark>
 
@@ -59,19 +59,16 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th width="164">参数</th><th width="119">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>money</td><td><mark style="color:blue;">number</mark></td><td>用户的当前金额。</td><td></td></tr><tr><td>rechargeReqId</td><td><mark style="color:blue;">string</mark></td><td>充值请求ID。</td><td></td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td>bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ==</td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="164">参数</th><th width="119">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>回应状态。<a href="../../ebet-zhuang-tai-ma.md#ebet-xiang-ying-de-zhuang-tai-dai-ma">状态码表</a></td><td>bCP+wYe8TxN3UIHeNPxEv7czYkXueoe1pKSB6IaUDfoR4mtFYcJl3rNFk8Uz84XAHfeD3mNE+p4gECOVw2JxxQ==</td></tr></tbody></table>
 
 {% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
-    "money": 1234567.89,
-    "rechargeReqId": "1demo1000",
-    "status": 200,
-    "apiVersion": "1.5.97"
+    "status": 200
 }
 ```
 {% endcode %}
 
 {% hint style="warning" %}
-<mark style="color:orange;">返回成功是表示已接收到通知，但处理不一定完成。请使用API:</mark> [rechargeStatus](rechargestatus.md)<mark style="color:orange;">做处理状态的确认</mark>
+<mark style="color:orange;">返回成功是表示已接收到通知，但处理不一定完成。请使用API:</mark> [rechargeStatus](../channel-post/rechargestatus.md)<mark style="color:orange;">做处理状态的确认</mark>
 {% endhint %}

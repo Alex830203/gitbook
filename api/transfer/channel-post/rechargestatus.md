@@ -4,6 +4,10 @@ description: 检查eBET是否有收到并处理完成充值请求
 
 # rechargestatus
 
+<figure><img src="../../../.gitbook/assets/recharge double.png" alt="变更额度处理流程（转帐钱包）"><figcaption><p>变更额度处理流程（转帐钱包）</p></figcaption></figure>
+
+<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>与流程相关的API页面</td><td><a href="recharge.md">recharge</a></td><td><a href="rechargestatus.md">rechargeStatus</a></td></tr></tbody></table>
+
 ## <mark style="color:green;">POST</mark>
 
 ### **Request**
