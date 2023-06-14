@@ -1,5 +1,5 @@
 ---
-description: 此页面提供eBET 必要实作的API相关资讯。
+description: 必要实作的eBET API相关资讯
 ---
 
 # API

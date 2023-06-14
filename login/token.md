@@ -6,7 +6,7 @@ description: 从渠道的APP或web跳转至eBET web
 
 <figure><img src="../.gitbook/assets/token login.png" alt=""><figcaption><p>Token登入的API操作流程</p></figcaption></figure>
 
-<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>与流程相关的API页面(转帐钱包)</td><td>launchUrl</td><td>RegisterOrLoginReq</td><td>UserInfo</td></tr><tr><td>与流程相关的API页面(单钱包)</td><td>launchUrl</td><td>registerOrLogin</td><td>syncCredit</td></tr></tbody></table>
+<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>与流程相关的API页面(转帐钱包)</td><td><a href="../api/common/channel-post/launchurl.md">launchUrl</a></td><td><a href="../api/transfer/ebet-post/registerorloginreq.md">RegisterOrLoginReq</a></td><td><a href="../api/transfer/ebet-post/userinfo.md">UserInfo</a></td></tr><tr><td>与流程相关的API页面(单钱包)</td><td><a href="../api/common/channel-post/launchurl.md">launchUrl</a></td><td><a href="../api/single/ebet-post/registerorlogin.md">registerOrLogin</a></td><td><a href="../api/single/ebet-post/synccredit.md">syncCredit</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 <mark style="color:blue;">Q：游戏连结如何变成Token登入连结？</mark>&#x20;
