@@ -14,7 +14,7 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th width="153">参数</th><th width="122">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">channelId</mark></td><td><mark style="color:blue;">number</mark></td><td>渠道ID。</td><td>RegisterOrLoginReq</td></tr><tr><td><mark style="color:red;">timestamp</mark></td><td><mark style="color:blue;">number</mark></td><td>时间戳记。以毫秒为单位。格式为Unix Time。</td><td>1</td></tr><tr><td><mark style="color:red;">signature</mark></td><td><mark style="color:blue;">string</mark></td><td>签名。 字串拼接：timestamp</td><td>1</td></tr><tr><td><mark style="color:red;">tableCode</mark></td><td><mark style="color:blue;">string</mark></td><td>游戏桌号码。</td><td></td></tr><tr><td><mark style="color:red;">tableType</mark></td><td><mark style="color:blue;">number</mark></td><td>游戏类型。</td><td></td></tr><tr><td><mark style="color:red;">tableSubType</mark></td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型。</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="153">参数</th><th width="122">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td><mark style="color:red;">channelId</mark></td><td><mark style="color:blue;">number</mark></td><td>渠道ID。</td><td>RegisterOrLoginReq</td></tr><tr><td><mark style="color:red;">timestamp</mark></td><td><mark style="color:blue;">number</mark></td><td>时间戳记。以毫秒为单位。格式为Unix Time。</td><td>1</td></tr><tr><td><mark style="color:red;">signature</mark></td><td><mark style="color:blue;">string</mark></td><td>签名。 字串拼接：timestamp</td><td>1</td></tr><tr><td><mark style="color:red;">tableType</mark></td><td><mark style="color:blue;">number</mark></td><td>游戏类型。</td><td></td></tr><tr><td><mark style="color:red;">startTimeStr</mark></td><td><mark style="color:blue;">string</mark></td><td>查询时间范围的开始。</td><td></td></tr><tr><td><mark style="color:red;">endTimeStr</mark></td><td><mark style="color:blue;">string</mark></td><td>查询时间范围的结束。</td><td></td></tr><tr><td>tableCode</td><td><mark style="color:blue;">string</mark></td><td>游戏桌号码。</td><td></td></tr><tr><td>bootsCardId</td><td><mark style="color:blue;">string</mark></td><td>牌靴ID。</td><td></td></tr><tr><td>bootsNumber</td><td><mark style="color:blue;">number</mark></td><td>牌靴号码。</td><td></td></tr></tbody></table>
 
 {% hint style="danger" %}
 <mark style="color:red;">标示红色为必要参数。</mark>
@@ -24,11 +24,11 @@ Content-Type: application/json
 ```json
 {
     "channelId": 1,
-    "timestamp": 1680229675,
-    "signature": "VssgTaIwTmi0v1WnFTcoROGCQvMApIL/6/jDkmhievKVGNzngDYHn0JNNAurbE3Cdhc6bamfEkgajeUjOOMLA5InJaI1MT0hTArr2rxtIfR13MOjnsDUZW1I55kz6FMw4PuBYIsKR9lFLji/Qa+dH6QqgGQ7Z3uaVLptOg4sFXQ=",
-    "tableCode": "BP1",
+    "timestamp": 1666503623,
     "tableType": 1,
-    "tableSubType": 0
+    "startTimeStr": "2023-03-11 23:30:00",
+    "endTimeStr": "2023-03-12 00:30:00",
+    "signature": "HYblBUothiWWRCk/kl7tCcOh3OLPWiEyiaiospwcR26jMfB2Y2/aAaE0gs8xopeX8pFws3glbx0F8vkMHEemzfha6wdqdRQMe2t9i2ibMZXX/z6Cf8gQVI7LOb55CZVhwjZAqkH5QNsclcprpaTfnJcT7cno7Typz80+hr9DZqE="
 }
 ```
 {% endcode %}
@@ -41,1223 +41,115 @@ Content-Type: application/json
 
 #### Body:
 
-<table><thead><tr><th width="176">参数</th><th width="117.66666666666666">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>count</td><td><mark style="color:blue;">number</mark></td><td>总数。</td><td><pre><code>apitest01
-</code></pre></td></tr><tr><td>tableCode</td><td><mark style="color:blue;">string</mark></td><td>游戏桌号码。</td><td></td></tr><tr><td>tableType</td><td><mark style="color:blue;">number</mark></td><td>游戏类型。</td><td></td></tr><tr><td>tableSubType</td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型。</td><td></td></tr><tr><td>luzhuList</td><td><mark style="color:blue;">array</mark></td><td>每局开牌结果。阵列值为阵列，下表为阵列参数值说明。</td><td>预设随机生成</td></tr><tr><td>luzhuStat</td><td><mark style="color:blue;">array</mark></td><td>每局结果。</td><td></td></tr><tr><td>remainingVisits</td><td><mark style="color:blue;">number</mark></td><td>剩余请求数，每分钟500次。</td><td>200</td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>eBET回应状态。</td><td><pre><code>accessTokenTest
+<table><thead><tr><th width="176">参数</th><th width="117.66666666666666">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>tableCode</td><td><mark style="color:blue;">string</mark></td><td>游戏桌号码。</td><td></td></tr><tr><td>bootsDetail</td><td><mark style="color:blue;">object</mark></td><td>牌靴详情。阵列值为物件，下表为物件参数说明。</td><td>200</td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td>eBET回应状态。</td><td><pre><code>accessTokenTest
 </code></pre></td></tr><tr><td>apiVersion</td><td><mark style="color:blue;">string</mark></td><td>API版本号。</td><td><pre><code>0
 </code></pre></td></tr></tbody></table>
 
-{% hint style="info" %}
-<mark style="color:blue;">当count> 0时才会显示参数luzhuList & luzhuStat</mark>
-{% endhint %}
+bootsDetail
 
-luzhuList / luzhuStat
+<table><thead><tr><th width="176">参数</th><th width="117.66666666666666">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>bootsCardId</td><td><mark style="color:blue;">string</mark></td><td>牌靴ID。</td><td></td></tr><tr><td>bootsNumber</td><td><mark style="color:blue;">number</mark></td><td>牌靴号码。</td><td>200</td></tr><tr><td>luzhu</td><td><mark style="color:blue;">array</mark></td><td>路书记录。 数组值组成为“roundCode - result”</td><td><pre><code>accessTokenTest
+</code></pre></td></tr></tbody></table>
 
-<table><thead><tr><th width="121" data-type="number">游戏类型</th><th width="131">游戏桌类型</th><th>luzhuList阵列参数值</th><th>luzhuStat阵列参数值</th></tr></thead><tbody><tr><td>1</td><td>0, 1</td><td>80, 68, 60</td><td>banker, draw, player</td></tr><tr><td>2</td><td>0</td><td>卡面代码</td><td>dragon, draw, tiger</td></tr><tr><td>3</td><td>0, 1</td><td>轮盘数字</td><td>even, odd<br>red, black<br>zero</td></tr><tr><td>4</td><td>0</td><td>骰子点数</td><td>big, small<br>even, odd<br>allTriple</td></tr><tr><td>4</td><td>1</td><td>骰子点数</td><td>big, small</td></tr></tbody></table>
-
-{% tabs %}
-{% tab title="百家乐" %}
 {% code title="Responses" overflow="wrap" lineNumbers="true" %}
 ```json
 {
-    "count": 30,
     "tableCode": "BP1",
-    "tableType": 1,
-    "tableSubType": 0,
-    "luzhuList": [
-        [
-            80
+    "bootsDetail": {
+        "2023-03-11": [
+            {
+                "bootsCardId": "116",
+                "bootsNumber": 29,
+                "luzhu": [
+                    "BP1-230311232942-60",
+                    "BP1-230311233029-80",
+                    "BP1-230311233111-60",
+                    "BP1-230311233203-80",
+                    "BP1-230311233246-60",
+                    "BP1-230311233329-60",
+                    "BP1-230311233417-60",
+                    "BP1-230311233504-60",
+                    "BP1-230311233556-80",
+                    "BP1-230311233639-60",
+                    "BP1-230311233725-68",
+                    "BP1-230311233817-80",
+                    "BP1-230311233901-68",
+                    "BP1-230311233949-80",
+                    "BP1-230311234035-80",
+                    "BP1-230311234119-80",
+                    "BP1-230311234206-80",
+                    "BP1-230311234249-60",
+                    "BP1-230311234332-60",
+                    "BP1-230311234423-80",
+                    "BP1-230311234506-80",
+                    "BP1-230311234557-80",
+                    "BP1-230311234643-60",
+                    "BP1-230311234730-80",
+                    "BP1-230311234821-68",
+                    "BP1-230311234907-68",
+                    "BP1-230311234959-60",
+                    "BP1-230311235047-68",
+                    "BP1-230311235131-80",
+                    "BP1-230311235221-80",
+                    "BP1-230311235316-60",
+                    "BP1-230311235408-60",
+                    "BP1-230311235458-80",
+                    "BP1-230311235546-60",
+                    "BP1-230311235651-60",
+                    "BP1-230311235749-68",
+                    "BP1-230311235843-80"
+                ]
+            }
         ],
-        [
-            68
-        ],
-        [
-            68
-        ],
-        [
-            60
-        ],
-        [
-            60
-        ],
-        [
-            60
-        ],
-        [
-            60
-        ],
-        [
-            68
-        ],
-        [
-            80
-        ],
-        [
-            60
-        ],
-        [
-            80
-        ],
-        [
-            68
-        ],
-        [
-            60
-        ],
-        [
-            60
-        ],
-        [
-            68
-        ],
-        [
-            60
-        ],
-        [
-            80
-        ],
-        [
-            80
-        ],
-        [
-            68
-        ],
-        [
-            60
-        ],
-        [
-            60
-        ],
-        [
-            60
-        ],
-        [
-            60
-        ],
-        [
-            80
-        ],
-        [
-            60
-        ],
-        [
-            60
-        ],
-        [
-            80
-        ],
-        [
-            60
-        ],
-        [
-            60
-        ],
-        [
-            60
+        "2023-03-12": [
+            {
+                "bootsCardId": "116",
+                "bootsNumber": 29,
+                "luzhu": [
+                    "BP1-230311235928-60",
+                    "BP1-230312000020-60",
+                    "BP1-230312000109-60",
+                    "BP1-230312000154-80"
+                ]
+            },
+            {
+                "bootsCardId": "117",
+                "bootsNumber": 1,
+                "luzhu": [
+                    "BP1-230312000607-68",
+                    "BP1-230312000653-60",
+                    "BP1-230312000745-80",
+                    "BP1-230312000828-60",
+                    "BP1-230312000921-60",
+                    "BP1-230312001005-60",
+                    "BP1-230312001053-80",
+                    "BP1-230312001141-80",
+                    "BP1-230312001226-60",
+                    "BP1-230312001316-60",
+                    "BP1-230312001403-68",
+                    "BP1-230312001456-60",
+                    "BP1-230312001539-60",
+                    "BP1-230312001631-80",
+                    "BP1-230312001724-60",
+                    "BP1-230312001816-80",
+                    "BP1-230312001906-80",
+                    "BP1-230312001958-80",
+                    "BP1-230312002050-80",
+                    "BP1-230312002134-80",
+                    "BP1-230312002227-80",
+                    "BP1-230312002315-80",
+                    "BP1-230312002404-60",
+                    "BP1-230312002452-80",
+                    "BP1-230312002537-80",
+                    "BP1-230312002631-60",
+                    "BP1-230312002716-80",
+                    "BP1-230312002759-68",
+                    "BP1-230312002847-80"
+                ]
+            }
         ]
-    ],
-    "luzhuStat": [
-        [
-            "banker"
-        ],
-        [
-            "draw"
-        ],
-        [
-            "draw"
-        ],
-        [
-            "player"
-        ],
-        [
-            "player"
-        ],
-        [
-            "player"
-        ],
-        [
-            "player"
-        ],
-        [
-            "draw"
-        ],
-        [
-            "banker"
-        ],
-        [
-            "player"
-        ],
-        [
-            "banker"
-        ],
-        [
-            "draw"
-        ],
-        [
-            "player"
-        ],
-        [
-            "player"
-        ],
-        [
-            "draw"
-        ],
-        [
-            "player"
-        ],
-        [
-            "banker"
-        ],
-        [
-            "banker"
-        ],
-        [
-            "draw"
-        ],
-        [
-            "player"
-        ],
-        [
-            "player"
-        ],
-        [
-            "player"
-        ],
-        [
-            "player"
-        ],
-        [
-            "banker"
-        ],
-        [
-            "player"
-        ],
-        [
-            "player"
-        ],
-        [
-            "banker"
-        ],
-        [
-            "player"
-        ],
-        [
-            "player"
-        ],
-        [
-            "player"
-        ]
-    ],
-    "remainingVisits": 499,
+    },
     "status": 200,
-    "apiVersion": "1.5.94"
+    "apiVersion": "1.5.92"
 }
 ```
 {% endcode %}
-{% endtab %}
-
-{% tab title="龙虎" %}
-{% code title="Responses" overflow="wrap" lineNumbers="true" %}
-```json
-{
-    "count": 30,
-    "tableCode": "DP1",
-    "tableType": 2,
-    "tableSubType": 0,
-    "luzhuList": [
-        [
-            30,
-            18
-        ],
-        [
-            5,
-            18
-        ],
-        [
-            51,
-            9
-        ],
-        [
-            30,
-            10
-        ],
-        [
-            11,
-            23
-        ],
-        [
-            12,
-            14
-        ],
-        [
-            32,
-            28
-        ],
-        [
-            37,
-            19
-        ],
-        [
-            42,
-            51
-        ],
-        [
-            47,
-            25
-        ],
-        [
-            28,
-            26
-        ],
-        [
-            23,
-            21
-        ],
-        [
-            6,
-            32
-        ],
-        [
-            3,
-            14
-        ],
-        [
-            37,
-            46
-        ],
-        [
-            25,
-            44
-        ],
-        [
-            3,
-            27
-        ],
-        [
-            44,
-            37
-        ],
-        [
-            33,
-            19
-        ],
-        [
-            1,
-            11
-        ],
-        [
-            3,
-            41
-        ],
-        [
-            21,
-            2
-        ],
-        [
-            31,
-            48
-        ],
-        [
-            22,
-            14
-        ],
-        [
-            4,
-            43
-        ],
-        [
-            31,
-            34
-        ],
-        [
-            37,
-            7
-        ],
-        [
-            38,
-            4
-        ],
-        [
-            35,
-            11
-        ],
-        [
-            27,
-            18
-        ]
-    ],
-    "luzhuStat": [
-        [
-            "tiger"
-        ],
-        [
-            "draw"
-        ],
-        [
-            "tiger"
-        ],
-        [
-            "tiger"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "tiger"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "draw"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "tiger"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "tiger"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "tiger"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "tiger"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "draw"
-        ],
-        [
-            "tiger"
-        ],
-        [
-            "dragon"
-        ],
-        [
-            "tiger"
-        ],
-        [
-            "tiger"
-        ],
-        [
-            "tiger"
-        ]
-    ],
-    "remainingVisits": 499,
-    "status": 200,
-    "apiVersion": "1.5.94"
-}
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="轮盘" %}
-{% code title="Responses" overflow="wrap" lineNumbers="true" %}
-```json
-{
-    "count": 30,
-    "tableCode": "RP1",
-    "tableType": 3,
-    "tableSubType": 0,
-    "luzhuList": [
-        [
-            13
-        ],
-        [
-            33
-        ],
-        [
-            11
-        ],
-        [
-            7
-        ],
-        [
-            3
-        ],
-        [
-            27
-        ],
-        [
-            15
-        ],
-        [
-            3
-        ],
-        [
-            28
-        ],
-        [
-            2
-        ],
-        [
-            9
-        ],
-        [
-            23
-        ],
-        [
-            17
-        ],
-        [
-            14
-        ],
-        [
-            24
-        ],
-        [
-            15
-        ],
-        [
-            18
-        ],
-        [
-            29
-        ],
-        [
-            33
-        ],
-        [
-            23
-        ],
-        [
-            19
-        ],
-        [
-            20
-        ],
-        [
-            35
-        ],
-        [
-            24
-        ],
-        [
-            0
-        ],
-        [
-            32
-        ],
-        [
-            25
-        ],
-        [
-            24
-        ],
-        [
-            6
-        ],
-        [
-            26
-        ]
-    ],
-    "luzhuStat": [
-        [
-            "odd",
-            "black"
-        ],
-        [
-            "odd",
-            "black"
-        ],
-        [
-            "odd",
-            "black"
-        ],
-        [
-            "odd",
-            "red"
-        ],
-        [
-            "odd",
-            "red"
-        ],
-        [
-            "odd",
-            "red"
-        ],
-        [
-            "odd",
-            "black"
-        ],
-        [
-            "odd",
-            "red"
-        ],
-        [
-            "even",
-            "black"
-        ],
-        [
-            "even",
-            "black"
-        ],
-        [
-            "odd",
-            "red"
-        ],
-        [
-            "odd",
-            "red"
-        ],
-        [
-            "odd",
-            "black"
-        ],
-        [
-            "even",
-            "red"
-        ],
-        [
-            "even",
-            "black"
-        ],
-        [
-            "odd",
-            "black"
-        ],
-        [
-            "even",
-            "red"
-        ],
-        [
-            "odd",
-            "black"
-        ],
-        [
-            "odd",
-            "black"
-        ],
-        [
-            "odd",
-            "red"
-        ],
-        [
-            "odd",
-            "red"
-        ],
-        [
-            "even",
-            "black"
-        ],
-        [
-            "odd",
-            "black"
-        ],
-        [
-            "even",
-            "black"
-        ],
-        [
-            "zero"
-        ],
-        [
-            "even",
-            "red"
-        ],
-        [
-            "odd",
-            "red"
-        ],
-        [
-            "even",
-            "black"
-        ],
-        [
-            "even",
-            "black"
-        ],
-        [
-            "even",
-            "black"
-        ]
-    ],
-    "remainingVisits": 499,
-    "status": 200,
-    "apiVersion": "1.5.94"
-}
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="骰子游戏" %}
-{% code title="Responses (tableSubType = 0)" overflow="wrap" lineNumbers="true" %}
-```json
-{
-    "count": 30,
-    "tableCode": "SL1",
-    "tableType": 4,
-    "tableSubType": 0,
-    "luzhuList": [
-        [
-            1,
-            1,
-            3
-        ],
-        [
-            1,
-            3,
-            4
-        ],
-        [
-            2,
-            4,
-            5
-        ],
-        [
-            1,
-            1,
-            4
-        ],
-        [
-            1,
-            3,
-            6
-        ],
-        [
-            3,
-            4,
-            5
-        ],
-        [
-            1,
-            3,
-            6
-        ],
-        [
-            2,
-            3,
-            5
-        ],
-        [
-            2,
-            2,
-            3
-        ],
-        [
-            1,
-            1,
-            5
-        ],
-        [
-            1,
-            2,
-            5
-        ],
-        [
-            1,
-            1,
-            4
-        ],
-        [
-            3,
-            4,
-            6
-        ],
-        [
-            3,
-            4,
-            5
-        ],
-        [
-            3,
-            4,
-            6
-        ],
-        [
-            2,
-            4,
-            6
-        ],
-        [
-            3,
-            4,
-            5
-        ],
-        [
-            2,
-            4,
-            4
-        ],
-        [
-            1,
-            1,
-            4
-        ],
-        [
-            1,
-            5,
-            5
-        ],
-        [
-            2,
-            3,
-            4
-        ],
-        [
-            5,
-            5,
-            6
-        ],
-        [
-            2,
-            2,
-            4
-        ],
-        [
-            2,
-            4,
-            6
-        ],
-        [
-            4,
-            5,
-            6
-        ],
-        [
-            2,
-            2,
-            3
-        ],
-        [
-            1,
-            1,
-            1
-        ],
-        [
-            1,
-            1,
-            2
-        ],
-        [
-            2,
-            3,
-            6
-        ],
-        [
-            1,
-            1,
-            5
-        ]
-    ],
-    "luzhuStat": [
-        [
-            "small",
-            "odd"
-        ],
-        [
-            "small",
-            "even"
-        ],
-        [
-            "big",
-            "odd"
-        ],
-        [
-            "small",
-            "even"
-        ],
-        [
-            "small",
-            "even"
-        ],
-        [
-            "big",
-            "even"
-        ],
-        [
-            "small",
-            "even"
-        ],
-        [
-            "small",
-            "even"
-        ],
-        [
-            "small",
-            "odd"
-        ],
-        [
-            "small",
-            "odd"
-        ],
-        [
-            "small",
-            "even"
-        ],
-        [
-            "small",
-            "even"
-        ],
-        [
-            "big",
-            "odd"
-        ],
-        [
-            "big",
-            "even"
-        ],
-        [
-            "big",
-            "odd"
-        ],
-        [
-            "big",
-            "even"
-        ],
-        [
-            "big",
-            "even"
-        ],
-        [
-            "small",
-            "even"
-        ],
-        [
-            "small",
-            "even"
-        ],
-        [
-            "big",
-            "odd"
-        ],
-        [
-            "small",
-            "odd"
-        ],
-        [
-            "big",
-            "even"
-        ],
-        [
-            "small",
-            "even"
-        ],
-        [
-            "big",
-            "even"
-        ],
-        [
-            "big",
-            "odd"
-        ],
-        [
-            "small",
-            "odd"
-        ],
-        [
-            "allTriple"
-        ],
-        [
-            "small",
-            "even"
-        ],
-        [
-            "big",
-            "odd"
-        ],
-        [
-            "small",
-            "odd"
-        ]
-    ],
-    "remainingVisits": 499,
-    "status": 200,
-    "apiVersion": "1.5.94"
-}
-```
-{% endcode %}
-
-{% code title="Responses (tableSubType = 1)" overflow="wrap" lineNumbers="true" %}
-```json
-{
-    "count": 30,
-    "tableCode": "SHL1",
-    "tableType": 4,
-    "tableSubType": 1,
-    "luzhuList": [
-        [
-            1,
-            3,
-            4
-        ],
-        [
-            2,
-            4,
-            5
-        ],
-        [
-            1,
-            1,
-            4
-        ],
-        [
-            1,
-            3,
-            6
-        ],
-        [
-            3,
-            4,
-            5
-        ],
-        [
-            1,
-            3,
-            6
-        ],
-        [
-            2,
-            3,
-            5
-        ],
-        [
-            2,
-            2,
-            3
-        ],
-        [
-            1,
-            1,
-            5
-        ],
-        [
-            1,
-            2,
-            5
-        ],
-        [
-            1,
-            1,
-            4
-        ],
-        [
-            3,
-            4,
-            6
-        ],
-        [
-            3,
-            4,
-            5
-        ],
-        [
-            3,
-            4,
-            6
-        ],
-        [
-            2,
-            4,
-            6
-        ],
-        [
-            3,
-            4,
-            5
-        ],
-        [
-            2,
-            4,
-            4
-        ],
-        [
-            1,
-            1,
-            4
-        ],
-        [
-            1,
-            5,
-            5
-        ],
-        [
-            2,
-            3,
-            4
-        ],
-        [
-            5,
-            5,
-            6
-        ],
-        [
-            2,
-            2,
-            4
-        ],
-        [
-            2,
-            4,
-            6
-        ],
-        [
-            4,
-            5,
-            6
-        ],
-        [
-            2,
-            2,
-            3
-        ],
-        [
-            1,
-            1,
-            1
-        ],
-        [
-            1,
-            1,
-            2
-        ],
-        [
-            2,
-            3,
-            6
-        ],
-        [
-            1,
-            1,
-            5
-        ],
-        [
-            2,
-            4,
-            6
-        ]
-    ],
-    "luzhuStat": [
-        [
-            "small"
-        ],
-        [
-            "big"
-        ],
-        [
-            "small"
-        ],
-        [
-            "small"
-        ],
-        [
-            "big"
-        ],
-        [
-            "small"
-        ],
-        [
-            "small"
-        ],
-        [
-            "small"
-        ],
-        [
-            "small"
-        ],
-        [
-            "small"
-        ],
-        [
-            "small"
-        ],
-        [
-            "big"
-        ],
-        [
-            "big"
-        ],
-        [
-            "big"
-        ],
-        [
-            "big"
-        ],
-        [
-            "big"
-        ],
-        [
-            "small"
-        ],
-        [
-            "small"
-        ],
-        [
-            "big"
-        ],
-        [
-            "small"
-        ],
-        [
-            "big"
-        ],
-        [
-            "small"
-        ],
-        [
-            "big"
-        ],
-        [
-            "big"
-        ],
-        [
-            "small"
-        ],
-        [
-            "small"
-        ],
-        [
-            "small"
-        ],
-        [
-            "big"
-        ],
-        [
-            "small"
-        ],
-        [
-            "big"
-        ]
-    ],
-    "remainingVisits": 499,
-    "status": 200,
-    "apiVersion": "1.5.94"
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
