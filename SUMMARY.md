@@ -28,7 +28,7 @@
       * [refundSingleWallet](api/single/ebet-post/refundsinglewallet.md)
       * [autoBatchRefund](api/single/ebet-post/autobatchrefund.md)
     * [渠道 POST](api/single/channel-post/README.md)
-      * [getseqnorecord\*](api/single/channel-post/getseqnorecord.md)
+      * [getseqnorecord](api/single/channel-post/getseqnorecord.md)
   * [共用 API](api/gong-yong-api.md)
     * [eBET POST](api/common/ebet-post/README.md)
       * [netCheck](api/common/ebet-post/netcheck.md)
