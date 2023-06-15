@@ -6,7 +6,7 @@ description: 通知渠道用户额度变动
 
 {% hint style="info" %}
 seqNo是唯一值。 避免重复处理金額，请勿记录相同的支出seqNo。\
-我们有一个retry机制。如果之前已经成功处理过，请向eBET返回201（重复seqNo）。\
+我们有一个retry机制。如果之前已经成功处理过，请向eBET返回200 或 201（重复seqNo）。\
 如果网路发生或是贵方回传系统错误,系统忙碌, 我方会尝试重送3次
 {% endhint %}
 
@@ -49,6 +49,11 @@ Content-Type: application/json
 #### withHoldingList
 
 <table><thead><tr><th width="160">参数</th><th width="180">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>withHolding</td><td><mark style="color:blue;">number</mark></td><td>預扣金额。</td><td>RegisterOrLoginReq</td></tr><tr><td>betType</td><td><mark style="color:blue;">number</mark></td><td>投注牌型</td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 2" %}
@@ -63,6 +68,11 @@ Content-Type: application/json
 #### withHoldingList
 
 <table><thead><tr><th width="160">参数</th><th width="180">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>withHolding</td><td><mark style="color:blue;">number</mark></td><td>預扣金额。<mark style="color:red;">withHolding =0时,代表預扣失败。</mark></td><td>RegisterOrLoginReq</td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td><p>预扣状态 </p><p>1: 成功 </p><p>0: 失败或没有金额需要返还 </p><p>11:退款 </p><p>13:退款失败</p></td><td></td></tr><tr><td>betType</td><td><mark style="color:blue;">number</mark></td><td>投注牌型</td><td></td></tr><tr><td>withHoldingId</td><td><mark style="color:blue;">string</mark></td><td>游戏下注的号码。 只有特定项目才会有此字段</td><td></td></tr><tr><td>betId</td><td><mark style="color:blue;">string</mark></td><td>投注ID</td><td></td></tr><tr><td>seqNo</td><td><mark style="color:blue;">string</mark></td><td>預扣请求的序列编号</td><td></td></tr><tr><td>refund</td><td><mark style="color:blue;">number</mark></td><td>牛牛返还金额</td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 27" %}
@@ -73,6 +83,11 @@ Content-Type: application/json
 #### betList
 
 <table><thead><tr><th width="164">参数</th><th width="180">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>betType</td><td><mark style="color:blue;">number</mark></td><td>投注牌型</td><td>RegisterOrLoginReq</td></tr><tr><td>betMoney</td><td><mark style="color:blue;">number</mark></td><td>投注金额。 </td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 28" %}
@@ -83,6 +98,11 @@ Content-Type: application/json
 #### withHoldingList
 
 <table><thead><tr><th width="160">参数</th><th width="180">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>withHolding</td><td><mark style="color:blue;">number</mark></td><td>預扣金额。<mark style="color:red;">withHolding =0时,代表預扣失败。</mark></td><td>RegisterOrLoginReq</td></tr><tr><td>status</td><td><mark style="color:blue;">number</mark></td><td><p>预扣状态 </p><p>1: 成功 </p><p>0: 失败或没有金额需要返还 </p><p>11:退款 </p><p>13:退款失败</p></td><td></td></tr><tr><td>betType</td><td><mark style="color:blue;">number</mark></td><td>投注牌型</td><td></td></tr><tr><td>withHoldingId</td><td><mark style="color:blue;">string</mark></td><td>游戏下注的号码。 只有特定项目才会有此字段</td><td></td></tr><tr><td>betId</td><td><mark style="color:blue;">string</mark></td><td>投注ID</td><td></td></tr><tr><td>seqNo</td><td><mark style="color:blue;">string</mark></td><td>預扣请求的序列编号</td><td></td></tr><tr><td>refund</td><td><mark style="color:blue;">number</mark></td><td>牛牛返还金额,<mark style="color:red;">仅只有type=28的事件，才需要此字段。</mark></td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 11" %}
@@ -93,6 +113,11 @@ Content-Type: application/json
 #### betList
 
 <table><thead><tr><th width="164">参数</th><th width="180">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>betType</td><td><mark style="color:blue;">number</mark></td><td>投注牌型</td><td>RegisterOrLoginReq</td></tr><tr><td>betMoney</td><td><mark style="color:blue;">number</mark></td><td>投注金额。</td><td></td></tr><tr><td>betId</td><td><mark style="color:blue;">string</mark></td><td>投注ID</td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 37" %}
@@ -108,13 +133,21 @@ Content-Type: application/json
 
 <table><thead><tr><th width="164">参数</th><th width="180">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>betType</td><td><mark style="color:blue;">number</mark></td><td>投注牌型</td><td>RegisterOrLoginReq</td></tr><tr><td>betMoney</td><td><mark style="color:blue;">number</mark></td><td>投注金额。 <mark style="color:red;">当betMoney = 0时，视为下注失败。</mark></td><td></td></tr><tr><td>seqNo</td><td><mark style="color:blue;">string</mark></td><td>投注请求的序号。 </td><td></td></tr><tr><td>payout</td><td><mark style="color:blue;">number</mark></td><td>派彩金额。 </td><td></td></tr><tr><td>number</td><td><mark style="color:blue;">string</mark></td><td>游戏下注的号码。 只有特定项目才会有此字段</td><td></td></tr><tr><td>odds</td><td><mark style="color:blue;">number</mark></td><td><p>赔率。 </p><p>Noted: </p><p>1.支援所有游戏除了老虎机 </p><p>2.赔率不含投注额</p></td><td></td></tr><tr><td>validBet</td><td><mark style="color:blue;">number</mark></td><td><p>每个投注项目的有效投注。 </p><p>该参数会依照有效投注的计算规则，请参考：<a href="../../can-shu-shuo-ming.md#you-xiao-tou-zhu">参数说明-有效投注。</a> </p></td><td></td></tr><tr><td>rebateAmount</td><td><mark style="color:blue;">number</mark></td><td>返水。</td><td></td></tr><tr><td>betId</td><td><mark style="color:blue;">string</mark></td><td>投注ID</td><td></td></tr></tbody></table>
 
-
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 3" %}
 #### detail
 
 <table><thead><tr><th width="196">参数</th><th width="116">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>tableCode</td><td><mark style="color:blue;">string</mark></td><td>游戏桌号</td><td></td></tr><tr><td>tableType</td><td><mark style="color:blue;">number</mark></td><td>游戏类型</td><td></td></tr><tr><td>tableSubType</td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号</td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -123,42 +156,77 @@ Content-Type: application/json
 #### detail
 
 <table><thead><tr><th width="196">参数</th><th width="116">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>tableCode</td><td><mark style="color:blue;">string</mark></td><td>游戏桌号</td><td></td></tr><tr><td>tableType</td><td><mark style="color:blue;">number</mark></td><td>游戏类型</td><td></td></tr><tr><td>tableSubType</td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号</td><td></td></tr><tr><td>matchId</td><td><mark style="color:blue;">number</mark></td><td>大赛代码。</td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 9" %}
 #### detail
 
 <table><thead><tr><th width="196">参数</th><th width="116">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>tableCode</td><td><mark style="color:blue;">string</mark></td><td>游戏桌号</td><td></td></tr><tr><td>tableType</td><td><mark style="color:blue;">number</mark></td><td>游戏类型</td><td></td></tr><tr><td>tableSubType</td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号</td><td></td></tr><tr><td>matchId</td><td><mark style="color:blue;">number</mark></td><td>大赛代码。</td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 14" %}
 #### detail
 
 <table><thead><tr><th width="196">参数</th><th width="116">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>tableType</td><td><mark style="color:blue;">number</mark></td><td>游戏类型</td><td></td></tr><tr><td>tableSubType</td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号</td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 15 " %}
 #### detail
 
 <table><thead><tr><th width="196">参数</th><th width="116">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>tableType</td><td><mark style="color:blue;">number</mark></td><td>游戏类型</td><td></td></tr><tr><td>tableSubType</td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号</td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 23" %}
 #### detail
 
 <table><thead><tr><th width="196">参数</th><th width="116">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>tableCode</td><td><mark style="color:blue;">string</mark></td><td>游戏桌号</td><td></td></tr><tr><td>tableType</td><td><mark style="color:blue;">number</mark></td><td>游戏类型</td><td></td></tr><tr><td>tableSubType</td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号</td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 24" %}
 #### detail
 
 <table><thead><tr><th width="196">参数</th><th width="116">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>tableCode</td><td><mark style="color:blue;">string</mark></td><td>游戏桌号</td><td></td></tr><tr><td>tableType</td><td><mark style="color:blue;">number</mark></td><td>游戏类型</td><td></td></tr><tr><td>tableSubType</td><td><mark style="color:blue;">number</mark></td><td>游戏桌类型</td><td></td></tr><tr><td>roundCode</td><td><mark style="color:blue;">string</mark></td><td>牌局号</td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Type 38" %}
 #### detail
 
 <table><thead><tr><th width="196">参数</th><th width="116">格式</th><th>描述</th><th data-hidden>范例</th></tr></thead><tbody><tr><td>tableType</td><td><mark style="color:blue;">number</mark></td><td>游戏类型</td><td></td></tr><tr><td>eventBonusType</td><td><mark style="color:blue;">number</mark></td><td>活动奖励类型</td><td></td></tr><tr><td>eventBonusCode</td><td><mark style="color:blue;">string</mark></td><td>活动奖励名称</td><td></td></tr></tbody></table>
+
+{% code title="Request" overflow="wrap" lineNumbers="true" %}
+```json
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
