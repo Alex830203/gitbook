@@ -23,7 +23,7 @@
     * [eBET POST](api/single/ebet-post/README.md)
       * [​registerOrLogin](api/single/ebet-post/registerorlogin.md)
       * [​syncCredit](api/single/ebet-post/synccredit.md)
-      * [​​increaseCredit\*](api/single/ebet-post/increasecredit.md)
+      * [​​increaseCredit](api/single/ebet-post/increasecredit.md)
       * [queryIncreaseCreditRecord](api/single/ebet-post/queryincreasecreditrecord.md)
       * [refundSingleWallet](api/single/ebet-post/refundsinglewallet.md)
       * [autoBatchRefund](api/single/ebet-post/autobatchrefund.md)

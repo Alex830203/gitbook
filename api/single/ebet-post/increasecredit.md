@@ -2,7 +2,7 @@
 description: 通知渠道用户额度变动
 ---
 
-# ​​increaseCredit\*
+# ​​increaseCredit
 
 {% hint style="info" %}
 seqNo是唯一值。 避免重复处理金額，请勿记录相同的支出seqNo。\
@@ -52,6 +52,42 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": -19275,
+    "type": 1,
+    "platform": 3,
+    "currency": "THB",
+    "seqNo": "94906311|bet|1686811358331|wayigame",
+    "detail": {
+        "roundCode": "wg-texas543_27462dded4",
+        "tableType": 30,
+        "tableSubType": 0,
+        "tableCode": "texas",
+        "gameName": "texas",
+        "betList": [
+            {
+                "betMoney": 0,
+                "betType": 601,
+                "betId": "94906311|bet|1686811358331|wayigame-601"
+            }
+        ],
+        "betTime": 1686811358280,
+        "validBet": 0,
+        "totalBet": 0,
+        "withHoldingList": [
+            {
+                "withHolding": 19275,
+                "betType": 601
+            }
+        ]
+    },
+    "event": "increaseCredit",
+    "timestamp": 1686811358544,
+    "sessionToken": "f73e0e279b0ea269a57c7ef48fa0b46e",
+    "signature": "c6SkBVVWIAyDHM1FkNGAdg1DcDhBTJX8CNb0DUyJd47qq4DfAnm24r6nQ3Ztfs89O+xghidTL82yIa9KFWAEIg=="
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -71,6 +107,113 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": 44.9,
+    "type": 2,
+    "platform": 3,
+    "currency": "CNY",
+    "seqNo": "9602f834ae6857f33b8e5a270e25278b",
+    "detail": {
+        "tableCode": "BP1",
+        "tableType": 1,
+        "tableSubType": 0,
+        "dealerName": "Vina",
+        "bootsCardId": "106",
+        "gameName": "baccarat",
+        "srcResults": [
+            8,
+            30,
+            null,
+            34,
+            26,
+            11
+        ],
+        "brokerageRequired": true,
+        "results": [
+            60,
+            70,
+            83,
+            63,
+            61
+        ],
+        "betList": [
+            {
+                "betType": 60,
+                "betMoney": 10,
+                "seqNo": "c14159701c2ba78a06baeb644386abd3",
+                "payout": 21,
+                "odds": 1,
+                "validBet": 10,
+                "rebateAmount": 1,
+                "betId": "c14159701c2ba78a06baeb644386abd3-60"
+            },
+            {
+                "betType": 63,
+                "betMoney": 10,
+                "seqNo": "c14159701c2ba78a06baeb644386abd3",
+                "payout": 19.9,
+                "odds": 0.9,
+                "validBet": 10,
+                "rebateAmount": 0.9,
+                "betId": "c14159701c2ba78a06baeb644386abd3-63"
+            },
+            {
+                "betType": 66,
+                "betMoney": 10,
+                "seqNo": "c14159701c2ba78a06baeb644386abd3",
+                "payout": 1,
+                "odds": 11,
+                "validBet": 10,
+                "rebateAmount": 1,
+                "betId": "c14159701c2ba78a06baeb644386abd3-66"
+            },
+            {
+                "betType": 82,
+                "betMoney": 10,
+                "seqNo": "c14159701c2ba78a06baeb644386abd3",
+                "payout": 1,
+                "odds": 0.94,
+                "validBet": 10,
+                "rebateAmount": 1,
+                "betId": "c14159701c2ba78a06baeb644386abd3-82"
+            },
+            {
+                "betType": 88,
+                "betMoney": 10,
+                "seqNo": "c14159701c2ba78a06baeb644386abd3",
+                "payout": 1,
+                "odds": 11,
+                "validBet": 10,
+                "rebateAmount": 1,
+                "betId": "c14159701c2ba78a06baeb644386abd3-88"
+            },
+            {
+                "betType": 68,
+                "betMoney": 10,
+                "seqNo": "a43ce533f01031658956f1b255e27c39",
+                "payout": 1,
+                "odds": 8,
+                "validBet": 10,
+                "rebateAmount": 1,
+                "betId": "a43ce533f01031658956f1b255e27c39-68"
+            }
+        ],
+        "roundCode": "BP1-230615141508",
+        "betTime": 1686809724275,
+        "totalBet": 60,
+        "validBet": 60,
+        "payout": 44.9,
+        "payoutTime": 1686809747345,
+        "rebateAmount": 5.9,
+        "betStopTime": 1686809733853
+    },
+    "event": "increaseCredit",
+    "timestamp": 1686809747884,
+    "sessionToken": "537ed0cff192bc65a64b6056b82735d6",
+    "signature": "dl/kuwL4lJ7H3wPN/NeaJRpU06BwpbF9f8gruAcq8LOKCS1skN46yL+PH0iA8at2Nck3G12AvC9tMx93klCAbg=="
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -86,6 +229,35 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": -200,
+    "type": 27,
+    "platform": 3,
+    "currency": "CNY",
+    "seqNo": "15193405|bet|1686809992123|wayigame-27",
+    "detail": {
+        "roundCode": "wg-texas542_27462bc928",
+        "tableType": 30,
+        "tableSubType": 0,
+        "tableCode": "texas",
+        "gameName": "texas",
+        "betList": [
+            {
+                "betMoney": 0,
+                "betType": 601
+            }
+        ],
+        "betTime": 1686809992090,
+        "validBet": 0,
+        "totalBet": 0
+    },
+    "event": "increaseCredit",
+    "timestamp": 1686809992546,
+    "sessionToken": "537ed0cff192bc65a64b6056b82735d6",
+    "signature": "SNdv+LjfGLrOKPev4MV3VJLof3C0PvcGA9WIRPEdlujPmumtMSqEVJ8hNc5ZJQh/0kNzTT0tKvIfoUtxlqKa5Q=="
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -101,6 +273,36 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": 200,
+    "type": 28,
+    "platform": 3,
+    "currency": "CNY",
+    "seqNo": "15193405|payout|1686810054228|wayigame-28",
+    "detail": {
+        "roundCode": "wg-texas542_27462bc928",
+        "tableType": 30,
+        "tableSubType": 0,
+        "tableCode": "texas",
+        "gameName": "texas",
+        "withHoldingList": [
+            {
+                "betType": 601,
+                "withHolding": 200,
+                "seqNo": "15193405|bet|1686809992123|wayigame-27",
+                "withHoldingId": "15193405|bet|1686809992123|wayigame-27-601",
+                "status": 1,
+                "refund": 200
+            }
+        ]
+    },
+    "event": "increaseCredit",
+    "timestamp": 1686810054703,
+    "sessionToken": "537ed0cff192bc65a64b6056b82735d6",
+    "signature": "JUztabKC+D/1CPRsKCvHOlswXO+EsGbaQip0V3Gqi44qNSAnMWhwPC4jZOnvqkXxzv6yVnx6vyoZlUTcPIOquQ=="
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -116,6 +318,39 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": 400,
+    "type": 11,
+    "platform": 3,
+    "currency": "CNY",
+    "seqNo": "165c0e36bce5bb2874de12c20348090d",
+    "detail": {
+        "tableCode": "NN2",
+        "tableType": 8,
+        "tableSubType": 0,
+        "roundCode": "NN2-211119154844",
+        "betTime": 1637308132392.0,
+        "betList": [
+            {
+                "betType": 302,
+                "betMoney": 50
+            },
+            {
+                "betType": 304,
+                "betMoney": 50
+            }
+        ],
+        "totalBet": 100,
+        "validBet": 0,
+        "withHoldingSeqNo": "43c4f135f0c05cf8eba045fb46ef1e51"
+    },
+    "event": "increaseCredit",
+    "timestamp": 1637308132650.0,
+    "sessionToken": "ddb5187ce8b1d020913a4b20380e03d7",
+    "signature": "A29ZGt8F1Dx5eHPeXJ3v8xSMrzEHlmPgDv8Qh/6m/04JibqjU3g4iA48tqXvbxUzbDyYDQQBmMP3ul+UsV3cCw=="
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -135,6 +370,76 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": 1200,
+    "type": 37,
+    "platform": 3,
+    "currency": "CNY",
+    "seqNo": "d2e3a1bd0b5dd66053359e7619d46a43",
+    "detail": {
+        "tableCode": "B18",
+        "tableType": 1,
+        "tableSubType": 0,
+        "srcResults": [
+            41,
+            41,
+            null,
+            25,
+            38,
+            null
+        ],
+        "brokerageRequired": true,
+        "results": [
+            60,
+            66,
+            88,
+            71,
+            83,
+            62,
+            61
+        ],
+        "betList": [
+            {
+                "betType": 60,
+                "betMoney": 100,
+                "seqNo": "1a57cb64c977172108b5fcac211e3755",
+                "payout": 200
+            },
+            {
+                "betType": 66,
+                "betMoney": 100,
+                "seqNo": "1a57cb64c977172108b5fcac211e3755",
+                "payout": 0
+            }
+        ],
+        "modifyBetList": [
+            {
+                "betType": 60,
+                "betMoney": 100,
+                "seqNo": "1a57cb64c977172108b5fcac211e3755",
+                "payout": 200
+            },
+            {
+                "betType": 66,
+                "betMoney": 100,
+                "seqNo": "1a57cb64c977172108b5fcac211e3755",
+                "payout": 1200
+            }
+        ],
+        "roundCode": "B18-200513164029",
+        "betTime": 1589359258387,
+        "totalBet": 200,
+        "validBet": 200,
+        "payout": 1200,
+        "payoutTime": 1589359300855
+    },
+    "event": "increaseCredit",
+    "timestamp": 1589359300861,
+    "sessionToken": "bf23ac28d01349fb7c5643b3b86aa7a5",
+    "signature": "fK34IX9cvjaIICPu8Gx+TxIgNfi/wuOaGlLd8IzvXS0eB2jOVqsLvZqpvu0MItwq7grmzByHw2DWKEeU1dEdTQ=="
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -146,6 +451,25 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": -100,
+    "type": 3,
+    "platform": 3,
+    "currency": "CNY",
+    "seqNo": "6070c43eeb40e5997ed18928a7494799",
+    "sessionToken": "c835a1e527d9a643970ac0b8394519eb",
+    "detail": {
+        "tableCode": "B1",
+        "tableType": 1,
+        "tableSubType": 1,
+        "roundCode": "B1-190711113358"
+    },
+    "event": "increaseCredit",
+    "timestamp": 1564554803438,
+    "signature": "VoXfGy/q5TizJ8puqwt5gVxC/p/dmRSHBDuX731YAhsHsxCEYf7KYlzv/bKDq5uX4wmcijL9RQmGWgbpRwq/fw=="
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -181,6 +505,24 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": 100,
+    "type": 14,
+    "platform": null,
+    "currency": "CNY",
+    "seqNo": "ab32d3eb6d4c053bb22d85a20d722f9a",
+    "sessionToken": "5032acd99251530eab617cd6966cd140",
+    "detail": {
+        "tableType": 1,
+        "tableSubType": 0,
+        "roundCode": "api_test_match_award"
+    },
+    "event": "increaseCredit",
+    "timestamp": 1564557695108,
+    "signature": "TaEWIYOudyrhcS59IuyDB9SyFdw54y5xcdI6/JPxzwbJzg6W4Fys3cNKgxujbA4EibagkVAxwfZ9wcSRGA8s0A=="
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -192,6 +534,24 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": -100,
+    "type": 15,
+    "platform": null,
+    "currency": "CNY",
+    "seqNo": "d63dc2e4f034116a2e92674eccd35e94",
+    "sessionToken": "5032acd99251530eab617cd6966cd140",
+    "detail": {
+        "tableType": 1,
+        "tableSubType": 0,
+        "roundCode": " api_test_match_award"
+    },
+    "event": "increaseCredit",
+    "timestamp": 1564557703045,
+    "signature": "aFqTvbPMDJes7JhsBGi+7OXllZ2TBnVjoE4Pag0Sifo+bPQWGHHu7ZAGyGAG8uAHlClujHNplH03G0tV5tOO3A=="
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -203,6 +563,25 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": 100,
+    "type": 23,
+    "platform": 3,
+    "currency": "CNY",
+    "seqNo": "5e35f21553d8aab158f18b9bc6dfee6b",
+    "sessionToken": "5032acd99251530eab617cd6966cd140",
+    "detail": {
+        "tableCode": "B1",
+        "tableType": 1,
+        "tableSubType": 0,
+        "roundCode": "B1-190731150155"
+    },
+    "event": "increaseCredit",
+    "timestamp": 1564556546166,
+    "signature": "DYmZ5OLoUlX9BztuN2nTMHF+gv6NC9x3IJb99SzrHQbNg1bXSuSf3+iyD68pECeiNyWhUhIxSGJJ66dyvw+p+w=="
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -214,6 +593,25 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": 100,
+    "type": 24,
+    "platform": 3,
+    "currency": "CNY",
+    "seqNo": "b81a266bece795f597ffeb1e81b1a093",
+    "sessionToken": "5032acd99251530eab617cd6966cd140",
+    "detail": {
+        "tableCode": "B1",
+        "tableType": 1,
+        "tableSubType": 0,
+        "roundCode": "B1-190731150155"
+    },
+    "event": "increaseCredit",
+    "timestamp": 1564556546208,
+    "signature": "YGMgM7c7JkuMhn6nvLOBDYIC+DjXJaHba/BUvQ8cTJ29H4H/u0Lr5FNPxiaoJp2ejKfQCiVhCAwx6FB6ZTaDaQ=="
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -225,6 +623,24 @@ Content-Type: application/json
 
 {% code title="Request" overflow="wrap" lineNumbers="true" %}
 ```json
+{
+    "username": "demo",
+    "channelId": 1,
+    "money": 1200,
+    "type": 38,
+    "platform": 3,
+    "currency": "CNY",
+    "seqNo": "d2e3a1bd0b5dd66053359e7619d46a43",
+    "detail": {
+        "tableType": 0,
+        "eventBonusType": 1,
+        "eventBonusCode": "test-bonus"
+    },
+    "event": "increaseCredit",
+    "timestamp": 1589359300861,
+    "sessionToken": "bf23ac28d01349fb7c5643b3b86aa7a5",
+    "signature": "fK34IX9cvjaIICPu8Gx+TxIgNfi/wuOaGlLd8IzvXS0eB2jOVqsLvZqpvu0MItwq7grmzByHw2DWKEeU1dEdTQ=="
+}
 ```
 {% endcode %}
 {% endtab %}
