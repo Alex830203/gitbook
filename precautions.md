@@ -22,14 +22,13 @@ eBET有3个部分需要提供 IP 做添加到白名单才允许使用。\
 1\. 登入游戏。若要在限制地区测试需要提供 IP。\
 真人游戏限制地区：<mark style="color:red;">香港、韩国、澳门、菲律宾、新加坡、台湾、美国</mark>\
 Genesis老虎机游戏限制地区：<mark style="color:red;">安地卡及巴布达、直布罗陀、香港、冰岛、爱尔兰岛、 列支敦斯登、马尔他、模里西斯、纽西兰、罗马尼亚、新加坡、西班牙、瑞典、瑞士、台湾、英国</mark>\
-2\. api請求。如果没有设置, 则 <mark style="color:red;">预设皆为开放</mark>。\
-3\. 渠道數據後台登入。只有提供的 IP 才 <mark style="color:red;">允許登入</mark>。
+2\. api請求，只有提供的 IP 才 <mark style="color:red;">允許請求</mark>。\
+3\. 渠道數據後台登入，只有提供的 IP 才 <mark style="color:red;">允許登入</mark>。
 
 **重要事项：**
 
 关于访问 eBET API 安全措施：\
-我们这里是需要您们提供当您们调用eBET API 的 IP地址。\
-我方添加之后就“ <mark style="color:red;">只有</mark> ”提供的 IP 地址才可以访问eBET API。\
+“ <mark style="color:red;">只有</mark> ”添加貴方提供的 IP 地址後，才可以访问eBET API。\
 PS：我方 <mark style="color:red;">已提醒</mark> 贵方安全措施，后期遇上关于访问 eBET API 特殊 <mark style="color:red;">状况请自负</mark> 。
 
 ## 4. 用戶名组成
